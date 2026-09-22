@@ -979,7 +979,7 @@ function downloadBib(idx) {
   const issn = '2096-0654';
   const keywords = (a.keywords || []).join(', ');
   
-  const bib = `@article{${bibKey},
+  let bib = `@article{${bibKey},
   author    = {${authors}},
   title     = {${title}},
   journal   = {${journal}},
