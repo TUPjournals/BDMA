@@ -608,13 +608,13 @@ body {
 <header class="header">
   <div class="header-inner">
     <div>
-      <h1>Big Data Mining and Analytics 2026</h1>
+      <h1>Big Data Mining and Analytics 2026 <span style="font-size:0.85rem;font-weight:400;opacity:0.85">(74 articles)</span></h1>
       <p>Article Index & Search</p>
     </div>
     <div class="header-links">
       <a href="https://www.sciopen.com/journal/2096-0654" target="_blank" class="header-link">Home page</a>
       <a href="https://mc03.manuscriptcentral.com/bdma" target="_blank" class="header-link">Submission link</a>
-
+      <button class="header-link" onclick="downloadAllBib()" style="background:rgba(139,92,246,0.3);border:1px solid rgba(255,255,255,0.35);color:#fff;padding:6px 14px;border-radius:20px;font-size:0.8rem;cursor:pointer">Export All BibTeX</button>
     </div>
   </div>
 </header>
@@ -627,6 +627,7 @@ body {
     </div>
     <select class="filter-select" id="yearFilter"><option value="">All Years</option></select>
     <select class="filter-select" id="typeFilter"><option value="">All Types</option></select>
+    <select class="filter-select" id="areaFilter"><option value="">All Areas</option></select>
   </div>
 </section>
 
@@ -660,6 +661,7 @@ let filteredArticles = [];
 const $search = document.getElementById('searchInput');
 const $year = document.getElementById('yearFilter');
 const $type = document.getElementById('typeFilter');
+const $area = document.getElementById('areaFilter');
 const $list = document.getElementById('articleList');
 const $stats = document.getElementById('statsRow');
 
@@ -678,13 +680,16 @@ async function loadData() {
 
 /* ── Filters ── */
 function fillFilters() {
-  const years = new Set(), types = new Set();
-  allArticles.forEach(a => { if (a.year) years.add(a.year); if (a.type) types.add(a.type); });
+  const years = new Set(), types = new Set(), areas = new Set();
+  allArticles.forEach(a => { if (a.year) years.add(a.year); if (a.type) types.add(a.type); if (a.research_area) areas.add(a.research_area); });
   [...years].sort((a,b)=>b-a).forEach(y => {
     const o = document.createElement('option'); o.value = y; o.textContent = y; $year.appendChild(o);
   });
   [...types].sort().forEach(t => {
     const o = document.createElement('option'); o.value = t; o.textContent = t; $type.appendChild(o);
+  });
+  [...areas].sort().forEach(t => {
+    const o = document.createElement('option'); o.value = t; o.textContent = t; $area.appendChild(o);
   });
 }
 
@@ -693,11 +698,12 @@ let currentQuery = '';
 function applyFilters() {
   const q = $search.value.trim();
   currentQuery = q;
-  const yv = $year.value, tv = $type.value;
+  const yv = $year.value, tv = $type.value, av = $area.value;
   filteredArticles = allArticles
     .map(a => {
       if (yv && a.year != yv) return null;
       if (tv && a.type !== tv) return null;
+      if (av && a.research_area !== av) return null;
       const score = searchScore(a, q);
       if (q && score === 0) return null;
       return { ...a, _score: score, _q: q };
@@ -769,7 +775,18 @@ function searchScore(a, q) {
 function render() {
   const views = filteredArticles.reduce((s,a) => s + (parseInt(a.views)||0), 0);
   const downloads = filteredArticles.reduce((s,a) => s + (parseInt(a.downloads)||0), 0);
-  $stats.innerHTML = `<div style="display:none"></div>`;
+  const types = new Set(filteredArticles.map(a => a.type).filter(Boolean));
+  const areas = new Set(filteredArticles.map(a => a.research_area).filter(Boolean));
+  const totalCount = allArticles.length;
+  const filteredCount = filteredArticles.length;
+  const countLabel = (filteredCount === totalCount) ? `${totalCount} articles` : `${filteredCount} / ${totalCount} articles`;
+  const typeList = [...types].join(', ');
+  const areaList = [...areas].join(', ');
+  $stats.innerHTML = `
+    <div class="stat-chip"><span class="dot"></span><strong>${countLabel}</strong></div>
+    ${typeList ? `<div class="stat-chip">${esc(typeList)}</div>` : ''}
+    ${areaList ? `<div class="stat-chip">Areas: ${esc(areaList)}</div>` : ''}
+  `;
 
   if (!filteredArticles.length) {
     $list.innerHTML = `<div class="center-msg"><div style="font-size:2.5rem;margin-bottom:8px">🔍</div><div>No articles found</div></div>`;
@@ -791,6 +808,7 @@ function render() {
         <div class="badges">
           ${a.year ? `<span class="badge-year">${a.year}</span>` : ''}
           ${a.type ? `<span class="badge-type">${esc(a.type)}</span>` : ''}
+          ${a.research_area ? `<span class="badge-type" style="background:#e0f2fe;color:#0891b2">${esc(a.research_area)}</span>` : ''}
           ${volIssue ? `<span class="badge-type">${esc(volIssue)}</span>` : ''}
           <button class="btn-expand toggle-btn" onclick="event.stopPropagation();toggle(this.closest('.card'))">Expand ▾</button>
         </div>
@@ -803,6 +821,7 @@ function render() {
         <span class="card-cite-text">${getCiteText(a)}</span>
         <button class="card-cite-btn" onclick="copyCite(${i})">Copy</button>
         <a class="card-cite-btn" href="javascript:void(0)" onclick="downloadRIS(${i})" style="background:#27ae60;color:#fff;text-decoration:none;display:inline-block;padding:3px 10px;border-radius:4px;font-size:0.72rem">RIS</a>
+        <a class="card-cite-btn" href="javascript:void(0)" onclick="downloadBib(${i})" style="background:#8b5cf6;color:#fff;text-decoration:none;display:inline-block;padding:3px 10px;border-radius:4px;font-size:0.72rem">BibTeX</a>
       </div>` : ''}
       <div class="detail">
         <div class="detail-grid">
@@ -902,6 +921,86 @@ function esc(s) {
   return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 }
 
+
+
+/* ── Download All BibTeX ── */
+function downloadAllBib() {
+  const allBib = [];
+  for (const a of allArticles) {
+    const firstAuthor = (a.authors && a.authors[0]) || 'Unknown';
+    const surname = firstAuthor.split(/\s+/)[0] || 'Unknown';
+    const bibKey = surname + (a.year || '');
+    const authors = (a.authors || []).join(' and ');
+    const title = (a.title || '').replace(/[{}]/g, '');
+    const journal = 'Big Data Mining and Analytics';
+    const year = a.year || '';
+    const volume = a.volume || '';
+    const number = a.issue || '';
+    const pages = (a.firstpage && a.lastpage) ? a.firstpage + '--' + a.lastpage : (a.firstpage || '');
+    const doi = a.doi || '';
+    const issn = '2096-0654';
+    const keywords = (a.keywords || []).join(', ');
+    
+    let bib = `@article{${bibKey},
+  author    = {${authors}},
+  title     = {${title}},
+  journal   = {${journal}},
+  year      = {${year}},
+  volume    = {${volume}},
+  number    = {${number}},
+  pages     = {${pages}},
+  doi       = {${doi}},
+  publisher = {清华大学出版社},
+  issn      = {${issn}}`;
+    
+    if (keywords) {
+      bib += ',\n  keywords  = {' + keywords + '}';
+    }
+    bib += '\n}\n';
+    allBib.push(bib);
+  }
+  download(allBib.join('\n'), 'BDMA_2026_all.bib', 'application/x-bibtex;charset=utf-8;');
+}
+/* ── Download BibTeX ── */
+function downloadBib(idx) {
+  const a = filteredArticles[idx];
+  if (!a) return;
+  const firstAuthor = (a.authors && a.authors[0]) || 'Unknown';
+  const surname = firstAuthor.split(/\s+/)[0] || 'Unknown';
+  const bibKey = surname + (a.year || '');
+  const authors = (a.authors || []).join(' and ');
+  const title = (a.title || '').replace(/[{}]/g, '');
+  const journal = 'Big Data Mining and Analytics';
+  const year = a.year || '';
+  const volume = a.volume || '';
+  const number = a.issue || '';
+  const pages = (a.firstpage && a.lastpage) ? a.firstpage + '--' + a.lastpage : (a.firstpage || '');
+  const doi = a.doi || '';
+  const issn = '2096-0654';
+  const keywords = (a.keywords || []).join(', ');
+  
+  const bib = `@article{${bibKey},
+  author    = {${authors}},
+  title     = {${title}},
+  journal   = {${journal}},
+  year      = {${year}},
+  volume    = {${volume}},
+  number    = {${number}},
+  pages     = {${pages}},
+  doi       = {${doi}},
+  publisher = {清华大学出版社},
+  issn      = {${issn}}`;
+  
+  if (keywords) {
+    bib += ',
+  keywords  = {' + keywords + '}';
+  }
+  bib += '
+}\n';
+  
+  const fn = (doi || 'BDMA').replace(/[/\\]/g, '_') + '.bib';
+  download(bib, fn, 'application/x-bibtex;charset=utf-8;');
+}
 /* ── Download RIS ── */
 function downloadRIS(idx) {
   const a = filteredArticles[idx];
@@ -945,6 +1044,7 @@ function download(content, filename, mime) {
 $search.addEventListener('input', debounce(applyFilters, 300));
 $year.addEventListener('change', applyFilters);
 $type.addEventListener('change', applyFilters);
+$area.addEventListener('change', applyFilters);
 
 function debounce(fn, ms) {
   let t;
