@@ -5,601 +5,95 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Big Data Mining and Analytics</title>
 <style>
-:root {
-  --bg: #f0f9ff;
-  --card: #ffffff;
-  --primary: #0891b2;
-  --primary-dark: #0e7490;
-  --accent: #06b6d4;
-  --accent-light: #cffafe;
-  --accent-bg: #ecfeff;
-  --text: #164e63;
-  --text-muted: #64748b;
-  --border: #bae6fd;
-  --radius: 12px;
-  --shadow: 0 1px 3px rgba(8,145,178,0.06), 0 4px 12px rgba(8,145,178,0.04);
-  --shadow-hover: 0 4px 12px rgba(8,145,178,0.1), 0 8px 24px rgba(8,145,178,0.06);
+:root{--bg:#f0f9ff;--card:#fff;--primary:#0891b2;--primary-dark:#0e7490;--accent:#06b6d4;--accent-light:#cffafe;--accent-bg:#ecfeff;--text:#164e63;--text-muted:#64748b;--border:#bae6fd;--radius:12px;--shadow:0 1px 3px rgba(8,145,178,.06),0 4px 12px rgba(8,145,178,.04);--shadow-hover:0 4px 12px rgba(8,145,178,.1),0 8px 24px rgba(8,145,178,.06)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.6;-webkit-font-smoothing:antialiased}
+.header{background:linear-gradient(135deg,#0891b2 0%,#06b6d4 50%,#22d3ee 100%);color:#fff;padding:28px 0 24px;position:sticky;top:0;z-index:100;box-shadow:0 2px 20px rgba(6,182,212,.25)}
+.header-inner{max-width:1200px;margin:0 auto;padding:0 24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.header h1{font-size:1.5rem;font-weight:700;letter-spacing:-.3px}
+.header p{font-size:.85rem;opacity:.8;font-weight:400}
+.header-links{display:flex;gap:10px;flex-wrap:wrap}
+.header-link{background:rgba(255,255,255,.2);border:1px solid rgba(255,255,255,.35);color:#fff;padding:6px 14px;border-radius:20px;font-size:.8rem;cursor:pointer;transition:background .2s;backdrop-filter:blur(4px);text-decoration:none;white-space:nowrap}
+.header-link:hover{background:rgba(255,255,255,.35)}
+.search-section{max-width:1200px;margin:24px auto 12px;padding:0 24px}
+.search-row{display:flex;gap:10px;flex-wrap:wrap;align-items:stretch}
+.search-wrap{flex:1;min-width:220px;position:relative}
+.search-wrap input{width:100%;padding:12px 16px 12px 44px;border:2px solid var(--border);border-radius:var(--radius);font-size:.95rem;background:var(--card);transition:border-color .2s,box-shadow .2s}
+.search-wrap input:focus{outline:none;border-color:var(--accent);box-shadow:0 0 0 3px rgba(6,182,212,.12)}
+.search-wrap .icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:1.1rem;pointer-events:none}
+.filter-select{padding:12px 14px;border:2px solid var(--border);border-radius:var(--radius);font-size:.88rem;background:var(--card);cursor:pointer;min-width:130px;transition:border-color .2s}
+.filter-select:focus{outline:none;border-color:var(--accent)}
+.stats-row{max-width:1200px;margin:0 auto 20px;padding:0 24px;display:flex;gap:10px;flex-wrap:wrap}
+.stat-chip{background:var(--card);padding:8px 16px;border-radius:24px;font-size:.82rem;color:var(--text-muted);border:1px solid var(--border);display:flex;align-items:center;gap:6px;box-shadow:0 1px 2px rgba(8,145,178,.04)}
+.stat-chip strong{color:var(--accent);font-size:1rem}
+.stat-chip .dot{width:6px;height:6px;border-radius:50%;background:#06b6d4}
+.list{max-width:1200px;margin:0 auto;padding:0 24px 48px}
+.card{background:var(--card);border-radius:var(--radius);padding:20px 24px;margin-bottom:12px;box-shadow:var(--shadow);border-left:4px solid transparent;transition:all .2s ease}
+.card:hover{border-left-color:var(--accent);box-shadow:var(--shadow-hover);transform:translateY(-1px)}
+.card.open{border-left-color:var(--primary)}
+.card-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px;cursor:pointer}
+.card-title{font-size:1rem;font-weight:600;color:var(--text);flex:1;line-height:1.45}
+.card-title:hover{color:var(--accent)}
+.badges{display:flex;gap:6px;flex-shrink:0;align-items:center}
+.badge-year{background:var(--accent);color:#fff;padding:3px 10px;border-radius:14px;font-size:.75rem;font-weight:600}
+.badge-type{background:var(--accent-bg);color:var(--primary);padding:3px 10px;border-radius:14px;font-size:.75rem;font-weight:500}
+.btn-expand{background:var(--accent-bg);color:var(--accent);border:1px solid var(--border);padding:3px 10px;border-radius:14px;font-size:.75rem;cursor:pointer;transition:all .2s;white-space:nowrap}
+.btn-expand:hover{background:var(--accent);color:#fff}
+.card-authors{font-size:.84rem;color:#64748b;margin-top:8px;line-height:1.5;max-width:700px}
+.card-cite{display:flex;align-items:center;gap:8px;margin-top:8px;padding:6px 10px;background:#f8f9fa;border-radius:6px;border-left:3px solid var(--accent)}
+.card-cite-text{flex:1;font-size:.78rem;color:#607d8b;line-height:1.5}
+.card-cite-btn{background:var(--accent);color:#fff;border:none;padding:3px 10px;border-radius:4px;font-size:.72rem;cursor:pointer;white-space:nowrap;transition:background .2s;display:inline-block;text-decoration:none;line-height:1.5;box-sizing:border-box}
+.card-cite-btn:hover{background:var(--primary)}
+.card-cite-btn.copied{background:#27ae60}
+.card-keywords{margin-top:8px;display:flex;flex-wrap:wrap;gap:5px}
+.kw{background:var(--accent-bg);color:var(--primary);padding:2px 10px;border-radius:10px;font-size:.74rem}
+.detail{display:none;margin-top:18px;padding-top:18px;border-top:1px solid var(--border)}
+.card.open .detail{display:block}
+.detail-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:10px;margin-bottom:14px}
+.d-item{font-size:.83rem}
+.d-item label{display:block;color:#64748b;font-size:.72rem;text-transform:uppercase;letter-spacing:.3px;margin-bottom:2px}
+.d-item span{color:var(--text);font-weight:500}
+.d-abstract{font-size:.88rem;color:var(--text);line-height:1.75;margin-top:10px;padding:12px 16px;background:var(--accent-bg);border-radius:8px;border-left:3px solid var(--accent)}
+.d-links{margin-top:14px;display:flex;gap:16px;flex-wrap:wrap}
+.d-links a{font-size:.83rem;color:var(--accent);text-decoration:none;font-weight:500}
+.d-links a:hover{text-decoration:underline}
+.card-doi{font-family:'Source Han Sans SC','Microsoft YaHei','Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:.8rem;margin-top:6px;word-break:break-all}
+.card-doi a{color:var(--accent);text-decoration:none}
+.card-doi a:hover{text-decoration:underline}
+.card-abstract{font-size:.85rem;color:var(--text-muted);line-height:1.6;margin-top:8px;text-align:justify}
+.center-msg{text-align:center;padding:60px 20px;color:var(--text-muted)}
+.spinner{display:inline-block;width:28px;height:28px;border:3px solid var(--border);border-top-color:var(--accent);border-radius:50%;animation:spin .7s linear infinite;margin-bottom:10px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.footer{text-align:center;padding:24px;color:var(--text-muted);font-size:.8rem;border-top:1px solid var(--border);margin-top:24px}
+.footer a{color:var(--accent);text-decoration:none}
+.back-top{position:fixed;bottom:32px;right:32px;width:48px;height:48px;background:var(--accent);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;cursor:pointer;box-shadow:0 4px 14px rgba(6,182,212,.3);opacity:0;transform:translateY(10px);transition:opacity .3s,transform .3s;z-index:99;border:none;user-select:none}
+.back-top.visible{opacity:1;transform:translateY(0)}
+.back-top:hover{background:var(--primary);transform:translateY(-2px)}
+@media(max-width:768px){
+  .header{padding:16px 0 12px;position:sticky}
+  .header-inner{padding:0 16px;flex-direction:column;align-items:flex-start;gap:8px}
+  .header h1{font-size:1.2rem}
+  .search-section{margin:16px auto 8px;padding:0 16px}
+  .search-row{gap:8px}
+  .search-wrap input{padding:10px 14px 10px 38px;font-size:.9rem}
+  .filter-select{padding:10px 12px;font-size:.85rem;min-width:100px}
+  .card{padding:16px;margin-bottom:10px}
+  .card-head{flex-direction:column;gap:8px}
+  .btn-expand{padding:4px 10px;font-size:.8rem}
+  .card-authors{max-width:100%;font-size:.8rem}
+  .card-doi a{font-size:.75rem}
+  .detail-grid{grid-template-columns:1fr;gap:8px}
+  .d-links{flex-direction:column;gap:8px}
+  .d-links a{display:block;padding:6px 0;font-size:.9rem}
+  .badge-year,.badge-type{font-size:.7rem;padding:2px 8px}
+  .footer{padding:16px;font-size:.75rem}
 }
-
-* { margin: 0; padding: 0; box-sizing: border-box; }
-
-body {
-  font-family: 'Inter', 'Microsoft YaHei', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* ── Header ── */
-.header {
-  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
-  color: #fff;
-  padding: 28px 0 24px;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-  box-shadow: 0 2px 20px rgba(6,182,212,0.25);
-}
-.header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
-}
-.header h1 { font-size: 1.5rem; font-weight: 700; letter-spacing: -0.3px; }
-.header p { font-size: 0.85rem; opacity: 0.8; font-weight: 400; }
-.header-links { display: flex; gap: 10px; }
-.header-link {
-  background: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.35);
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  backdrop-filter: blur(4px);
-  text-decoration: none;
-  white-space: nowrap;
-}
-.header-link:hover { background: rgba(255,255,255,0.35); }
-
-.export-btns { display: flex; gap: 8px; }
-.export-btn {
-  background: rgba(255,255,255,0.2);
-  border: 1px solid rgba(255,255,255,0.35);
-  color: #fff;
-  padding: 6px 14px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  transition: background 0.2s;
-  backdrop-filter: blur(4px);
-}
-.export-btn:hover { background: rgba(255,255,255,0.35); }
-
-/* ── Search ── */
-.search-section {
-  max-width: 1200px;
-  margin: 24px auto 12px;
-  padding: 0 24px;
-}
-.search-row {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-  align-items: stretch;
-}
-.search-wrap {
-  flex: 1;
-  min-width: 220px;
-  position: relative;
-}
-.search-wrap input {
-  width: 100%;
-  padding: 12px 16px 12px 44px;
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
-  font-size: 0.95rem;
-  background: var(--card);
-  transition: border-color 0.2s, box-shadow 0.2s;
-}
-.search-wrap input:focus {
-  outline: none;
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(6,182,212,0.12);
-}
-.search-wrap .icon {
-  position: absolute;
-  left: 14px; top: 50%;
-  transform: translateY(-50%);
-  font-size: 1.1rem;
-  pointer-events: none;
-}
-
-.filter-select {
-  padding: 12px 14px;
-  border: 2px solid var(--border);
-  border-radius: var(--radius);
-  font-size: 0.88rem;
-  background: var(--card);
-  cursor: pointer;
-  min-width: 130px;
-  transition: border-color 0.2s;
-}
-.filter-select:focus {
-  outline: none;
-  border-color: var(--accent);
-}
-
-/* ── Stats ── */
-.stats-row {
-  max-width: 1200px;
-  margin: 0 auto 20px;
-  padding: 0 24px;
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-.stat-chip {
-  background: var(--card);
-  padding: 8px 16px;
-  border-radius: 24px;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  border: 1px solid var(--border);
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  box-shadow: 0 1px 2px rgba(8,145,178,0.04);
-}
-.stat-chip strong { color: var(--accent); font-size: 1rem; }
-.stat-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: #06b6d4; }
-
-/* ── Article List ── */
-.list {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 24px 48px;
-}
-
-.card {
-  background: var(--card);
-  border-radius: var(--radius);
-  padding: 20px 24px;
-  margin-bottom: 12px;
-  box-shadow: var(--shadow);
-  border-left: 4px solid transparent;
-  transition: all 0.2s ease;
-}
-.card:hover {
-  border-left-color: var(--accent);
-  box-shadow: var(--shadow-hover);
-  transform: translateY(-1px);
-}
-.card.open { border-left-color: var(--primary); }
-
-.card-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 14px;
-  cursor: pointer;
-}
-.card-title {
-  font-size: 1rem;
-  font-weight: 600;
-  color: var(--text);
-  flex: 1;
-  line-height: 1.45;
-}
-.card-title:hover { color: var(--accent); }
-
-.badges { display: flex; gap: 6px; flex-shrink: 0; align-items: center; }
-.badge-year {
-  background: var(--accent);
-  color: #fff;
-  padding: 3px 10px;
-  border-radius: 14px;
-  font-size: 0.75rem;
-  font-weight: 600;
-}
-.badge-type {
-  background: var(--accent-bg);
-  color: var(--primary);
-  padding: 3px 10px;
-  border-radius: 14px;
-  font-size: 0.75rem;
-  font-weight: 500;
-}
-.btn-expand {
-  background: var(--accent-bg);
-  color: var(--accent);
-  border: 1px solid var(--border);
-  padding: 3px 10px;
-  border-radius: 14px;
-  font-size: 0.75rem;
-  cursor: pointer;
-  transition: all 0.2s;
-  white-space: nowrap;
-}
-.btn-expand:hover {
-  background: var(--accent);
-  color: #fff;
-}
-
-.card-authors {
-  font-size: 0.84rem;
-  color: #64748b;
-  margin-top: 8px;
-  line-height: 1.5;
-  max-width: 700px;
-}
-.card-cite {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  margin-top: 8px;
-  padding: 6px 10px;
-  background: #f8f9fa;
-  border-radius: 6px;
-  border-left: 3px solid var(--accent);
-}
-.card-cite-text {
-  flex: 1;
-  font-size: 0.78rem;
-  color: #607d8b;
-  line-height: 1.5;
-}
-.card-cite-btn {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  padding: 3px 10px;
-  border-radius: 4px;
-  font-size: 0.72rem;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s;
-  display: inline-block;
-  text-decoration: none;
-  line-height: 1.5;
-  box-sizing: border-box;
-}
-.card-cite-btn:hover { background: var(--primary); }
-.card-cite-btn.copied { background: #27ae60; }
-.card-keywords {
-  margin-top: 8px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 5px;
-}
-.kw {
-  background: var(--accent-bg);
-  color: var(--primary);
-  padding: 2px 10px;
-  border-radius: 10px;
-  font-size: 0.74rem;
-}
-
-/* ── Detail Panel ── */
-.detail {
-  display: none;
-  margin-top: 18px;
-  padding-top: 18px;
-  border-top: 1px solid var(--border);
-}
-.card.open .detail { display: block; }
-
-.detail-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 10px;
-  margin-bottom: 14px;
-}
-.d-item { font-size: 0.83rem; }
-.d-item label {
-  display: block;
-  color: #64748b;
-  font-size: 0.72rem;
-  text-transform: uppercase;
-  letter-spacing: 0.3px;
-  margin-bottom: 2px;
-}
-.d-item span { color: var(--text); font-weight: 500; }
-
-.d-abstract {
-  font-size: 0.88rem;
-  color: var(--text);
-  line-height: 1.75;
-  margin-top: 10px;
-  padding: 12px 16px;
-  background: var(--accent-bg);
-  border-radius: 8px;
-  border-left: 3px solid var(--accent);
-}
-
-.d-links {
-  margin-top: 14px;
-  display: flex;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-.d-links a {
-  font-size: 0.83rem;
-  color: var(--accent);
-  text-decoration: none;
-  font-weight: 500;
-}
-.d-links a:hover { text-decoration: underline; }
-
-/* ── Cite ── */
-.d-cite {
-  margin-top: 10px;
-  padding: 10px 14px;
-  background: #f8f9fa;
-  border-radius: 8px;
-  border-left: 3px solid var(--accent);
-  display: flex;
-  gap: 10px;
-  align-items: flex-start;
-}
-.d-cite-text {
-  flex: 1;
-  font-size: 0.82rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  word-break: break-word;
-}
-.d-cite-copy {
-  background: var(--accent);
-  color: #fff;
-  border: none;
-  padding: 5px 12px;
-  border-radius: 6px;
-  font-size: 0.78rem;
-  cursor: pointer;
-  white-space: nowrap;
-  transition: background 0.2s;
-}
-.d-cite-copy:hover { background: var(--primary); }
-.d-cite-copy.copied { background: #27ae60; }
-
-/* ── Card DOI & Abstract ── */
-.card-doi {
-  font-family: 'Source Han Sans SC', 'Microsoft YaHei', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  font-size: 0.8rem;
-  margin-top: 6px;
-  word-break: break-all;
-}
-.card-doi a {
-  color: var(--accent);
-  text-decoration: none;
-}
-.card-doi a:hover {
-  text-decoration: underline;
-}
-.card-abstract {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  line-height: 1.6;
-  margin-top: 8px;
-  text-align: justify;
-}
-
-/* ── Loading / Empty ── */
-.center-msg {
-  text-align: center;
-  padding: 60px 20px;
-  color: var(--text-muted);
-}
-.spinner {
-  display: inline-block;
-  width: 28px; height: 28px;
-  border: 3px solid var(--border);
-  border-top-color: var(--accent);
-  border-radius: 50%;
-  animation: spin 0.7s linear infinite;
-  margin-bottom: 10px;
-}
-@keyframes spin { to { transform: rotate(360deg); } }
-
-/* ── Mobile Responsive ── */
-@media (max-width: 768px) {
-  .header {
-    padding: 16px 0 12px;
-    position: sticky;
-  }
-  .header-inner {
-    padding: 0 16px;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 8px;
-  }
-  .header h1 {
-    font-size: 1.2rem;
-  }
-  .header p {
-    font-size: 0.75rem;
-  }
-  .header-links {
-    display: flex;
-    gap: 8px;
-  }
-  .header-link {
-    font-size: 0.75rem;
-    padding: 5px 12px;
-  }
-  .export-btns {
-    display: none;
-  }
-
-  .search-section {
-    margin: 16px auto 8px;
-    padding: 0 16px;
-  }
-  .search-row {
-    gap: 8px;
-  }
-  .search-wrap input {
-    padding: 10px 14px 10px 38px;
-    font-size: 0.9rem;
-  }
-  .filter-select {
-    padding: 10px 12px;
-    font-size: 0.85rem;
-    min-width: 100px;
-  }
-
-  .card {
-    padding: 16px;
-    margin-bottom: 10px;
-  }
-  .card-head {
-    flex-direction: column;
-    gap: 8px;
-  }
-  .card-title {
-    font-size: 0.95rem;
-  }
-  .badges {
-    flex-wrap: wrap;
-    gap: 4px;
-  }
-  .btn-expand {
-    padding: 4px 10px;
-    font-size: 0.8rem;
-  }
-  .card-authors {
-    max-width: 100%;
-    font-size: 0.8rem;
-  }
-  .card-doi a {
-    font-size: 0.75rem;
-  }
-
-  .detail-grid {
-    grid-template-columns: 1fr;
-    gap: 8px;
-  }
-  .d-links {
-    flex-direction: column;
-    gap: 8px;
-  }
-  .d-links a {
-    display: block;
-    padding: 6px 0;
-    font-size: 0.9rem;
-  }
-
-  .d-cite {
-    flex-direction: column;
-    gap: 8px;
-    padding: 10px 12px;
-  }
-  .d-cite-text {
-    font-size: 0.78rem;
-  }
-  .d-cite-copy {
-    padding: 8px 12px;
-    font-size: 0.85rem;
-    width: 100%;
-  }
-
-  .badge-year, .badge-type {
-    font-size: 0.7rem;
-    padding: 2px 8px;
-  }
-
-  .footer {
-    padding: 16px;
-    font-size: 0.75rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .header h1 {
-    font-size: 1.1rem;
-  }
-  .search-wrap input {
-    font-size: 0.85rem;
-  }
-  .filter-select {
-    width: 100%;
-  }
-  .card {
-    padding: 12px;
-  }
-  .card-title {
-    font-size: 0.9rem;
-  }
-}
-
-/* ── Footer ── */
-.footer {
-  text-align: center;
-  padding: 24px;
-  color: var(--text-muted);
-  font-size: 0.8rem;
-  border-top: 1px solid var(--border);
-  margin-top: 24px;
-}
-.footer a { color: var(--accent); text-decoration: none; }
-
-/* ── Responsive ── */
-@media (max-width: 640px) {
-  .header-inner { flex-direction: column; align-items: flex-start; }
-  .search-row { flex-direction: column; }
-  .filter-select { width: 100%; }
-  .card-head { flex-direction: column; }
-  .badges { flex-shrink: 1; }
-  .header-links { display: flex; gap: 8px; }
-  .header-link { font-size: 0.75rem; padding: 5px 12px; }
-}
-/* ── Back to Top ── */
-.back-top {
-  position: fixed;
-  bottom: 32px;
-  right: 32px;
-  width: 48px;
-  height: 48px;
-  background: var(--accent);
-  color: #fff;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.3rem;
-  cursor: pointer;
-  box-shadow: 0 4px 14px rgba(6,182,212,0.3);
-  opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.3s, transform 0.3s;
-  z-index: 99;
-  border: none;
-  user-select: none;
-}
-.back-top.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-.back-top:hover {
-  background: var(--primary);
-  transform: translateY(-2px);
-}
-@media (max-width: 640px) {
-  .back-top {
-    bottom: 20px;
-    right: 20px;
-    width: 42px;
-    height: 42px;
-    font-size: 1.1rem;
-  }
+@media(max-width:640px){
+  .header-inner{flex-direction:column;align-items:flex-start}
+  .search-row{flex-direction:column}
+  .filter-select{width:100%}
+  .card-head{flex-direction:column}
+  .back-top{bottom:20px;right:20px;width:42px;height:42px;font-size:1.1rem}
 }
 </style>
 </head>
@@ -608,13 +102,13 @@ body {
 <header class="header">
   <div class="header-inner">
     <div>
-      <h1>Big Data Mining and Analytics 2026 <span style="font-size:0.85rem;font-weight:400;opacity:0.85">(74 articles)</span></h1>
-      <p>Article Index & Search</p>
+      <h1>Big Data Mining and Analytics 2026 <span style="font-size:.85rem;font-weight:400;opacity:.85">(74 articles)</span></h1>
+      <p>Article Index &amp; Search</p>
     </div>
     <div class="header-links">
       <a href="https://www.sciopen.com/journal/2096-0654" target="_blank" class="header-link">Home page</a>
       <a href="https://mc03.manuscriptcentral.com/bdma" target="_blank" class="header-link">Submission link</a>
-      <button class="header-link" onclick="downloadAllBib()" style="background:rgba(139,92,246,0.3);border:1px solid rgba(255,255,255,0.35);color:#fff;padding:6px 14px;border-radius:20px;font-size:0.8rem;cursor:pointer">Export All BibTeX</button>
+      <button class="header-link" id="exportAllBib" style="background:rgba(139,92,246,.3);border:1px solid rgba(255,255,255,.35);color:#fff;padding:6px 14px;border-radius:20px;font-size:.8rem;cursor:pointer">Export All BibTeX</button>
     </div>
   </div>
 </header>
@@ -641,306 +135,289 @@ body {
   Big Data Mining and Analytics 2026 &copy; 2026 — Data from <a href="https://www.sciopen.com" target="_blank">SciOpen</a>
 </div>
 <button id="backTop" class="back-top" title="返回搜索框">▴</button>
+
 <script>
-  /* ── Back to Top ── */
-  const $backTop = document.getElementById('backTop');
-  window.addEventListener('scroll', () => {
-    $backTop.classList.toggle('visible', window.scrollY > 400);
+// Back to top
+(function(){
+  var $backTop = document.getElementById('backTop');
+  window.addEventListener('scroll', function(){
+    if (window.scrollY > 400) {
+      $backTop.classList.add('visible');
+    } else {
+      $backTop.classList.remove('visible');
+    }
   });
-  $backTop.addEventListener('click', () => {
-    $search.focus();
-    $search.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  $backTop.addEventListener('click', function(){
+    var search = document.getElementById('searchInput');
+    search.focus();
+    search.scrollIntoView({behavior:'smooth', block:'center'});
   });
+})();
 </script>
 
 <script>
+// Main app
+(function(){
+  var DATA_URL = 'articles_md/articles.json?v=20260922';
+  var allArticles = [];
+  var filteredArticles = [];
+  var currentQuery = '';
 
-const DATA_URL = 'articles_md/articles.json?v=20260922';
-let allArticles = [];
-let filteredArticles = [];
+  var $search = document.getElementById('searchInput');
+  var $year = document.getElementById('yearFilter');
+  var $type = document.getElementById('typeFilter');
+  var $area = document.getElementById('areaFilter');
+  var $list = document.getElementById('articleList');
+  var $stats = document.getElementById('statsRow');
 
-const $search = document.getElementById('searchInput');
-const $year = document.getElementById('yearFilter');
-const $type = document.getElementById('typeFilter');
-const $area = document.getElementById('areaFilter');
-const $list = document.getElementById('articleList');
-const $stats = document.getElementById('statsRow');
-
-/* ── Load ── */
-async function loadData() {
-  try {
-    const r = await fetch(DATA_URL);
-    allArticles = await r.json();
-    filteredArticles = allArticles;
-    fillFilters();
-    render();
-  } catch (e) {
-    $list.innerHTML = `<div class="center-msg">⚠️ Failed to load: ${e.message}</div>`;
+  function esc(s) {
+    if (!s) return '';
+    return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
   }
-}
 
-/* ── Filters ── */
-function fillFilters() {
-  const years = new Set(), types = new Set(), areas = new Set();
-  allArticles.forEach(a => { if (a.year) years.add(a.year); if (a.type) types.add(a.type); if (a.research_area) areas.add(a.research_area); });
-  [...years].sort((a,b)=>b-a).forEach(y => {
-    const o = document.createElement('option'); o.value = y; o.textContent = y; $year.appendChild(o);
-  });
-  [...types].sort().forEach(t => {
-    const o = document.createElement('option'); o.value = t; o.textContent = t; $type.appendChild(o);
-  });
-  [...areas].sort().forEach(t => {
-    const o = document.createElement('option'); o.value = t; o.textContent = t; $area.appendChild(o);
-  });
-}
-
-let currentQuery = '';
-
-function applyFilters() {
-  const q = $search.value.trim();
-  currentQuery = q;
-  const yv = $year.value, tv = $type.value, av = $area.value;
-  filteredArticles = allArticles
-    .map(a => {
-      if (yv && a.year != yv) return null;
-      if (tv && a.type !== tv) return null;
-      if (av && a.research_area !== av) return null;
-      const score = searchScore(a, q);
-      if (q && score === 0) return null;
-      return { ...a, _score: score, _q: q };
-    })
-    .filter(Boolean)
-    .sort((a, b) => b._score - a._score);
-  render();
-}
-
-/* ── Highlight ── */
-function highlight(text, query) {
-  if (!query || !text) return esc(text || '');
-  const tokens = query.trim().split(/\s+/).filter(Boolean);
-  let result = esc(text);
-  for (const tok of tokens) {
-    const re = new RegExp('(' + tok.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + ')', 'gi');
-    result = result.replace(re, '<mark style="background:#fde047;padding:0 2px;border-radius:2px">$1</mark>');
+  function highlight(text, query) {
+    if (!query || !text) return esc(text || '');
+    var result = esc(text);
+    var tokens = query.trim().split(/\s+/);
+    for (var i = 0; i < tokens.length; i++) {
+      if (!tokens[i]) continue;
+      var escaped = tokens[i].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+      var re = new RegExp('(' + escaped + ')', 'gi');
+      result = result.replace(re, '<mark style="background:#fde047;padding:0 2px;border-radius:2px">$1</mark>');
+    }
+    return result;
   }
-  return result;
-}
 
-/* ── Fuzzy Search ── */
-function fuzzyMatch(text, query) {
-  if (!query) return { match: true, score: 0 };
-  const t = (text || '').toLowerCase();
-  const q = query.toLowerCase().trim();
-  if (!q) return { match: true, score: 0 };
-  if (t.includes(q)) return { match: true, score: 10 };
-  const tokens = q.split(/\s+/);
-  let allMatch = true;
-  for (const tok of tokens) {
-    if (!t.includes(tok)) { allMatch = false; break; }
+  function fuzzyMatch(text, query) {
+    if (!query) return { match: true, score: 0 };
+    var t = (text || '').toLowerCase();
+    var q = query.toLowerCase().trim();
+    if (!q) return { match: true, score: 0 };
+    if (t.indexOf(q) !== -1) return { match: true, score: 10 };
+    var tokens = q.split(/\s+/);
+    var allMatch = true;
+    for (var i = 0; i < tokens.length; i++) {
+      if (t.indexOf(tokens[i]) === -1) { allMatch = false; break; }
+    }
+    if (allMatch) return { match: true, score: 5 };
+    var qi = 0;
+    for (var j = 0; j < t.length && qi < q.length; j++) {
+      if (t[j] === q[qi]) qi++;
+    }
+    if (qi === q.length) return { match: true, score: 2 };
+    return { match: false, score: 0 };
   }
-  if (allMatch) return { match: true, score: 5 };
-  let qi = 0;
-  for (let i = 0; i < t.length && qi < q.length; i++) {
-    if (t[i] === q[qi]) qi++;
-  }
-  if (qi === q.length) return { match: true, score: 2 };
-  return { match: false, score: 0 };
-}
 
-function searchScore(a, q) {
-  if (!q) return 1;
-  const tokens = q.toLowerCase().trim().split(/\s+/);
-  let total = 0;
-  let anyMatch = false;
-  for (const tok of tokens) {
-    const fields = [
-      { v: a.title || '', w: 10 },
-      { v: (a.authors||[]).join(' ') || '', w: 5 },
-      { v: (a.keywords||[]).join(' ') || '', w: 4 },
-      { v: a.abstract || '', w: 1 },
-    ];
-    let best = 0;
-    for (const f of fields) {
-      const r = fuzzyMatch(f.v, tok);
-      if (r.match) {
-        anyMatch = true;
-        best = Math.max(best, r.score * f.w);
+  function searchScore(a, q) {
+    if (!q) return 1;
+    var tokens = q.toLowerCase().trim().split(/\s+/);
+    var total = 0;
+    var anyMatch = false;
+    for (var i = 0; i < tokens.length; i++) {
+      var fields = [
+        { v: a.title || '', w: 10 },
+        { v: (a.authors||[]).join(' ') || '', w: 5 },
+        { v: (a.keywords||[]).join(' ') || '', w: 4 },
+        { v: a.abstract || '', w: 1 }
+      ];
+      var best = 0;
+      for (var j = 0; j < fields.length; j++) {
+        var r = fuzzyMatch(fields[j].v, tokens[i]);
+        if (r.match) {
+          anyMatch = true;
+          var score = r.score * fields[j].w;
+          if (score > best) best = score;
+        }
       }
+      total += best;
     }
-    total += best;
-  }
-  return anyMatch ? total : 0;
-}
-
-/* ── Render ── */
-function render() {
-  const views = filteredArticles.reduce((s,a) => s + (parseInt(a.views)||0), 0);
-  const downloads = filteredArticles.reduce((s,a) => s + (parseInt(a.downloads)||0), 0);
-  const types = new Set(filteredArticles.map(a => a.type).filter(Boolean));
-  const areas = new Set(filteredArticles.map(a => a.research_area).filter(Boolean));
-  const totalCount = allArticles.length;
-  const filteredCount = filteredArticles.length;
-  const countLabel = (filteredCount === totalCount) ? `${totalCount} articles` : `${filteredCount} / ${totalCount} articles`;
-  const typeList = [...types].join(', ');
-  const areaList = [...areas].join(', ');
-  $stats.innerHTML = `
-    <div class="stat-chip"><span class="dot"></span><strong>${countLabel}</strong></div>
-    ${typeList ? `<div class="stat-chip">${esc(typeList)}</div>` : ''}
-    ${areaList ? `<div class="stat-chip">Areas: ${esc(areaList)}</div>` : ''}
-  `;
-
-  if (!filteredArticles.length) {
-    $list.innerHTML = `<div class="center-msg"><div style="font-size:2.5rem;margin-bottom:8px">🔍</div><div>No articles found</div></div>`;
-    return;
+    return anyMatch ? total : 0;
   }
 
-  $list.innerHTML = filteredArticles.map((a,i) => {
-    const formattedAuthors = (a.authors||[]).map(name => {
-      return `<span style="display:inline-block;white-space:nowrap">${esc(name)}</span>`;
+  function fillFilters() {
+    var years = [], types = [], areas = [];
+    var yearSet = {}, typeSet = {}, areaSet = {};
+    allArticles.forEach(function(a){
+      if(a.year && !yearSet[a.year]) { yearSet[a.year]=1; years.push(a.year); }
+      if(a.type && !typeSet[a.type]) { typeSet[a.type]=1; types.push(a.type); }
+      if(a.research_area && !areaSet[a.research_area]) { areaSet[a.research_area]=1; areas.push(a.research_area); }
     });
-    const shortNames = formattedAuthors.join(', ');
-    const kws = (a.keywords||[]).slice(0,5).map(k => `<span class="kw">${highlight(k.replace(/<[^>]+>/g, ''), currentQuery)}</span>`).join('');
-    const volIssue = (a.volume || a.issue) ? `Vol.${a.volume||'?'} Iss. ${a.issue||'?'}` : '';
-
-    return `
-    <div class="card" data-idx="${i}">
-      <div class="card-head" onclick="toggle(this.parentElement)">
-        <div class="card-title">${highlight(a.title.replace(/<[^>]+>/g, ''), currentQuery)}</div>
-        <div class="badges">
-          ${a.year ? `<span class="badge-year">${a.year}</span>` : ''}
-          ${a.type ? `<span class="badge-type">${esc(a.type)}</span>` : ''}
-          ${a.research_area ? `<span class="badge-type" style="background:#e0f2fe;color:#0891b2">${esc(a.research_area)}</span>` : ''}
-          ${volIssue ? `<span class="badge-type">${esc(volIssue)}</span>` : ''}
-          <button class="btn-expand toggle-btn" onclick="event.stopPropagation();toggle(this.closest('.card'))">Expand ▾</button>
-        </div>
-      </div>
-      <div class="card-authors">${shortNames}</div>
-      ${kws ? `<div class="card-keywords">${kws}</div>` : ''}
-      ${a.doi ? `<div class="card-doi"><a href="https://doi.org/${a.doi}" target="_blank" onclick="event.stopPropagation()">https://doi.org/${esc(a.doi)}</a></div>` : ''}
-      ${a.doi ? `
-      <div class="card-cite" onclick="event.stopPropagation()">
-        <span class="card-cite-text">${getCiteText(a)}</span>
-        <button class="card-cite-btn" onclick="copyCite(${i})">Copy</button>
-        <a class="card-cite-btn" href="javascript:void(0)" onclick="downloadRIS(${i})" style="background:#27ae60;color:#fff;text-decoration:none;display:inline-block;padding:3px 10px;border-radius:4px;font-size:0.72rem">RIS</a>
-        <a class="card-cite-btn" href="javascript:void(0)" onclick="downloadBib(${i})" style="background:#8b5cf6;color:#fff;text-decoration:none;display:inline-block;padding:3px 10px;border-radius:4px;font-size:0.72rem">BibTeX</a>
-      </div>` : ''}
-      <div class="detail">
-        <div class="detail-grid">
-          ${a.doi ? `<div class="d-item"><label>DOI</label><span>${esc(a.doi)}</span></div>` : ''}
-          ${a.volume ? `<div class="d-item"><label>Volume(Issue)</label><span>${a.volume}(${a.issue})</span></div>` : ''}
-          ${a.firstpage ? `<div class="d-item"><label>Pages</label><span>${a.firstpage}-${a.lastpage}</span></div>` : ''}
-          ${a.publication_date ? `<div class="d-item"><label>Published</label><span>${esc(a.publication_date)}</span></div>` : ''}
-          ${a.online_date ? `<div class="d-item"><label>Online</label><span>${esc(a.online_date)}</span></div>` : ''}
-        </div>
-        ${a.abstract ? `<div class="d-abstract"><strong>Abstract:</strong> ${highlight(a.abstract.replace(/<[^>]+>/g, ''), currentQuery)}</div>` : ''}
-        <div class="d-links">
-          ${a.url ? `<a href="${a.url}" target="_blank" onclick="event.stopPropagation()">View on SciOpen →</a>` : ''}
-          ${a.pdf ? `<a href="${a.pdf}" target="_blank" onclick="event.stopPropagation()">Download PDF →</a>` : ''}
-        </div>
-      </div>
-    </div>`;
-  }).join('');
-}
-
-/* ── Toggle ── */
-function toggle(card) {
-  card.classList.toggle('open');
-  const btn = card.querySelector('.toggle-btn');
-  if (btn) {
-    btn.textContent = card.classList.contains('open') ? 'Collapse ▴' : 'Expand ▾';
+    years.sort(function(a,b){return b-a;});
+    types.sort();
+    areas.sort();
+    years.forEach(function(y){ var o=document.createElement('option'); o.value=y; o.textContent=y; $year.appendChild(o); });
+    types.forEach(function(t){ var o=document.createElement('option'); o.value=t; o.textContent=t; $type.appendChild(o); });
+    areas.forEach(function(t){ var o=document.createElement('option'); o.value=t; o.textContent=t; $area.appendChild(o); });
   }
-}
 
-/* ── Cite Text ── */
-function getCiteText(a) {
-  const aus = (a.authors||[]).map(name => {
-    const parts = (name || '').trim().split(/\s+/);
-    if (parts.length >= 2) {
-      const last = parts[parts.length-1];
-      const firstInit = parts[0]?.[0]?.toUpperCase() || '';
-      return `${last} ${firstInit}`;
+  function applyFilters() {
+    var q = $search.value.trim();
+    currentQuery = q;
+    var yv = $year.value, tv = $type.value, av = $area.value;
+    filteredArticles = [];
+    for (var i = 0; i < allArticles.length; i++) {
+      var a = allArticles[i];
+      if (yv && a.year != yv) continue;
+      if (tv && a.type !== tv) continue;
+      if (av && a.research_area !== av) continue;
+      var score = searchScore(a, q);
+      if (q && score === 0) continue;
+      a._score = score;
+      filteredArticles.push(a);
     }
-    return name || '';
-  });
-  let authorStr;
-  if (aus.length > 3) {
-    authorStr = aus.slice(0,3).join(', ') + ', et al';
-  } else {
-    authorStr = aus.join(', ');
+    filteredArticles.sort(function(a, b) { return b._score - a._score; });
+    render();
   }
-  const year = a.year || '';
-  const title = (a.title || '').replace(/<[^>]+>/g, '');
-  const volIssue = (a.volume || a.issue) ? `${a.volume||''}(${a.issue||''})` : '';
-  const pages = (a.firstpage && a.lastpage) ? `${a.firstpage}-${a.lastpage}` : (a.firstpage || '');
-  const doiUrl = `https://doi.org/${a.doi || ''}`;
-  return `${authorStr}. ${title}. Big Data Mining and Analytics, ${year}, ${volIssue}: ${pages}. ${doiUrl}`;
-}
 
-/* ── Copy Cite ── */
-function copyCite(idx) {
-  const a = filteredArticles[idx];
-  if (!a) return;
-  const text = getCiteText(a);
-  const btn = event.target;
-  if (navigator.clipboard) {
-    navigator.clipboard.writeText(text).then(() => {
-      showCopied(btn);
-    }).catch(() => {
-      fallbackCopy(text, btn);
+  function render() {
+    var types = new Set();
+    var areas = new Set();
+    filteredArticles.forEach(function(a){ if(a.type) types.add(a.type); if(a.research_area) areas.add(a.research_area); });
+    var totalCount = allArticles.length;
+    var filteredCount = filteredArticles.length;
+    var countLabel = (filteredCount === totalCount) ? totalCount + ' articles' : filteredCount + ' / ' + totalCount + ' articles';
+    var typeList = Array.from(types).join(', ');
+    var areaList = Array.from(areas).join(', ');
+
+    var statsHtml = '<div class="stat-chip"><span class="dot"></span><strong>' + countLabel + '</strong></div>';
+    if (typeList) statsHtml += '<div class="stat-chip">' + esc(typeList) + '</div>';
+    if (areaList) statsHtml += '<div class="stat-chip">Areas: ' + esc(areaList) + '</div>';
+    $stats.innerHTML = statsHtml;
+
+    if (!filteredArticles.length) {
+      $list.innerHTML = '<div class="center-msg"><div style="font-size:2.5rem;margin-bottom:8px">🔍</div><div>No articles found</div></div>';
+      return;
+    }
+
+    var html = '';
+    for (var i = 0; i < filteredArticles.length; i++) {
+      var a = filteredArticles[i];
+      html += '<div class="card" data-idx="' + i + '">';
+      html += '<div class="card-head" onclick="window._toggleCard(this.parentElement)">';
+      html += '<div class="card-title">' + highlight(a.title.replace(/<[^>]+>/g, ''), currentQuery) + '</div>';
+      html += '<div class="badges">';
+      if (a.year) html += '<span class="badge-year">' + a.year + '</span>';
+      if (a.type) html += '<span class="badge-type">' + esc(a.type) + '</span>';
+      if (a.research_area) html += '<span class="badge-type" style="background:#e0f2fe;color:#0891b2">' + esc(a.research_area) + '</span>';
+      var volIssue = (a.volume || a.issue) ? 'Vol.' + (a.volume||'?') + ' Iss. ' + (a.issue||'?') : '';
+      if (volIssue) html += '<span class="badge-type">' + esc(volIssue) + '</span>';
+      html += '<button class="btn-expand toggle-btn" onclick="event.stopPropagation();window._toggleCard(this.closest(\'.card\'))">Expand ▾</button>';
+      html += '</div></div>';
+      html += '<div class="card-authors">' + (a.authors||[]).join(', ') + '</div>';
+      var kws = '';
+      var kwList = (a.keywords||[]).slice(0,5);
+      for (var k = 0; k < kwList.length; k++) {
+        kws += '<span class="kw">' + highlight(kwList[k].replace(/<[^>]+>/g, ''), currentQuery) + '</span>';
+      }
+      if (kws) html += '<div class="card-keywords">' + kws + '</div>';
+      if (a.doi) html += '<div class="card-doi"><a href="https://doi.org/' + a.doi + '" target="_blank" onclick="event.stopPropagation()">https://doi.org/' + esc(a.doi) + '</a></div>';
+      if (a.doi) {
+        html += '<div class="card-cite" onclick="event.stopPropagation()">' +
+          '<span class="card-cite-text">' + getCiteText(a) + '</span>' +
+          '<button class="card-cite-btn" onclick="window._copyCite(' + i + ')">Copy</button>' +
+          '<a class="card-cite-btn" href="javascript:void(0)" onclick="window._downloadRIS(' + i + ')" style="background:#27ae60">RIS</a>' +
+          '<a class="card-cite-btn" href="javascript:void(0)" onclick="window._downloadBib(' + i + ')" style="background:#8b5cf6">BibTeX</a>' +
+        '</div>';
+      }
+      html += '<div class="detail"><div class="detail-grid">';
+      if (a.doi) html += '<div class="d-item"><label>DOI</label><span>' + esc(a.doi) + '</span></div>';
+      if (a.volume) html += '<div class="d-item"><label>Volume(Issue)</label><span>' + a.volume + '(' + a.issue + ')</span></div>';
+      if (a.firstpage) html += '<div class="d-item"><label>Pages</label><span>' + a.firstpage + '-' + a.lastpage + '</span></div>';
+      if (a.publication_date) html += '<div class="d-item"><label>Published</label><span>' + esc(a.publication_date) + '</span></div>';
+      if (a.online_date) html += '<div class="d-item"><label>Online</label><span>' + esc(a.online_date) + '</span></div>';
+      html += '</div>';
+      if (a.abstract) html += '<div class="d-abstract"><strong>Abstract:</strong> ' + highlight(a.abstract.replace(/<[^>]+>/g, ''), currentQuery) + '</div>';
+      html += '<div class="d-links">';
+      if (a.url) html += '<a href="' + a.url + '" target="_blank" onclick="event.stopPropagation()">View on SciOpen →</a>';
+      if (a.pdf) html += '<a href="' + a.pdf + '" target="_blank" onclick="event.stopPropagation()">Download PDF →</a>';
+      html += '</div></div></div>';
+    }
+    $list.innerHTML = html;
+  }
+
+  function getCiteText(a) {
+    var aus = (a.authors||[]).map(function(name) {
+      var parts = (name || '').trim().split(/\s+/);
+      if (parts.length >= 2) {
+        var last = parts[parts.length-1];
+        var firstInit = parts[0] && parts[0][0] ? parts[0][0].toUpperCase() : '';
+        return last + ' ' + firstInit;
+      }
+      return name || '';
     });
-  } else {
-    fallbackCopy(text, btn);
+    var authorStr;
+    if (aus.length > 3) {
+      authorStr = aus.slice(0,3).join(', ') + ', et al';
+    } else {
+      authorStr = aus.join(', ');
+    }
+    var year = a.year || '';
+    var title = (a.title || '').replace(/<[^>]+>/g, '');
+    var volIssue = (a.volume || a.issue) ? (a.volume||'') + '(' + (a.issue||'') + ')' : '';
+    var pages = (a.firstpage && a.lastpage) ? (a.firstpage + '-' + a.lastpage) : (a.firstpage || '');
+    var doiUrl = 'https://doi.org/' + (a.doi || '');
+    return authorStr + '. ' + title + '. Big Data Mining and Analytics, ' + year + ', ' + volIssue + ': ' + pages + '. ' + doiUrl;
   }
-}
 
-function fallbackCopy(text, btn) {
-  const ta = document.createElement('textarea');
-  ta.value = text;
-  ta.style.position = 'fixed';
-  ta.style.opacity = '0';
-  document.body.appendChild(ta);
-  ta.select();
-  try {
-    document.execCommand('copy');
-    showCopied(btn);
-  } catch(e) {}
-  document.body.removeChild(ta);
-}
+  // Expose to global scope for onclick handlers
+  window._toggleCard = function(card) {
+    card.classList.toggle('open');
+    var btn = card.querySelector('.toggle-btn');
+    if (btn) btn.textContent = card.classList.contains('open') ? 'Collapse ▴' : 'Expand ▾';
+  };
 
-function showCopied(btn) {
-  btn.textContent = 'Copied ✓';
-  btn.classList.add('copied');
-  setTimeout(() => {
-    btn.textContent = 'Copy';
-    btn.classList.remove('copied');
-  }, 1500);
-}
+  window._copyCite = function(idx) {
+    var a = filteredArticles[idx];
+    if (!a) return;
+    var text = getCiteText(a);
+    if (navigator.clipboard) {
+      navigator.clipboard.writeText(text).catch(function(){});
+    } else {
+      var ta = document.createElement('textarea');
+      ta.value = text;
+      ta.style.position = 'fixed';
+      ta.style.opacity = '0';
+      document.body.appendChild(ta);
+      ta.select();
+      try { document.execCommand('copy'); } catch(e) {}
+      document.body.removeChild(ta);
+    }
+    var btn = event.target;
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('copied');
+    setTimeout(function() {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 1500);
+  };
 
-/* ── Escape ── */
-function esc(s) {
-  if (!s) return '';
-  return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-}
+  function downloadFile(content, filename, mime) {
+    var blob = new Blob([content], { type: mime });
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url; a.download = filename;
+    document.body.appendChild(a); a.click();
+    document.body.removeChild(a); URL.revokeObjectURL(url);
+  }
 
-/* ── Download All BibTeX ── */
-function downloadAllBib() {
-  const allBib = [];
-  for (const a of allArticles) {
-    const firstAuthor = (a.authors && a.authors[0]) || 'Unknown';
-    const surname = firstAuthor.split(/\s+/)[0] || 'Unknown';
-    const bibKey = surname + (a.year || '');
-    const authors = (a.authors || []).join(' and ');
-    const title = (a.title || '').replace(/[{}]/g, '');
-    const journal = 'Big Data Mining and Analytics';
-    const year = a.year || '';
-    const volume = a.volume || '';
-    const number = a.issue || '';
-    const pages = (a.firstpage && a.lastpage) ? a.firstpage + '--' + a.lastpage : (a.firstpage || '');
-    const doi = a.doi || '';
-    const issn = '2096-0654';
-    const keywords = (a.keywords || []).join(', ');
+  window._downloadBib = function(idx) {
+    var a = filteredArticles[idx];
+    if (!a) return;
+    var firstAuthor = (a.authors && a.authors[0]) || 'Unknown';
+    var surname = firstAuthor.split(/\s+/)[0] || 'Unknown';
+    var bibKey = surname + (a.year || '');
+    var authors = (a.authors || []).join(' and ');
+    var title = (a.title || '').replace(/[{}]/g, '');
+    var journal = 'Big Data Mining and Analytics';
+    var year = a.year || '';
+    var volume = a.volume || '';
+    var number = a.issue || '';
+    var pages = (a.firstpage && a.lastpage) ? a.firstpage + '--' + a.lastpage : (a.firstpage || '');
+    var doi = a.doi || '';
+    var issn = '2096-0654';
+    var keywords = (a.keywords || []).join(', ');
     
-    let bib = '@article{' + bibKey + ',\n  author    = {' + authors +
+    var bib = '@article{' + bibKey + ',\n  author    = {' + authors +
       '},\n  title     = {' + title +
       '},\n  journal   = {' + journal +
       '},\n  year      = {' + year +
@@ -950,105 +427,90 @@ function downloadAllBib() {
       '},\n  doi       = {' + doi +
       '},\n  publisher = {清华大学出版社},\n  issn      = {' + issn + '}}';
     
-    if (keywords) {
-      bib += ',\n  keywords  = {' + keywords + '}';
-    }
+    if (keywords) bib += ',\n  keywords  = {' + keywords + '}';
     bib += '\n}\n';
-    allBib.push(bib);
-  }
-  download(allBib.join('\n'), 'BDMA_2026_all.bib', 'application/x-bibtex;charset=utf-8;');
-}
+    
+    var fn = (doi || 'BDMA').replace(/[/\\]/g, '_') + '.bib';
+    downloadFile(bib, fn, 'application/x-bibtex;charset=utf-8;');
+  };
 
-/* ── Download BibTeX ── */
-function downloadBib(idx) {
-  const a = filteredArticles[idx];
-  if (!a) return;
-  const firstAuthor = (a.authors && a.authors[0]) || 'Unknown';
-  const surname = firstAuthor.split(/\s+/)[0] || 'Unknown';
-  const bibKey = surname + (a.year || '');
-  const authors = (a.authors || []).join(' and ');
-  const title = (a.title || '').replace(/[{}]/g, '');
-  const journal = 'Big Data Mining and Analytics';
-  const year = a.year || '';
-  const volume = a.volume || '';
-  const number = a.issue || '';
-  const pages = (a.firstpage && a.lastpage) ? a.firstpage + '--' + a.lastpage : (a.firstpage || '');
-  const doi = a.doi || '';
-  const issn = '2096-0654';
-  const keywords = (a.keywords || []).join(', ');
-  
-  let bib = '@article{' + bibKey + ',\n  author    = {' + authors +
-    '},\n  title     = {' + title +
-    '},\n  journal   = {' + journal +
-    '},\n  year      = {' + year +
-    '},\n  volume    = {' + volume +
-    '},\n  number    = {' + number +
-    '},\n  pages     = {' + pages +
-    '},\n  doi       = {' + doi +
-    '},\n  publisher = {清华大学出版社},\n  issn      = {' + issn + '}}';
-  
-  if (keywords) {
-    bib += ',\n  keywords  = {' + keywords + '}';
-  }
-  bib += '\n}\n';
-  
-  const fn = (doi || 'BDMA').replace(/[/\\]/g, '_') + '.bib';
-  download(bib, fn, 'application/x-bibtex;charset=utf-8;');
-}
+  window._downloadRIS = function(idx) {
+    var a = filteredArticles[idx];
+    if (!a) return;
+    var ris = [];
+    ris.push('TY  - JOUR');
+    (a.authors||[]).forEach(function(name) {
+      var parts = (name || '').trim().split(/\s+/);
+      if (parts.length >= 2) {
+        ris.push('AU  - ' + parts[parts.length-1] + ', ' + parts.slice(0,-1).join(' '));
+      } else {
+        ris.push('AU  - ' + (name || ''));
+      }
+    });
+    if (a.year) ris.push('PY  - ' + a.year);
+    ris.push('TI  - ' + (a.title||'').replace(/<[^>]+>/g, ''));
+    ris.push('JO  - Big Data Mining and Analytics');
+    ris.push('SN  - 2096-0654');
+    if (a.firstpage) ris.push('SP  - ' + a.firstpage);
+    if (a.lastpage) ris.push('EP  - ' + a.lastpage);
+    if (a.volume) ris.push('VL  - ' + a.volume);
+    if (a.issue) ris.push('IS  - ' + a.issue);
+    if (a.abstract) ris.push('AB  - ' + a.abstract.replace(/<[^>]+>/g, '').replace(/\s+/g,' ').trim());
+    if (a.doi) ris.push('UR  - https://doi.org/' + a.doi);
+    if (a.doi) ris.push('DO  - ' + a.doi);
+    var fn = (a.doi||'BDMA').replace(/[/\\]/g,'_') + '.ris';
+    downloadFile(ris.join('\r\n') + '\r\n', fn, 'application/x-research-info-systems;charset=utf-8;');
+  };
 
-/* ── Download RIS ── */
-function downloadRIS(idx) {
-  const a = filteredArticles[idx];
-  if (!a) return;
-  const ris = [];
-  ris.push('TY  - JOUR');
-  (a.authors||[]).forEach(name => {
-    const parts = (name || '').trim().split(/\s+/);
-    if (parts.length >= 2) {
-      ris.push('AU  - ' + parts[parts.length-1] + ', ' + parts.slice(0,-1).join(' '));
-    } else {
-      ris.push('AU  - ' + name || '');
+  document.getElementById('exportAllBib').addEventListener('click', function() {
+    var allBib = [];
+    for (var i = 0; i < allArticles.length; i++) {
+      var a = allArticles[i];
+      var firstAuthor = (a.authors && a.authors[0]) || 'Unknown';
+      var surname = firstAuthor.split(/\s+/)[0] || 'Unknown';
+      var bibKey = surname + (a.year || '');
+      var authors = (a.authors || []).join(' and ');
+      var title = (a.title || '').replace(/[{}]/g, '');
+      var bib = '@article{' + bibKey + ',\n  author    = {' + authors +
+        '},\n  title     = {' + title +
+        '},\n  journal   = {Big Data Mining and Analytics},\n  year      = {' + (a.year||'') +
+        '},\n  volume    = {' + (a.volume||'') +
+        '},\n  number    = {' + (a.issue||'') +
+        '},\n  pages     = {' + ((a.firstpage&&a.lastpage)?a.firstpage+'--'+a.lastpage:(a.firstpage||'')) +
+        '},\n  doi       = {' + (a.doi||'') +
+        '},\n  publisher = {清华大学出版社},\n  issn      = {2096-0654}}';
+      var kws = (a.keywords||[]).join(', ');
+      if (kws) bib += ',\n  keywords  = {' + kws + '}';
+      bib += '\n}\n';
+      allBib.push(bib);
     }
+    downloadFile(allBib.join('\n'), 'BDMA_2026_all.bib', 'application/x-bibtex;charset=utf-8;');
   });
-  if (a.year) ris.push('PY  - ' + a.year);
-  ris.push('TI  - ' + (a.title||'').replace(/<[^>]+>/g, ''));
-  ris.push('JO  - Big Data Mining and Analytics');
-  ris.push('SN  - 2096-0654');
-  if (a.firstpage) ris.push('SP  - ' + a.firstpage);
-  if (a.lastpage) ris.push('EP  - ' + a.lastpage);
-  if (a.volume) ris.push('VL  - ' + a.volume);
-  if (a.issue) ris.push('IS  - ' + a.issue);
-  if (a.abstract) ris.push('AB  - ' + a.abstract.replace(/<[^>]+>/g, '').replace(/\s+/g,' ').trim());
-  if (a.doi) ris.push('UR  - https://doi.org/' + a.doi);
-  if (a.doi) ris.push('DO  - ' + a.doi);
-  const fn = (a.doi||'BDMA').replace(/[/\\]/g,'_') + '.ris';
-  download(ris.join('\r\n') + '\r\n', fn, 'application/x-research-info-systems;charset=utf-8;');
-}
 
-/* ── Download helper ── */
-function download(content, filename, mime) {
-  const blob = new Blob([content], { type: mime });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url; a.download = filename;
-  document.body.appendChild(a); a.click();
-  document.body.removeChild(a); URL.revokeObjectURL(url);
-}
+  $search.addEventListener('input', debounce(applyFilters, 300));
+  $year.addEventListener('change', applyFilters);
+  $type.addEventListener('change', applyFilters);
+  $area.addEventListener('change', applyFilters);
 
-/* ── Events ── */
-$search.addEventListener('input', debounce(applyFilters, 300));
-$year.addEventListener('change', applyFilters);
-$type.addEventListener('change', applyFilters);
-$area.addEventListener('change', applyFilters);
+  function debounce(fn, ms) {
+    var t;
+    return function() { clearTimeout(t); t = setTimeout(fn, ms); };
+  }
 
-function debounce(fn, ms) {
-  let t;
-  return (...a) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); };
-}
+  // Init
+  fetch(DATA_URL)
+    .then(function(r){ return r.json(); })
+    .then(function(data){
+      allArticles = data;
+      filteredArticles = data;
+      fillFilters();
+      render();
+    })
+    .catch(function(e){
+      $list.innerHTML = '<div class="center-msg">⚠️ Failed to load: ' + esc(e.message) + '</div>';
+    });
 
-/* ── Init ── */
-loadData();
-
+})();
 </script>
 </body>
 </html>
