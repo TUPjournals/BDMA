@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Big Data Mining and Analytics — 2026</title>
+<meta name="description" content="Article index for Big Data Mining and Analytics (BDMA) — 2026 volume">
+<style>
+:root {
+  --primary: #6c63ff;
+  --primary-dark: #5a52d5;
+  --primary-light: #8b85ff;
+  --accent: #61dafb;
+  --accent-dark: #4fa8c7;
+  --bg: #ffffff;
+  --card-bg: #f8f9fa;
+  --card-hover: #f0f0ff;
+  --border: #e2e8f0;
+  --text: #1a1a2e;
+  --text-secondary: #64748b;
+  --text-muted: #94a3b8;
+  --shadow: rgba(108, 99, 255, 0.08);
+  --radius: 12px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary) 50%, var(--primary-light) 100%);
+  color: white;
+  padding: 3rem 1rem 2.5rem;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255,255,255,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.header h1 {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+  position: relative;
+}
+
+.header .subtitle {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-bottom: 0.75rem;
+  position: relative;
+}
+
+.header .meta {
+  font-size: 0.85rem;
+  opacity: 0.8;
+  position: relative;
+}
+
+.header-links {
+  margin-top: 1rem;
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.header-link {
+  color: white;
+  font-size: 0.85rem;
+  text-decoration: none;
+  border: 1px solid rgba(255,255,255,0.5);
+  padding: 4px 14px;
+  border-radius: 4px;
+  transition: all 0.2s;
+}
+
+.header-link:hover {
+  background: rgba(255,255,255,0.2);
+  border-color: white;
+}
+
+/* Search & Filters */
+.search-section {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+.search-box {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.search-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  transition: all 0.2s;
+  outline: none;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.1);
+}
+
+.filter-select {
+  padding: 12px 16px;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  font-size: 0.95rem;
+  background: white;
+  cursor: pointer;
+  outline: none;
+  min-width: 160px;
+}
+
+.filter-select:focus {
+  border-color: var(--primary);
+}
+
+.stats {
+  text-align: center;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.5rem;
+}
+
+.stats strong {
+  color: var(--primary);
+  font-size: 1.1rem;
+}
+
+/* Article Cards */
+.articles-container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem 3rem;
+}
+
+.article-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.article-card:hover {
+  background: var(--card-hover);
+  border-color: var(--primary);
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+.article-card.expanded {
+  border-color: var(--primary);
+  box-shadow: 0 4px 20px var(--shadow);
+}
+
+/* Card header */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  flex: 1;
+  line-height: 1.4;
+}
+
+.card-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.card-title a:hover {
+  color: var(--primary);
+}
+
+.card-badges {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.badge {
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.badge-type {
+  background: rgba(108, 99, 255, 0.1);
+  color: var(--primary-dark);
+}
+
+.badge-oa {
+  background: rgba(97, 218, 251, 0.15);
+  color: var(--accent-dark);
+}
+
+/* Card meta */
+.card-meta {
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+}
+
+.card-meta .sep {
+  color: var(--text-muted);
+}
+
+.card-authors {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  font-style: italic;
+}
+
+/* Keywords */
+.keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 0.75rem;
+}
+
+.kw {
+  font-size: 0.72rem;
+  padding: 3px 10px;
+  border-radius: 10px;
+  background: #e8f5e9;
+  color: #2e7d32;
+  font-weight: 500;
+}
+
+/* Abstract */
+.abstract {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  margin-bottom: 0.75rem;
+  line-height: 1.6;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border);
+}
+
+/* Cite row */
+.cite-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  align-items: center;
+  font-size: 0.82rem;
+  padding-top: 0.5rem;
+}
+
+.cite-text {
+  flex: 1;
+  min-width: 200px;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.btn {
+  padding: 5px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 0.78rem;
+  cursor: pointer;
+  background: white;
+  color: var(--text-secondary);
+  transition: all 0.2s;
+  white-space: nowrap;
+}
+
+.btn:hover {
+  background: var(--card-hover);
+  border-color: var(--primary);
+  color: var(--primary);
+}
+
+.btn-copy.copied {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-color: #c8e6c9;
+}
+
+.btn-ris {
+  background: #e8f5e9;
+  color: #2e7d32;
+  border-color: #c8e6c9;
+}
+
+.btn-ris:hover {
+  background: #c8e6c9;
+}
+
+.btn-expand {
+  background: transparent;
+  border: none;
+  color: var(--primary);
+  font-weight: 500;
+}
+
+.btn-expand:hover {
+  background: transparent;
+  color: var(--primary-dark);
+}
+
+/* Card footer badges */
+.card-footer {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-top: 0.5rem;
+}
+
+.card-footer .doi-link {
+  font-size: 0.78rem;
+  color: var(--primary);
+  text-decoration: none;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: rgba(108, 99, 255, 0.05);
+}
+
+.card-footer .doi-link:hover {
+  background: rgba(108, 99, 255, 0.1);
+}
+
+/* Back to top */
+.back-top {
+  position: fixed;
+  bottom: 32px;
+  right: 32px;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(108, 99, 255, 0.3);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  z-index: 100;
+}
+
+.back-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-top:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 2rem;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+}
+
+.footer a {
+  color: var(--primary);
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .header h1 { font-size: 1.6rem; }
+  .search-box { flex-direction: column; }
+  .card-header { flex-direction: column; gap: 0.5rem; }
+  .cite-row { flex-direction: column; align-items: flex-start; }
+  .back-top { bottom: 20px; right: 20px; width: 42px; height: 42px; }
+}
+
+/* No results */
+.no-results {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+/* Loading */
+.loading {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-muted);
+}
+
+.loading::after {
+  content: '...';
+  animation: dots 1.5s steps(4, end) infinite;
+}
+
+@keyframes dots {
+  0%, 20% { content: ''; }
+  40% { content: '.'; }
+  60% { content: '..'; }
+  80%, 100% { content: '...'; }
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>Big Data Mining and Analytics</h1>
+  <div class="subtitle">Article Index — 2026</div>
+  <div class="meta">ISSN 2096-0654 | e-ISSN 2097-406X | Tsinghua University Press</div>
+  <div class="header-links">
+    <a href="https://www.sciopen.com/journal/2096-0654" target="_blank" class="header-link">Home page</a>
+    <a href="https://mc03.manuscriptcentral.com/bdma" target="_blank" class="header-link">Submission link</a>
+  </div>
+</div>
+
+<div class="search-section">
+  <div class="search-box">
+    <input type="text" class="search-input" id="searchInput" placeholder="Search by title, author, keywords, or abstract...">
+    <select class="filter-select" id="yearFilter">
+      <option value="">All Years</option>
+    </select>
+    <select class="filter-select" id="typeFilter">
+      <option value="">All Types</option>
+    </select>
+  </div>
+  <div class="stats" id="stats">Loading...</div>
+</div>
+
+<div class="articles-container" id="articlesList">
+  <div class="loading">Loading articles</div>
+</div>
+
+<button id="backTop" class="back-top" title="Back to search">&#9650;</button>
+
+<div class="footer">
+  <p>Big Data Mining and Analytics &mdash; 2026 Index</p>
+  <p style="margin-top: 0.5rem;">Data sourced from <a href="https://www.sciopen.com/journal/2096-0654" target="_blank">SciOpen</a></p>
+</div>
+
+<script>
+const DATA_URL = 'articles_md/articles.json?v=20260922';
+
+let allArticles = [];
+let filteredArticles = [];
+
+// DOM elements
+const $search = document.getElementById('searchInput');
+const $year = document.getElementById('yearFilter');
+const $type = document.getElementById('typeFilter');
+const $list = document.getElementById('articlesList');
+const $stats = document.getElementById('stats');
+const $backTop = document.getElementById('backTop');
+
+// Escape HTML
+function esc(s) {
+  const d = document.createElement('div');
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+// Format cite text
+function formatCite(a) {
+  const parts = (a.authors || []).map(auth => {
+    const words = auth.trim().split(/\s+/);
+    const surname = words[words.length - 1];
+    const initial = words[0] ? words[0].charAt(0) : '';
+    return surname + ' ' + initial;
+  });
+  let cite;
+  if (parts.length <= 3) {
+    cite = parts.join(', ');
+  } else {
+    cite = parts.slice(0, 3).join(', ') + ', et al.';
+  }
+  cite += '. ';
+  cite += (a.title || '') + '. ';
+  cite += 'Big Data Mining and Analytics, ';
+  cite += a.year + ', ';
+  cite += a.volume + '(' + a.issue + '): ' + a.firstpage + '-' + a.lastpage + '. ';
+  cite += 'https://doi.org/' + a.doi;
+  return cite;
+}
+
+// Render articles
+function renderArticles(articles) {
+  if (articles.length === 0) {
+    $list.innerHTML = '<div class="no-results">No articles match your search.</div>';
+    $stats.innerHTML = '0 articles found';
+    return;
+  }
+  
+  let html = '';
+  articles.forEach((a, idx) => {
+    const origA = allArticles[idx] || a;
+    const doi = a.doi || '';
+    const title = a.title || '';
+    const authors = a.authors || [];
+    const keywords = a.keywords || [];
+    const volume = a.volume || '';
+    const issue = a.issue || '';
+    const firstpage = a.firstpage || '';
+    const lastpage = a.lastpage || '';
+    const year = a.year || '';
+    const type = a.type || '';
+    const abstract = a.abstract || '';
+    const url = a.url || 'https://www.sciopen.com/article/' + doi;
+    
+    // Card
+    html += '<div class="article-card" id="card-' + doi.replace(/[^a-zA-Z0-9]/g, '_') + '">';
+    
+    // Header
+    html += '<div class="card-header">';
+    html += '<div class="card-title"><a href="' + url + '" target="_blank">' + esc(title) + '</a></div>';
+    html += '<div class="card-badges">';
+    if (type) html += '<span class="badge badge-type">' + esc(type) + '</span>';
+    html += '<span class="badge badge-oa">Open Access</span>';
+    html += '</div>';
+    html += '</div>';
+    
+    // Meta
+    html += '<div class="card-meta">';
+    html += '<span>Vol.' + esc(volume) + ' Iss.' + esc(issue) + '</span>';
+    html += '<span class="sep">|</span>';
+    html += '<span>Pages: ' + esc(firstpage) + '-' + esc(lastpage) + '</span>';
+    html += '<span class="sep">|</span>';
+    html += '<span>' + esc(year) + '</span>';
+    html += '</div>';
+    
+    // Authors
+    if (authors.length > 0) {
+      html += '<div class="card-authors">' + esc(authors.join(', ')) + '</div>';
+    }
+    
+    // Keywords
+    if (keywords.length > 0) {
+      html += '<div class="keywords">';
+      keywords.forEach(kw => {
+        html += '<span class="kw">' + esc(kw) + '</span>';
+      });
+      html += '</div>';
+    }
+    
+    // Abstract (hidden by default)
+    if (abstract) {
+      html += '<div class="abstract" style="display:none;">' + esc(abstract) + '</div>';
+    }
+    
+    // Cite row
+    html += '<div class="cite-row">';
+    html += '<span class="cite-text">' + esc(formatCite(a)) + '</span>';
+    html += '<button class="btn btn-copy" data-doi="' + doi + '" onclick="copyCite(this)">Copy</button>';
+    html += '<button class="btn btn-ris" data-doi="' + doi + '" onclick="downloadRIS(this)">RIS</button>';
+    html += '<button class="btn btn-expand" data-doi="' + doi + '" onclick="toggleExpand(this)">Expand ▾</button>';
+    html += '</div>';
+    
+    html += '</div>';
+  });
+  
+  $list.innerHTML = html;
+  $stats.innerHTML = articles.length + ' articles found';
+}
+
+// Toggle expand
+function toggleExpand(btn) {
+  const doi = btn.dataset.doi;
+  const card = btn.closest('.article-card');
+  const abstractDiv = card.querySelector('.abstract');
+  
+  if (abstractDiv) {
+    const isExpanded = abstractDiv.style.display !== 'none';
+    abstractDiv.style.display = isExpanded ? 'none' : 'block';
+    btn.textContent = isExpanded ? 'Expand ▾' : 'Collapse ▴';
+    card.classList.toggle('expanded', !isExpanded);
+  }
+}
+
+// Copy cite
+function copyCite(btn) {
+  const doi = btn.dataset.doi;
+  const a = allArticles.find(x => x.doi === doi);
+  if (!a) return;
+  
+  const cite = formatCite(a);
+  navigator.clipboard.writeText(cite).then(() => {
+    btn.textContent = 'Copied ✓';
+    btn.classList.add('copied');
+    setTimeout(() => {
+      btn.textContent = 'Copy';
+      btn.classList.remove('copied');
+    }, 1500);
+  });
+}
+
+// Generate RIS
+function generateRIS(a) {
+  let ris = '';
+  ris += 'TY  - JOUR\r\n';
+  (a.authors || []).forEach(auth => {
+    ris += 'AU  - ' + auth + '\r\n';
+  });
+  ris += 'PY  - ' + (a.year || '') + '\r\n';
+  ris += 'TI  - ' + (a.title || '') + '\r\n';
+  ris += 'JO  - Big Data Mining and Analytics\r\n';
+  ris += 'SN  - 2096-0654\r\n';
+  ris += 'VL  - ' + (a.volume || '') + '\r\n';
+  ris += 'IS  - ' + (a.issue || '') + '\r\n';
+  ris += 'SP  - ' + (a.firstpage || '') + '\r\n';
+  ris += 'EP  - ' + (a.lastpage || '') + '\r\n';
+  ris += 'AB  - ' + (a.abstract || '') + '\r\n';
+  ris += 'UR  - https://doi.org/' + (a.doi || '') + '\r\n';
+  ris += 'DO  - ' + (a.doi || '') + '\r\n';
+  return ris;
+}
+
+// Download RIS
+function downloadRIS(btn) {
+  const doi = btn.dataset.doi;
+  const a = allArticles.find(x => x.doi === doi);
+  if (!a) return;
+  
+  const ris = generateRIS(a);
+  const blob = new Blob([ris], { type: 'application/x-research-info-systems;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a');
+  link.href = url;
+  link.download = doi.replace(/[\/\\:*?"<>|]/g, '_') + '.ris';
+  link.click();
+  URL.revokeObjectURL(url);
+}
+
+// Search & filter
+function applyFilters() {
+  const query = $search.value.toLowerCase().trim();
+  const yearVal = $year.value;
+  const typeVal = $type.value;
+  
+  let results = allArticles.filter(a => {
+    // Year filter
+    if (yearVal && a.year != yearVal) return false;
+    // Type filter
+    if (typeVal && a.type !== typeVal) return false;
+    // Search query
+    if (query) {
+      const title = (a.title || '').toLowerCase();
+      const authors = (a.authors || []).join(' ').toLowerCase();
+      const keywords = (a.keywords || []).join(' ').toLowerCase();
+      const abstract = (a.abstract || '').toLowerCase();
+      
+      const searchText = title + ' ' + authors + ' ' + keywords + ' ' + abstract;
+      if (!searchText.includes(query)) return false;
+    }
+    return true;
+  });
+  
+  // Sort: volume desc, issue desc, firstpage desc
+  results.sort((a, b) => {
+    const vol = (b.volume || 0) - (a.volume || 0);
+    if (vol !== 0) return vol;
+    const iss = (b.issue || 0) - (a.issue || 0);
+    if (iss !== 0) return iss;
+    return (b.firstpage || 0) - (a.firstpage || 0);
+  });
+  
+  filteredArticles = results;
+  renderArticles(results);
+}
+
+// Fill filters
+function fillFilters() {
+  const years = new Set();
+  const types = new Set();
+  allArticles.forEach(a => {
+    if (a.year) years.add(a.year);
+    if (a.type) types.add(a.type);
+  });
+  
+  // Years (descending)
+  [...years].sort((a, b) => b - a).forEach(yr => {
+    const o = document.createElement('option');
+    o.value = yr;
+    o.textContent = yr;
+    $year.appendChild(o);
+  });
+  
+  // Types (alphabetical)
+  [...types].sort().forEach(t => {
+    const o = document.createElement('option');
+    o.value = t;
+    o.textContent = t;
+    $type.appendChild(o);
+  });
+}
+
+// Back to top
+window.addEventListener('scroll', () => {
+  $backTop.classList.toggle('visible', window.scrollY > 400);
+});
+
+$backTop.addEventListener('click', () => {
+  $search.focus();
+  $search.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+
+// Event listeners
+$search.addEventListener('input', applyFilters);
+$year.addEventListener('change', applyFilters);
+$type.addEventListener('change', applyFilters);
+
+// Load data
+fetch(DATA_URL)
+  .then(r => r.json())
+  .then(data => {
+    allArticles = data;
+    // Sort by default
+    allArticles.sort((a, b) => {
+      const vol = (b.volume || 0) - (a.volume || 0);
+      if (vol !== 0) return vol;
+      const iss = (b.issue || 0) - (a.issue || 0);
+      if (iss !== 0) return iss;
+      return (b.firstpage || 0) - (a.firstpage || 0);
+    });
+    fillFilters();
+    applyFilters();
+  })
+  .catch(err => {
+    $list.innerHTML = '<div class="no-results">Error loading data. Please refresh.</div>';
+    console.error(err);
+  });
+</script>
+</body>
+</html>
