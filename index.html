@@ -954,7 +954,7 @@ function downloadAllBib() {
   issn      = {${issn}}`;
     
     if (keywords) {
-      bib += ',\n  keywords  = {' + keywords + '}';
+      bib += ',\\n  keywords  = {' + keywords + '}';
     }
     bib += '\n}\n';
     allBib.push(bib);
@@ -962,46 +962,7 @@ function downloadAllBib() {
   download(allBib.join('\n'), 'BDMA_2026_all.bib', 'application/x-bibtex;charset=utf-8;');
 }
 /* ── Download BibTeX ── */
-function downloadBib(idx) {
-  const a = filteredArticles[idx];
-  if (!a) return;
-  const firstAuthor = (a.authors && a.authors[0]) || 'Unknown';
-  const surname = firstAuthor.split(/\s+/)[0] || 'Unknown';
-  const bibKey = surname + (a.year || '');
-  const authors = (a.authors || []).join(' and ');
-  const title = (a.title || '').replace(/[{}]/g, '');
-  const journal = 'Big Data Mining and Analytics';
-  const year = a.year || '';
-  const volume = a.volume || '';
-  const number = a.issue || '';
-  const pages = (a.firstpage && a.lastpage) ? a.firstpage + '--' + a.lastpage : (a.firstpage || '');
-  const doi = a.doi || '';
-  const issn = '2096-0654';
-  const keywords = (a.keywords || []).join(', ');
-  
-  let bib = `@article{${bibKey},
-  author    = {${authors}},
-  title     = {${title}},
-  journal   = {${journal}},
-  year      = {${year}},
-  volume    = {${volume}},
-  number    = {${number}},
-  pages     = {${pages}},
-  doi       = {${doi}},
-  publisher = {清华大学出版社},
-  issn      = {${issn}}`;
-  
-  if (keywords) {
-    bib += ',
-  keywords  = {' + keywords + '}';
-  }
-  bib += '
-}\n';
-  
-  const fn = (doi || 'BDMA').replace(/[/\\]/g, '_') + '.bib';
-  download(bib, fn, 'application/x-bibtex;charset=utf-8;');
-}
-/* ── Download RIS ── */
+undefined
 function downloadRIS(idx) {
   const a = filteredArticles[idx];
   if (!a) return;
