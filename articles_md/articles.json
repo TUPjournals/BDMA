@@ -31,7 +31,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/10/1",
     "online_date": "2026/8/20",
-    "research_area": "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020101",
@@ -64,7 +66,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/10/1",
     "online_date": "2026/8/20",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020095",
@@ -95,7 +99,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/10/1",
     "online_date": "2026/8/20",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020099",
@@ -130,7 +136,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/10/1",
     "online_date": "2026/8/20",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020098",
@@ -158,7 +166,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/10/1",
     "online_date": "2026/8/20",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020097",
@@ -189,7 +199,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/10/1",
     "online_date": "2026/8/20",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020079",
@@ -219,7 +231,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/8/1",
     "online_date": "2026/7/21",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020093",
@@ -254,7 +268,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/8/1",
     "online_date": "2026/7/21",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020100",
@@ -286,7 +302,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/8/1",
     "online_date": "2026/7/21",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020124",
@@ -320,7 +338,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/8/1",
     "online_date": "2026/7/21",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020111",
@@ -350,7 +370,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/8/1",
     "online_date": "2026/7/21",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020094",
@@ -383,7 +405,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/8/1",
     "online_date": "2026/7/21",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020092",
@@ -414,7 +438,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/8/1",
     "online_date": "2026/7/21",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020091",
@@ -445,7 +471,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/8/1",
     "online_date": "2026/7/21",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020085",
@@ -479,7 +507,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/8/1",
     "online_date": "2026/7/21",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020084",
@@ -510,7 +540,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/8/1",
     "online_date": "2026/7/21",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020089",
@@ -542,7 +574,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/8/1",
     "online_date": "2026/7/21",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020088",
@@ -579,7 +613,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/8/1",
     "online_date": "2026/7/21",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020082",
@@ -610,7 +646,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020108",
@@ -642,7 +680,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020060",
@@ -679,7 +719,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020081",
@@ -708,7 +750,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020067",
@@ -741,7 +785,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020087",
@@ -774,7 +820,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020078",
@@ -806,7 +854,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020076",
@@ -839,7 +889,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020051",
@@ -875,7 +927,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020075",
@@ -907,7 +961,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020070",
@@ -942,7 +998,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020072",
@@ -972,7 +1030,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020054",
@@ -1007,7 +1067,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020074",
@@ -1043,7 +1105,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020061",
@@ -1072,7 +1136,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/6/1",
     "online_date": "2026/6/1",
-    "research_area": "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020065",
@@ -1105,7 +1171,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020057",
@@ -1138,7 +1206,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020106",
@@ -1172,7 +1242,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020041",
@@ -1201,7 +1273,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020052",
@@ -1234,7 +1308,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020086",
@@ -1266,7 +1342,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020117",
@@ -1295,7 +1373,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020048",
@@ -1328,7 +1408,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020043",
@@ -1358,7 +1440,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020068",
@@ -1389,7 +1473,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020064",
@@ -1421,7 +1507,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020062",
@@ -1452,7 +1540,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020090",
@@ -1484,7 +1574,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020080",
@@ -1520,7 +1612,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020037",
@@ -1551,7 +1645,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020097",
@@ -1583,7 +1679,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020059",
@@ -1612,7 +1710,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020047",
@@ -1642,7 +1742,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2026.9020002",
@@ -1666,7 +1768,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/4/1",
     "online_date": "2026/2/9",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020063",
@@ -1700,7 +1804,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020058",
@@ -1735,7 +1841,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020083",
@@ -1766,7 +1874,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020055",
@@ -1797,7 +1907,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020053",
@@ -1828,7 +1940,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020050",
@@ -1859,7 +1973,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020049",
@@ -1889,7 +2005,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020046",
@@ -1928,7 +2046,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020066",
@@ -1963,7 +2083,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020042",
@@ -1995,7 +2117,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020056",
@@ -2024,7 +2148,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Computational Biology and Bioinformatics"
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020040",
@@ -2054,7 +2180,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020039",
@@ -2084,7 +2212,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020033",
@@ -2117,7 +2247,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020044",
@@ -2148,7 +2280,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020069",
@@ -2182,7 +2316,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020029",
@@ -2213,7 +2349,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020045",
@@ -2244,7 +2382,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020071",
@@ -2268,7 +2408,9 @@
     "issn": "2096-0654",
     "publication_date": "2026/2/1",
     "online_date": "2025/12/10",
-    "research_area": "Big Data Intelligent Computing and Mining"
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020105",
@@ -2303,7 +2445,9 @@
     "issn": "2096-0654",
     "publication_date": "",
     "online_date": "",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020073",
@@ -2332,7 +2476,9 @@
     "issn": "2096-0654",
     "publication_date": "",
     "online_date": "",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020110",
@@ -2365,6 +2511,8 @@
     "issn": "2096-0654",
     "publication_date": "",
     "online_date": "",
-    "research_area": "Information System and Web Mining"
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   }
 ]
