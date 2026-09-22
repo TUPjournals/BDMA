@@ -113,7 +113,6 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
     <div class="header-links">
       <a href="https://www.sciopen.com/journal/2096-0654" target="_blank" class="header-link">Home page</a>
       <a href="https://mc03.manuscriptcentral.com/bdma" target="_blank" class="header-link">Submission link</a>
-      <button class="header-link" id="exportAllBib" style="background:rgba(139,92,246,.3);border:1px solid rgba(255,255,255,.35);color:#fff;padding:6px 14px;border-radius:20px;font-size:.8rem;cursor:pointer">Export All BibTeX</button>
     </div>
   </div>
 </header>
@@ -125,7 +124,6 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
       <input type="text" id="searchInput" placeholder="Search by title, author, keyword...">
     </div>
     <select class="filter-select" id="yearFilter"><option value="">All Years</option></select>
-    <select class="filter-select" id="typeFilter"><option value="">All Types</option></select>
     <select class="filter-select" id="areaFilter"><option value="">All Areas</option></select>
   </div>
 </section>
@@ -170,7 +168,6 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
 
   var $search = document.getElementById('searchInput');
   var $year = document.getElementById('yearFilter');
-  var $type = document.getElementById('typeFilter');
   var $area = document.getElementById('areaFilter');
   var $list = document.getElementById('articleList');
   var $stats = document.getElementById('statsRow');
@@ -240,30 +237,26 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
   }
 
   function fillFilters() {
-      var years = [], types = [], areas = [];
-      var yearSet = {}, typeSet = {}, areaSet = {};
+      var years = [], areas = [];
+      var yearSet = {}, areaSet = {};
       allArticles.forEach(function(a){
         if(a.year && !yearSet[a.year]) { yearSet[a.year]=1; years.push(a.year); }
-        if(a.type && !typeSet[a.type]) { typeSet[a.type]=1; types.push(a.type); }
         (a.research_area||[]).forEach(function(ar){ if(ar && !areaSet[ar]) { areaSet[ar]=1; areas.push(ar); } });
       });
     years.sort(function(a,b){return b-a;});
-    types.sort();
     areas.sort();
     years.forEach(function(y){ var o=document.createElement('option'); o.value=y; o.textContent=y; $year.appendChild(o); });
-    types.forEach(function(t){ var o=document.createElement('option'); o.value=t; o.textContent=t; $type.appendChild(o); });
     areas.forEach(function(t){ var o=document.createElement('option'); o.value=t; o.textContent=t; $area.appendChild(o); });
   }
 
   function applyFilters() {
       var q = $search.value.trim();
       currentQuery = q;
-      var yv = $year.value, tv = $type.value, av = $area.value;
+      var yv = $year.value, av = $area.value;
       filteredArticles = [];
       for (var i = 0; i < allArticles.length; i++) {
         var a = allArticles[i];
         if (yv && a.year != yv) continue;
-        if (tv && a.type !== tv) continue;
         if (av && (a.research_area||[]).indexOf(av) === -1) continue;
         var score = searchScore(a, q);
         if (q && score === 0) continue;
@@ -275,17 +268,14 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
     }
 
   function render() {
-    var types = new Set();
     var areas = new Set();
-    filteredArticles.forEach(function(a){ if(a.type) types.add(a.type); (a.research_area||[]).forEach(function(ar){ if(ar) areas.add(ar); }); });
+    filteredArticles.forEach(function(a){ (a.research_area||[]).forEach(function(ar){ if(ar) areas.add(ar); }); });
     var totalCount = allArticles.length;
     var filteredCount = filteredArticles.length;
     var countLabel = (filteredCount === totalCount) ? totalCount + ' articles' : filteredCount + ' / ' + totalCount + ' articles';
-    var typeList = Array.from(types).join(', ');
     var areaList = Array.from(areas).join(', ');
 
     var statsHtml = '<div class="stat-chip"><span class="dot"></span><strong>' + countLabel + '</strong></div>';
-    if (typeList) statsHtml += '<div class="stat-chip">' + esc(typeList) + '</div>';
     if (areaList) statsHtml += '<div class="stat-chip">Areas: ' + esc(areaList) + '</div>';
     $stats.innerHTML = statsHtml;
 
@@ -302,7 +292,6 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
       html += '<div class="card-title">' + highlight(a.title.replace(/<[^>]+>/g, ''), currentQuery) + '</div>';
       html += '<div class="badges">';
       if (a.year) html += '<span class="badge-year">' + a.year + '</span>';
-      if (a.type) html += '<span class="badge-type">' + esc(a.type) + '</span>';
       var volIssue = (a.volume || a.issue) ? 'Vol.' + (a.volume||'?') + ' Iss. ' + (a.issue||'?') : '';
       if (volIssue) html += '<span class="badge-type">' + esc(volIssue) + '</span>';
       html += '<button class="btn-expand toggle-btn" onclick="event.stopPropagation();window._toggleCard(this.closest(\'.card\'))">Expand ▾</button>';
@@ -473,34 +462,8 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
     downloadFile(ris.join('\r\n') + '\r\n', fn, 'application/x-research-info-systems;charset=utf-8;');
   };
 
-  document.getElementById('exportAllBib').addEventListener('click', function() {
-    var allBib = [];
-    for (var i = 0; i < allArticles.length; i++) {
-      var a = allArticles[i];
-      var firstAuthor = (a.authors && a.authors[0]) || 'Unknown';
-      var surname = firstAuthor.split(/\s+/)[0] || 'Unknown';
-      var bibKey = surname + (a.year || '');
-      var authors = (a.authors || []).join(' and ');
-      var title = (a.title || '').replace(/[{}]/g, '');
-      var bib = '@article{' + bibKey + ',\n  author    = {' + authors +
-        '},\n  title     = {' + title +
-        '},\n  journal   = {Big Data Mining and Analytics},\n  year      = {' + (a.year||'') +
-        '},\n  volume    = {' + (a.volume||'') +
-        '},\n  number    = {' + (a.issue||'') +
-        '},\n  pages     = {' + ((a.firstpage&&a.lastpage)?a.firstpage+'--'+a.lastpage:(a.firstpage||'')) +
-        '},\n  doi       = {' + (a.doi||'') +
-        '},\n  publisher = {清华大学出版社},\n  issn      = {2096-0654}}';
-      var kws = (a.keywords||[]).join(', ');
-      if (kws) bib += ',\n  keywords  = {' + kws + '}';
-      bib += '\n}\n';
-      allBib.push(bib);
-    }
-    downloadFile(allBib.join('\n'), 'BDMA_2026_all.bib', 'application/x-bibtex;charset=utf-8;');
-  });
-
   $search.addEventListener('input', debounce(applyFilters, 300));
   $year.addEventListener('change', applyFilters);
-  $type.addEventListener('change', applyFilters);
   $area.addEventListener('change', applyFilters);
 
   function debounce(fn, ms) {
