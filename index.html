@@ -46,6 +46,11 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
 .card-cite-btn:hover{background:var(--primary)}
 .card-cite-btn.copied{background:#27ae60}
 .card-keywords{margin-top:8px;display:flex;flex-wrap:wrap;gap:5px}
+.kw-area {
+  background: #fff3e0;
+  color: #e65100;
+  font-weight: 600;
+}
 .kw{background:var(--accent-bg);color:var(--primary);padding:2px 10px;border-radius:10px;font-size:.74rem}
 .detail{display:none;margin-top:18px;padding-top:18px;border-top:1px solid var(--border)}
 .card.open .detail{display:block}
@@ -235,13 +240,13 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
   }
 
   function fillFilters() {
-    var years = [], types = [], areas = [];
-    var yearSet = {}, typeSet = {}, areaSet = {};
-    allArticles.forEach(function(a){
-      if(a.year && !yearSet[a.year]) { yearSet[a.year]=1; years.push(a.year); }
-      if(a.type && !typeSet[a.type]) { typeSet[a.type]=1; types.push(a.type); }
-      if(a.research_area && !areaSet[a.research_area]) { areaSet[a.research_area]=1; areas.push(a.research_area); }
-    });
+      var years = [], types = [], areas = [];
+      var yearSet = {}, typeSet = {}, areaSet = {};
+      allArticles.forEach(function(a){
+        if(a.year && !yearSet[a.year]) { yearSet[a.year]=1; years.push(a.year); }
+        if(a.type && !typeSet[a.type]) { typeSet[a.type]=1; types.push(a.type); }
+        (a.research_area||[]).forEach(function(ar){ if(ar && !areaSet[ar]) { areaSet[ar]=1; areas.push(ar); } });
+      });
     years.sort(function(a,b){return b-a;});
     types.sort();
     areas.sort();
@@ -251,28 +256,28 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
   }
 
   function applyFilters() {
-    var q = $search.value.trim();
-    currentQuery = q;
-    var yv = $year.value, tv = $type.value, av = $area.value;
-    filteredArticles = [];
-    for (var i = 0; i < allArticles.length; i++) {
-      var a = allArticles[i];
-      if (yv && a.year != yv) continue;
-      if (tv && a.type !== tv) continue;
-      if (av && a.research_area !== av) continue;
-      var score = searchScore(a, q);
-      if (q && score === 0) continue;
-      a._score = score;
-      filteredArticles.push(a);
+      var q = $search.value.trim();
+      currentQuery = q;
+      var yv = $year.value, tv = $type.value, av = $area.value;
+      filteredArticles = [];
+      for (var i = 0; i < allArticles.length; i++) {
+        var a = allArticles[i];
+        if (yv && a.year != yv) continue;
+        if (tv && a.type !== tv) continue;
+        if (av && (a.research_area||[]).indexOf(av) === -1) continue;
+        var score = searchScore(a, q);
+        if (q && score === 0) continue;
+        a._score = score;
+        filteredArticles.push(a);
+      }
+      filteredArticles.sort(function(a, b) { return b._score - a._score; });
+      render();
     }
-    filteredArticles.sort(function(a, b) { return b._score - a._score; });
-    render();
-  }
 
   function render() {
     var types = new Set();
     var areas = new Set();
-    filteredArticles.forEach(function(a){ if(a.type) types.add(a.type); if(a.research_area) areas.add(a.research_area); });
+    filteredArticles.forEach(function(a){ if(a.type) types.add(a.type); (a.research_area||[]).forEach(function(ar){ if(ar) areas.add(ar); }); });
     var totalCount = allArticles.length;
     var filteredCount = filteredArticles.length;
     var countLabel = (filteredCount === totalCount) ? totalCount + ' articles' : filteredCount + ' / ' + totalCount + ' articles';
@@ -298,7 +303,6 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
       html += '<div class="badges">';
       if (a.year) html += '<span class="badge-year">' + a.year + '</span>';
       if (a.type) html += '<span class="badge-type">' + esc(a.type) + '</span>';
-      if (a.research_area) html += '<span class="badge-type" style="background:#e0f2fe;color:#0891b2">' + esc(a.research_area) + '</span>';
       var volIssue = (a.volume || a.issue) ? 'Vol.' + (a.volume||'?') + ' Iss. ' + (a.issue||'?') : '';
       if (volIssue) html += '<span class="badge-type">' + esc(volIssue) + '</span>';
       html += '<button class="btn-expand toggle-btn" onclick="event.stopPropagation();window._toggleCard(this.closest(\'.card\'))">Expand ▾</button>';
@@ -310,6 +314,13 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
         kws += '<span class="kw">' + highlight(kwList[k].replace(/<[^>]+>/g, ''), currentQuery) + '</span>';
       }
       if (kws) html += '<div class="card-keywords">' + kws + '</div>';
+      if (a.research_area && a.research_area.length) {
+        html += '<div class="card-keywords"><span style="font-size:0.78rem;color:#666;margin-right:4px;font-weight:600">Research area:</span>';
+        for (var ra = 0; ra < a.research_area.length; ra++) {
+          html += '<span class="kw kw-area">' + esc(a.research_area[ra]) + '</span>';
+        }
+        html += '</div>';
+      }
       if (a.doi) html += '<div class="card-doi"><a href="https://doi.org/' + a.doi + '" target="_blank" onclick="event.stopPropagation()">https://doi.org/' + esc(a.doi) + '</a></div>';
       if (a.doi) {
         html += '<div class="card-cite" onclick="event.stopPropagation()">' +
