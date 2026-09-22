@@ -268,15 +268,11 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
     }
 
   function render() {
-    var areas = new Set();
-    filteredArticles.forEach(function(a){ (a.research_area||[]).forEach(function(ar){ if(ar) areas.add(ar); }); });
     var totalCount = allArticles.length;
     var filteredCount = filteredArticles.length;
     var countLabel = (filteredCount === totalCount) ? totalCount + ' articles' : filteredCount + ' / ' + totalCount + ' articles';
-    var areaList = Array.from(areas).join(', ');
 
     var statsHtml = '<div class="stat-chip"><span class="dot"></span><strong>' + countLabel + '</strong></div>';
-    if (areaList) statsHtml += '<div class="stat-chip">Areas: ' + esc(areaList) + '</div>';
     $stats.innerHTML = statsHtml;
 
     if (!filteredArticles.length) {
