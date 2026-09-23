@@ -1,0 +1,2126 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>ResDecode: Accelerating Large Language Models Inference via Residual Decoding Heads</title>
+  <meta name="keywords" content="speculative decoding, efficient inference, Large Language Models (LLMs)" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+  <meta name="robots" content="noarchive" />
+  <meta property="og:title" content="ResDecode: Accelerating Large Language Models Inference via Residual Decoding Heads" />
+  <meta property="og:type" content="Article" />
+  <meta property="og:url" content="https://www.sciopen.com/article/10.26599/BDMA.2024.9020074" />
+  <meta property="og:site_name" content="SciOpen" />
+  <meta property="og:description" content="         &lt;p&gt;Large language Models (LLMs) have immense potential to enhance the capabilities of Cyber-Physical-Social Intelligence (CPSI) systems, enabling them to better engage with complex cyber, physical, and social environments. However, the high inference latency of LLMs, which is inherited from the autoregressive decoding process, hinders their wide application in CPSI systems. To address this challenge, current approaches have incorporated speculative decoding to enable parallel prediction of multiple subsequent tokens, thereby achieving inference acceleration. Nevertheless, the accuracy of these decoding heads falls short of the autoregressive decoding approach. In light of these limitations, we propose ResDecode, a novel speculative decoding method characterized by its efficient and accurate decoding heads. Within the lightweight draft model, we propose a residual decoding head to compensate for the full context encoder’s limited capability on long-range dependencies, thus improving accuracy. ResDecode demonstrates impressive results, achieving a maximum speedup ratio of 3.2&lt;inline-formula id=&quot;Z-20250103131051&quot;&gt; &lt;math id=&quot;mathml_Z-20250103131051&quot; display=&quot;inline&quot; overflow=&quot;scroll&quot;&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;/math&gt;&lt;/inline-formula&gt; on the MT-bench compared to vanilla autoregressive decoding.&lt;/p&gt;       " />
+  <meta name="citation_doi" content="10.26599/BDMA.2024.9020074" />
+  <meta name="dc.identifier" content="10.26599/BDMA.2024.9020074" />
+  <meta name="citation_journal_title" content="Big Data Mining and Analytics" />
+  <meta name="citation_title" content="ResDecode: Accelerating Large Language Models Inference via Residual Decoding Heads" />
+  <meta content="speculative decoding" name="citation_keywords" /><meta content="efficient inference" name="citation_keywords" /><meta content="Large Language Models (LLMs)" name="citation_keywords" />
+  <meta name="citation_volume" content="8" />
+  <meta name="citation_issue" content="4" />
+  <meta name="citation_publication_date"
+    content="2025/6/1" />
+  <meta name="citation_online_date" content="2025/5/12" />
+  <meta name="citation_issn" content="2096-0654" />
+  <meta name="citation_language" content="en" />
+  
+    <meta name="citation_author"
+      content="Ziqian Zeng" />
+    <meta name="citation_author_institution"
+      content="Shien Ming Wu School of Intelligent Engineering,CHINA. South China University of Technology,CHINA. " />
+  
+    <meta name="citation_author"
+      content="Jiahong Yu" />
+    <meta name="citation_author_institution"
+      content="School of Computer Science and Engineering,CHINA. South China University of Technology,CHINA. " />
+  
+    <meta name="citation_author"
+      content="Qianshi Pang" />
+    <meta name="citation_author_institution"
+      content="School of Computer Science and Engineering,CHINA. South China University of Technology,CHINA. " />
+  
+    <meta name="citation_author"
+      content="Zihao Wang" />
+    <meta name="citation_author_institution"
+      content="Department of Computer Science and Engineering,CHINA. School of Engineering,CHINA. The Hong Kong University of Science and Technology,CHINA. " />
+  
+    <meta name="citation_author"
+      content="Huiping Zhuang" />
+    <meta name="citation_author_institution"
+      content="Shien Ming Wu School of Intelligent Engineering,CHINA. South China University of Technology,CHINA. " />
+  
+    <meta name="citation_author"
+      content="Fan Yu" />
+    <meta name="citation_author_institution"
+      content="Huawei Technology Co., Ltd,Shanghai,CHINA. " />
+  
+    <meta name="citation_author"
+      content="Hongen Shao" />
+    <meta name="citation_author_institution"
+      content="School of Future Technology,CHINA. South China University of Technology,CHINA. " />
+  
+    <meta name="citation_author"
+      content="Xiaofeng Zou" />
+    <meta name="citation_author_institution"
+      content="School of Future Technology,CHINA. South China University of Technology,CHINA. " />
+  
+  <meta name="citation_abstract_html_url" content="https://www.sciopen.com/article/10.26599/BDMA.2024.9020074" />
+  <meta name="citation_fulltext_html_url" content="https://www.sciopen.com/article/10.26599/BDMA.2024.9020074" />
+  <link rel="canonical" content="https://www.sciopen.com/article/10.26599/BDMA.2024.9020074">
+  <meta name="citation_date" content="2025/06/01" />
+  <meta name="citation_pdf_url" content="https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020074.pdf" />
+  <meta name="citation_firstpage"
+    content="779">
+  <meta name="citation_lastpage" content="793">
+  <meta name="citation_publisher" content="清华大学出版社" />
+  <meta name="citation_fulltext_world_readable" content="" />
+  <meta name="Description" content="         &lt;p&gt;Large language Models (LLMs) have immense potential to enhance the capabilities of Cyber-Physical-Social Intelligence (CPSI) systems, enabling them to better engage with complex cyber, physical, and social environments. However, the high inference latency of LLMs, which is inherited from the autoregressive decoding process, hinders their wide application in CPSI systems. To address this challenge, current approaches have incorporated speculative decoding to enable parallel prediction of multiple subsequent tokens, thereby achieving inference acceleration. Nevertheless, the accuracy of these decoding heads falls short of the autoregressive decoding approach. In light of these limitations, we propose ResDecode, a novel speculative decoding method characterized by its efficient and accurate decoding heads. Within the lightweight draft model, we propose a residual decoding head to compensate for the full context encoder’s limited capability on long-range dependencies, thus improving accuracy. ResDecode demonstrates impressive results, achieving a maximum speedup ratio of 3.2&lt;inline-formula id=&quot;Z-20250103131051&quot;&gt; &lt;math id=&quot;mathml_Z-20250103131051&quot; display=&quot;inline&quot; overflow=&quot;scroll&quot;&gt;&lt;mo&gt;×&lt;/mo&gt;&lt;/math&gt;&lt;/inline-formula&gt; on the MT-bench compared to vanilla autoregressive decoding.&lt;/p&gt;       " />
+  <meta name="article_references" content="Zeng Z, Yu J, Pang Q, et al. . ResDecode: Accelerating Large Language Models Inference via Residual Decoding Heads. . &lt;span style = &#39;font-style: italic;&#39;&gt;Big Data Mining and Analytics&lt;/span&gt;, .  2025, 8(4): 779-793. . https://doi.org/10.26599/BDMA.2024.9020074" />
+
+  <script>
+    var _hmt = _hmt || [];
+    (function () {
+      var hm = document.createElement('script');
+      hm.src = 'https://hm.baidu.com/hm.js?459d6fc0106b99052c6f753275cafeea';
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5SWG8SFZJW"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag('js', new Date());
+
+    gtag('config', 'G-5SWG8SFZJW');
+    gtag('config', 'AW-10902746976');
+  </script>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  <link rel="stylesheet"
+    href="/assets/bootstrap/css/bootstrap.min.css" />
+  <link rel="stylesheet"
+    href="/assets/bootstrap/css/bootstrap-theme.min.css" />
+  <link rel="stylesheet" type="text/css"
+    href="/assets/css/main-d930173d972c4e6f30aa8aa72f899105.css" />
+  <link rel="stylesheet" type="text/css"
+    href="" />
+  <link rel="stylesheet"
+    href="/assets/css/yxshare-fef9fea08989beac7bbf5247cc50a495.css" />
+  <link rel="stylesheet"
+    href="/assets/swiper/css/swiper.min.css" />
+  <link rel="stylesheet"
+    href="/assets/viewer/viewer-c0ba7a3d525d8a4332954939894dbeab.css" />
+  <link rel="stylesheet"
+    href="/assets/css/article-new-8666c07e895a70d9784c56ca3136c730.css" />
+  <link rel="stylesheet"
+    href="/assets/css/review-report-761bf2a189ce16da18695854f39f5737.css" />
+  <script src="/assets/js/jquery.min.js"></script>
+  <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        showProcessingMessages: false,
+        messageStyle: 'none',
+      });
+    </script>
+  <script type="text/javascript" async
+    src="https://wqketang.cn-beijing.oss.aliyuncs.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>
+  <!--    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/MathJax.js?config=TeX-MML-AM_HTMLorMML"></script>-->
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"ScholarlyArticle","name":"ResDecode: Accelerating Large Language Models Inference via Residual Decoding Heads","authors":[{"name":"Ziqian Zeng","@type":"Person"},{"name":"Jiahong Yu","@type":"Person"},{"name":"Qianshi Pang","@type":"Person"},{"name":"Zihao Wang","@type":"Person"},{"name":"Huiping Zhuang","@type":"Person"},{"name":"Fan Yu","@type":"Person"},{"name":"Hongen Shao","@type":"Person"},{"name":"Xiaofeng Zou","@type":"Person"}],"datePublished":"2025/5/12","journalName":"Big Data Mining and Analytics","volumeNumber":"8","issueNumber":"4","pagination":"779-793","publisher":{"name":"清华大学出版社","@type":"Organization"},"identifier":{"propertyID":"DOI","@type":"PropertyValue","value":"10.26599/BDMA.2024.9020074"},"url":"https://www.sciopen.com/article/10.26599/BDMA.2024.9020074","description":"         <p>Large language Models (LLMs) have immense potential to enhance the capabilities of Cyber-Physical-Social Intelligence (CPSI) systems, enabling them to better engage with complex cyber, physical, and social environments. However, the high inference latency of LLMs, which is inherited from the autoregressive decoding process, hinders their wide application in CPSI systems. To address this challenge, current approaches have incorporated speculative decoding to enable parallel prediction of multiple subsequent tokens, thereby achieving inference acceleration. Nevertheless, the accuracy of these decoding heads falls short of the autoregressive decoding approach. In light of these limitations, we propose ResDecode, a novel speculative decoding method characterized by its efficient and accurate decoding heads. Within the lightweight draft model, we propose a residual decoding head to compensate for the full context encoder’s limited capability on long-range dependencies, thus improving accuracy. ResDecode demonstrates impressive results, achieving a maximum speedup ratio of 3.2<inline-formula id=\"Z-20250103131051\"> <math id=\"mathml_Z-20250103131051\" display=\"inline\" overflow=\"scroll\"><mo>×</mo></math></inline-formula> on the MT-bench compared to vanilla autoregressive decoding.</p>       ","isPartOf":{"@id":"https://www.sciopen.com/journal/2096-0654","issn":"2096-0654","@type":"Periodical"},"hasPart":{"contentUrl":"https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020074.pdf","encodingFormat":"application/pdf","@type":"DigitalDocument"}}</script>
+  <script>
+    var ifOpenPeerReviewStatus = false;
+  </script>
+</head>
+
+<body>
+  <div id="ai-chat">
+  <el-drawer
+    class="ai-drawer-wrapper"
+    custom-class="ai-drawer"
+    title="标题"
+    :before-close="aiDrawerClose"
+    :visible.sync="aiDrawerShow"
+    direction="rtl"
+    :modal="false"
+    :with-header="false"
+    :append-to-body="true"
+    :z-index="1001"
+  >
+    <div class="drawer-title">
+      <div class="left">
+        <img src="/assets/img/article/AM_Full.svg" />
+        <span>AI Chat Paper</span>
+      </div>
+      <div class="right"><i class="el-icon-close" @click="aiDrawerClose"></i></div>
+    </div>
+    <div class="drawer-body">
+      <div class="tips">Note: Please note that the following content is generated by AMiner AI. SciOpen does not take any responsibility related to this content.</div>
+      <div class="content">
+        <div class="tools">
+          <div class="title">{{lang === 'zh_CN' ? '文章概述' : 'Summary'}}</div>
+          <div class="switch-lang" @click="switchLang">{{lang === 'en_US' ? '中' : 'Eng'}}</div>
+        </div>
+        <div class="desc" v-show="lang === 'zh_CN'">
+          <div class="inline-block" ref="zh_CN"></div>
+        </div>
+        <div class="desc" v-show="lang === 'en_US'">
+          <div class="inline-block" ref="en_US"></div>
+        </div>
+        <el-button class="open-button" @click="openAMiner" :loading="openAMinerLoading">Chat more with AI <i class="el-icon-right"></i></el-button>
+        <div id="ai-chat-copyright" class="content-copyright">Powered by AMiner. Clicking this button will take you away from SciOpen.</div>
+      </div>
+    </div>
+  </el-drawer>
+  <div class="modal fade ai-chat-error-modal" id="ai-chat-error-modal" tabindex="-1" aria-labelledby="ai-chat-error-modal" aria-hidden="true">
+    <div class="modal-dialog" style="margin-top: 26vh; width: 800px; color: #333">
+      <div class="lxf-box-modal">
+        <div class="ai-chat-error-modal-title">Error Occurred</div>
+        <div class="ai-chat-error-modal-close" aria-hidden="true" data-dismiss="modal" aria-label="Close">
+          <i class="el-icon-error" style="font-size: 22px; color: #fff" aria-hidden="true" data-dismiss="modal" aria-label="Close"></i>
+        </div>
+        <div class="modal-body">
+          <p class="desc-1">{{errorText}}</p>
+          <p class="desc-2">Visit www.aminer.cn directly for more AI services.</p>
+          <p class="desc-3"><a href="https://www.aminer.cn/" target="_blank">Go to AMiner</a></p>
+          <p class="desc-4">error code: {{errorCode}}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+  <div id="review-report-page">
+  <el-drawer class="ai-drawer-wrapper" custom-class="ai-drawer" title="标题" :before-close="reviewReportDrawerClose"
+    :visible.sync="reviewReportDrawerShow" direction="rtl" :modal="false" :with-header="false" :append-to-body="true"
+    :z-index="1002">
+    <div class="drawer-title">
+      <div class="left"></div>
+      <div class="right"><i class="el-icon-close" @click="reviewReportDrawerClose"></i></div>
+    </div>
+    <div class="drawer-body">
+      <div class="content ahc-content" style="padding: 0 !important; width: unset !important"
+        id="review-report-page-content">
+        <div class="content-item" v-for="(item,index) in boxData" :id="item.id">
+          <div class="content-item-title" style="color: #536CEB ;" v-if="item.secType==='reviewer'" v-text="item.title">
+          </div>
+          <div class="content-item-title" v-if="item.secType==='author_response'" v-text="item.title">
+          </div>
+          <div class="content-item-data" :id="'data_'+ item.id" v-html="item.content"></div>
+          <div class="content-item-more" :id="'but_' + item.id" @click="showMore(item.id)" v-text="'Show more'"></div>
+        </div>
+      </div>
+    </div>
+  </el-drawer>
+</div>
+  <img src="/assets/img/home/logo.png" style="display: none" /><!-- 分享默认图 -->
+  <div>
+    <!--轮播图-->
+    
+    <div id="header" style="background: #fff">
+      <div id="v4-header" class="v4-header" @mouseleave="hoverMenu('')">
+  <link rel="stylesheet" href="/assets/js/element-ui/lib/theme-chalk/index.css" />
+  <div class="header-left">
+    <a href="/home">
+      <img class="header-logo" src="/assets/img/home/logo.png" />
+    </a>
+    
+  </div>
+  <div class="header-right">
+    <div class="v4-menu">
+      <div class="menu-item" :class="{active: currentMenu === 'Subjects'}" @click="hoverMenu('Subjects','click')">
+        All Journals
+        <span><i class="el-icon-arrow-down"></i></span>
+      </div>
+    </div>
+    <a href="/home" class="mobile-header-logo">
+      <img src="/assets/img/home/logo.png" />
+    </a>
+    <div class="search-box" v-if="showSearchBtn" @click="showSearch('pc')">
+      <i class="el-icon-search"></i>
+      Search
+    </div>
+    <a class="user-login-item" href="/user/user/login_forward">Login</a>
+    <span class="mobile-hr"> | </span>
+    <a class="user-sign-item" href="/user/user/register_forward">Sign up</a>
+    
+    
+  </div>
+  <div class="mobile-menu" id="menu">
+    <div class="menu-icon right" @click="mobileShowMenu()"></div>
+  </div>
+  <div class="modal fade" id="logoff" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel">Logging off</h4>
+        </div>
+        <div class="modal-body">All data generated by the account on the platform will be deleted after logout.</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary modal-logoff">Save</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="v4-header-hover-panel" :class="{'show-panel':currentMenu === 'Subjects'}" v-show="currentMenu==='Subjects'" @mouseover="hoverMenu('Subjects')" @mouseout="hoverMenu('')">
+    <div class="hover-left">
+      <div class="left-title">Browse by Subject</div>
+      <div class="left-desc">
+        <p>Search for peer-reviewed journals with full access.</p>
+      </div>
+      <div class="left-abc">
+        <a href="/home/discipline?tab=&id=&language=" target="_blank">Journals A - Z <i class="el-icon-arrow-right"></i></a>
+      </div>
+    </div>
+    <div class="hover-right subject">
+      <a :href="item.href" target="_blank" class="subject-item" v-for="item in subjectList">
+        <div class="item-desc">{{item.name}}</div>
+        <div class="item-abc">{{item.abc}}</div>
+      </a>
+    </div>
+  </div>
+  <div class="v4-header-hover-panel" :class="{'show-panel':currentMenu === 'About Us'}" v-show="currentMenu==='About Us'" @mouseover="hoverMenu('About Us')" @mouseout="hoverMenu('')">
+    <div class="hover-left">
+      <div class="left-title">About Us</div>
+      <div class="left-desc">
+        <p>Discover the SciOpen Platform and Achieve Your Research Goals with Ease.</p>
+      </div>
+    </div>
+    <div class="hover-right">
+      <div class="about-item">
+        <div class="item-panel" v-if="aboutList.length">
+          <div class="item-title">About Us</div>
+          <div class="item-desc">
+            <a class="desc-item" :href="item.href" target="_blank" v-for="item in aboutList">{{item.title}}</a>
+          </div>
+        </div>
+        <div class="item-panel" v-if="publishList.length">
+          <div class="item-title">Publish with Us</div>
+          <div class="item-desc">
+            <a class="desc-item" :href="item.href" target="_blank" v-for="item in publishList">{{item.title}}</a>
+          </div>
+        </div>
+        <div class="item-panel" v-if="supportList.length">
+          <div class="item-title">Support</div>
+          <div class="item-desc">
+            <a class="desc-item" :href="item.href" target="_blank" v-for="item in supportList">{{item.title}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="v4-header-hover-panel search" :class="{'show-panel':searchShow}" v-show="searchShow" @click.stop>
+    <div class="warp search-wrap">
+      <div class="search-wrap-content">
+        <p class="search-title">Search articles, authors, keywords, DOl and etc.</p>
+        <div class="search-d1" :class="journalId?'journal':''">
+          <el-input v-model="searchForm.keyword" clearable placeholder="Enter Search Terms" class="search-d1-i" @keyup.enter.native="!expandStatus ? goSearch(1) : goSearch(2)"></el-input>
+          <el-select v-if="journalId" v-model="searchType" class="item-s1">
+            <el-option :key="1" label="The Platform" :value="1"></el-option>
+            <el-option :key="2" label="This Journal" :value="2"></el-option>
+          </el-select>
+          <el-button v-if="!expandStatus" class="icon-button" type="primary" icon="el-icon-search" @click="goSearch(1)"></el-button>
+        </div>
+        <div class="search-d2" v-if="expandStatus">
+          <div v-for="(item,index) in searchForm.keywordDTO" class="search-d2-item">
+            <el-select v-model="item.tag" class="item-s1">
+              <el-option :key="1" label="AND" :value="1"></el-option>
+              <el-option :key="2" label="OR" :value="2"></el-option>
+              <el-option :key="3" label="NOT" :value="3"></el-option>
+            </el-select>
+            <el-select v-model="item.type" class="item-s2" @change="item.key='';item.key2=''">
+              <el-option v-if="!journalId" label="Journal Title" value="journal"></el-option>
+              <el-option v-if="!journalId" label="ISSN" value="issn"></el-option>
+              <el-option label="Article Title" value="title"></el-option>
+              <el-option label="Author" value="author"></el-option>
+              <el-option label="Keywords" value="keywords"></el-option>
+              <el-option label="DOI" value="doi"></el-option>
+              <el-option label="Abstract" value="abstracted"></el-option>
+            </el-select>
+            <template v-if="item.type !== 'author'">
+              <el-input v-if="item.type === 'doi'" v-model="item.key" clearable :placeholder="`Search in DOI`" class="item-i1"></el-input>
+              <el-input v-else-if="item.type === 'abstracted'" v-model="item.key" clearable :placeholder="`Search in Abstract`" class="item-i1"></el-input>
+              <el-input v-else-if="item.type === 'keywords'" v-model="item.key" clearable :placeholder="`Search in Keywords`" class="item-i1"></el-input>
+              <el-input v-else-if="item.type === 'title'" v-model="item.key" clearable :placeholder="`Search in Article Title`" class="item-i1"></el-input>
+              <el-input v-else-if="item.type === 'issn'" v-model="item.key" clearable :placeholder="`Search in ISSN`" class="item-i1"></el-input>
+              <el-input v-else-if="item.type === 'journal'" v-model="item.key" clearable :placeholder="`Search in Journal Title`" class="item-i1"></el-input>
+              <el-input v-else v-model="item.key" clearable :placeholder="`Search in ${item.type}`" class="item-i1"></el-input>
+            </template>
+            <template v-if="item.type === 'author'">
+              <el-input v-model="item.key" clearable placeholder="First name" class="item-i2" style="width: 100%"></el-input>
+              <el-input v-model="item.key2" clearable placeholder="Last name" class="item-i3" style="width: 100%"></el-input>
+            </template>
+            <span class="add-btn">
+              <img src="/assets/img/index/search-plus.svg" alt="" @click="addInput(index)" />
+              <img v-if="searchForm.keywordDTO.length > 1" src="/assets/img/index/search-reduce.svg" alt="" @click="delInput(index)" />
+            </span>
+          </div>
+          <div class="search-d2-time">
+            <label class="search-title">Published Date</label>
+            <div class="time-range-panel">
+              <el-date-picker class="time-range-1" v-model="searchForm.startTime" type="date" placeholder="Start Time" :picker-options="startTimeOptions"> </el-date-picker>
+              <div class="time-hr">-</div>
+              <el-date-picker class="time-range-2" v-model="searchForm.endTime" type="date" placeholder="End Time" :picker-options="endTimeOptions"> </el-date-picker>
+            </div>
+          </div>
+          <div class="search-d2-btn" :class="journalId ? 'journal' : ''">
+            <span @click="resetInput">Reset</span>
+            <span @click="goSearch(2)">Search</span>
+          </div>
+        </div>
+        <div class="search-d3">
+          <img src="/assets/img/index/search-more.svg" alt="" :class="expandStatus ? 'img-rote' : 'img-unrote'" @click="expandStatus = !expandStatus" />
+          <span @click="expandStatus = !expandStatus">{{expandStatus?'Exit ':''}}Advanced Search</span>
+        </div>
+      </div>
+    </div>
+  </div>
+  <el-drawer class="menu-drawer" :class="{'show-panel':showMobileMenu}" :visible.sync="showMobileMenu" direction="rtl" :show-close="false" :with-header="false" size="290px">
+    <div class="mobile-menu-panel">
+      <div class="menu-item" @click="clickMenu('Subjects')">
+        All Journals <span class="arrow" :class="{active: currentMenu === 'Subjects'}"><i class="el-icon-arrow-right"></i></span>
+      </div>
+      <collapse-transition>
+        <div class="subject-content" v-show="currentMenu === 'Subjects'">
+          <a :href="item.href" class="subject-item" v-for="item in subjectList"> <div class="item-desc">{{item.name}}</div></a>
+          <a class="subject-item" href="/home/discipline?tab=&id=&language="
+            ><div class="item-desc">Journals A - Z <i class="el-icon-arrow-right"></i></div
+          ></a>
+        </div>
+      </collapse-transition>
+      <div class="menu-item" @click="goToMenu('v4-webinar')">Webinars</div>
+      <div class="menu-item" @click="goToMenu('v4-news')">News</div>
+      <div class="menu-item" @click="goToMenu('v4-services')">Services</div>
+      <div class="menu-item" @click="clickMenu('About Us')">
+        About Us <span class="arrow" :class="{active:currentMenu === 'About Us'}"><i class="el-icon-arrow-right"></i></span>
+      </div>
+      <collapse-transition>
+        <div class="about-content" v-show="currentMenu === 'About Us'">
+          <div class="about-item">
+            <div class="item-panel" v-if="aboutList.length">
+              <div class="item-title">About Us</div>
+              <div class="item-desc">
+                <a class="desc-item" :href="item.href" target="_blank" v-for="item in aboutList">{{item.title}}</a>
+              </div>
+            </div>
+            <div class="item-panel" v-if="publishList.length">
+              <div class="item-title">Publish with Us</div>
+              <div class="item-desc">
+                <a class="desc-item" :href="item.href" target="_blank" v-for="item in publishList">{{item.title}}</a>
+              </div>
+            </div>
+            <div class="item-panel" v-if="supportList.length">
+              <div class="item-title">Support</div>
+              <div class="item-desc">
+                <a class="desc-item" :href="item.href" target="_blank" v-for="item in supportList">{{item.title}}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </collapse-transition>
+      <div class="menu-item" v-if="showSearchBtn" @click="showSearch(&#39;mobile&#39;)">Advanced Search</div>
+    </div>
+  </el-drawer>
+  <script>
+    var user = null;
+    var journalId = "1404097305465446402";
+    var issn = "2096-0654";
+  </script>
+  <script src="/assets/js/vue.min.js"></script>
+  <script src="/assets/js/axios.min.js"></script>
+  <script src="/assets/js/element-ui/lib/index.js"></script>
+  <script src="/assets/js/element-ui/lib/umd/locale/en.js"></script>
+  <script src="/assets/js/collapse-transition.js"></script>
+  <script src="/assets/js/dayjs/dayjs.min.js"></script>
+  <script src="/assets/js/v4-header.js"></script>
+</div>
+    </div>
+
+    <div class="v4-art">
+      <div class="v4-art-main-box" id="article-app">
+        <div class="bread-menu" style="max-width: 1440px">
+          <span><a href="/home">Home</a></span>
+          <span> <i class="glyphicon glyphicon-menu-right"></i> </span>
+          <span><a href="/journal/2096-0654">Big Data Mining and Analytics</a></span>
+          <span> <i class="glyphicon glyphicon-menu-right"></i> </span>
+          <span> Article </span>
+        </div>
+        <!-- 顶部 -->
+        <div class="v4-art-top" id="v4_art_top">
+          <div class="v4-art-top-main" id="v4_art_top_main">
+            <div class="v4-art-top-main-m">
+              <!-- View pdf 不显示hover信息 -->
+              <div class="v4-art-top-item view-pdf"
+                onclick="googleDownload();previewActivityPdf(&quot;1914504378247024641&quot;,&quot;10.26599\/BDMA.2024.9020074&quot;, &quot;&quot;, 1, 0)">
+                <svg class="vt-art-top-item-img" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 200 200">
+                  <image id="图层_1" data-name="图层 1" x="19" y="19" width="164" height="165"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <svg class="vt-art-top-item-img-hover" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 200 200">
+                  <image id="图层_1" data-name="图层 1" x="19" y="19" width="164" height="165"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <span>PDF (2 MB)</span>
+              </div>
+              <!-- View pdf 显示hover信息 -->
+              
+              <!-- Article link -->
+              
+              <!-- Cite -->
+              <div class="v4-art-top-item down-citation">
+                <svg class="vt-art-top-item-img" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 200 200">
+                  <image id="图层_1" data-name="图层 1" x="18" y="18" width="164" height="164"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <svg class="vt-art-top-item-img-hover" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 200 200">
+                  <image id="图层_1" data-name="图层 1" x="18" y="18" width="164" height="164"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <span>Cite</span>
+                <div class="download-boxs">
+                  <a href="/article/download_ris?tag=2&amp;id=1914504378247024641" target="_blank" class="item-box">
+                    EndNote(RIS) </a>
+                  <a href="/article/download_ris?tag=3&amp;id=1914504378247024641" target="_blank" class="item-box">
+                    BibTeX </a>
+                </div>
+              </div>
+              <!-- 收藏 -->
+              <div class="v4-art-top-item" id="collection_not_1914504378247024641" onclick="openCheck(&quot;1914504378247024641&quot;)">
+                <svg class="vt-art-top-item-img" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 200 200">
+                  <image id="图层_1" data-name="图层 1" x="18" y="18" width="164" height="164"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <svg class="vt-art-top-item-img-hover" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 200 200">
+                  <image id="图层_1" data-name="图层 1" x="18" y="18" width="164" height="164"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <span>Collect</span>
+              </div>
+              <!-- 取消收藏 -->
+              <div class="v4-art-top-item display-none" id="collection_1914504378247024641" onclick="collection(2, &quot;1914504378247024641&quot;)">
+                <svg class="vt-art-top-item-img" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 200 200">
+                  <image id="图层_1" data-name="图层 1" x="18" y="18" width="164" height="164"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <svg class="vt-art-top-item-img-hover" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 200 200">
+                  <image id="图层_1" data-name="图层 1" x="18" y="18" width="164" height="164"
+                    xlink:href="data:img/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKQAAACkCAYAAAAZtYVBAAAKc0lEQVR4nO2dfYwVVxnGn112gWW7Bbct0IKURmFbraFYpSVlTVsEwRqtqWmINIoJfsSIBuNnta1/aFNLSbT8YypJUemHNBpjLCVR08QtMTFGwRApoNbWElq0q4AL3Y+y5tDn1ru3d+8992PuvPPO80tudrO5M3POmd+emXNmzvu2LV03ggpMBbAAwAoAi/mZD2Cs0kZCkA4AzwM4zM9TAJ4DMKl0HRVabiWA9QBuA9CpFhZ1ck3RZqMAdgJ4CMCvy+2uvczfegHcD+BxAB+TjKKJdNKpx+lYb+muS3vIXtq7RmdBJMg0AJsALOJVeLBwqOIecqZkFC1mDZ2bWThsQcjQU35LMooUWEP3zl2tC0K+i4MXIdLgNjp4TsguABuKu00hWsxMOtgVhJwH4FadAZEywcF54brdz1FPLGcBPAtgP4AhAG06k6KIcQDdAJYAuHSSqcVyBAf7Ozj0juUFAHcD2AHglM6CqEAPL8O3A5gb2VCLgpB9kV9+kd3qgM6CiCB0WNsA7APwGIA5Edv0Fe4hqzHMoblkFLUyQHeGI7ab1x75osQxXqaFqIcddKgaY7E3nPt0zyga4BQdqkqskEM6G6JBohyKFVJTO6JRohyKFVKIliAhhSkkpDCFhBSmkJDCFBJSmEJCClNISGEKCSlMISGFKSSkMIWEFKaQkMIUElKYQkIKU0hIYQoJKUwhIYUpJKQwhYQUppCQwhSVgt6LyoQwhh8AcDmjf7wC4O8A/gRgt9quPiRkfQQRP18IsllCWH/8JIB7AOzNVrXSR5fs2vkEU1uUkxEMRfc+AD/nd0UNSMjaWMue77yIrUJGi28AWGapAtaRkPF08zL9hhq2uRjAXdxWRCAh43lPhct0JVZxWxGBhIzjfN4PTq1j205ue34aBc8aEjKO6wCsbmD71dyHqIKErM4UAF9tMAJcG/cxpVWFzioSsjprmamiUfq5L1EBCVmZ0D53NHF/d6jNK6PGqUzIOnF1E/d3tZJUVUZCTk4YHX+qyfd9U7hP5SCfBAk5Obck9JRlGfctyiAhyzOTme+7Eth3F/etZKdlkJDluR7AjQnu/0YeQ5QgIV/PDACbEn41r4PHmJHgMTKJhHw94Xn1yhYcZ2Wdz8ZdIyEn0sa3c1rFXcoBNBEJOZEw+r22hce7ViPuiUjIiXw8J8c0i4T8P6tTert7WYNvErlCQr7KVM4Nzkrh2LN47HretXSHhHyV5Sm/ibOWZcg9eV8GuxDAIgCbU35yEo79ZfaSR7i+O5d4FbKNLzB08CS/CcBiAJfx9z4u7u/i5HSPgTKHXnIFgNMAzgA4CuAQgL8CeAbAYf4+EjLvAxgFMG6g3E0l60JO51qVbv68AMCVAC7lzzdSvraMzPf1FP1zLCxZ9jDOT5D0HwAOAHiWP18CcJJBCsLPl1Mqf8NkScjQu80HMJcDgSsAzGGPF5abLjBQxiQp/FNdwU/pyPw5AMfYi74I4CCAE5T3OP9uniwI+V4A6wBcxR4vjZFwFljAzzUlZf0nBX0awA8A/MJyXSwLGXqDezlZrVe16ucifq7k+vBHAHyJvac5rArZQRk3GyiLJ3qK1pdvZMQ2U1idh/ywZEyUDRTS3Pm3KGSYhvmigXJ453aLMYcsCvl23u+IZAkDoCXW2tiikEkuHRDG29qikNMNlCEvTLNWT4tCnjJQhrxg7omORSEHDJQhL/zBWj0tCnmAz2tFsoRHjb+z1sYWhfwPgK0GyuGd7/KxoimsToz/GMDDBsrhldC22y3WzaqQ4RWqLwB4wkBZvPEE2/akxXpZXsJwjI+4HjJQFi/sZpses1of62tqjvNtny0GypJ1wmtn69mmZsnCIq8zjM99r4GyZJXQdh/igNE0WVl1GF6T+rpG33WxlW03nIXCZmkZ7Ch7yvsMlCUr3Mc2G81KgbO2LnuUr03pnrI6W9hWmZERGV11GBr4K/xd702WZwvb6KzFwlUiq5ErzqqnnJRCz5g5GZHxUCphsfzXmPtlxEB5LLCVbTKW1QpkPbZPuHx/E8BnLC5YaiGvsFfM1ACmHF5CqXyfUR0eyGFE2nHmvjH5bLpWPEU/284lnnm6fI+wzi5khMNwfNuZ3SATk8ANMsy6upERTuNDhsv2Z51LOcw6PmCgLE3Fa8DScKLuNFCOpLjTo4xwHkH39wbKkBR/9lkt30J6TkrUzJTJpvAs5FsMlCEplvqsloTMKm7r5lXI2fx4pZchn93hVciFzvO+TGWIa3d4FfKtzlP/hvhHbzZQjqbjVci3MS2IVzothtJrBl6FdNl7lKBLdkaYxaRI3rnEY0YKj0LOZhIl7/R67CU9ChlO0oUGypE0vR6vBB6FXJST5Ernsa6u8HrJzguXeKunNyE7mWwzL7h7AOBNyIuYCTYv9Hm7j/Qm5AU5mfIpMNtbHkhvQl7s8b6qAhd6q683Iec4f6WulClM2ewGL+uywfXYaQxoThbloF6dwhzoQv4TZjJ0SimehOzmWz6tIkSL2APge0VCXsd10je38GnRVZyTNBkzvFY8CTmjhS9V/BTAjwD8rOTve/l5N4BPMmpt0syzmCKuXjzdb01vwf1UWMl4K4CPlJGxmF8B+CiTW+5OuEx9np7dexJyPMFAS/uZVP4GAI8BGIrY5jSAJwHcwm33J1Q+TYwbJURzeKnJRTvA8HbvBPAIgP/WsY+Xue07AHw6gXRuhzwlLPUk5AnevzWDvzACbbjk3t2knm2McXhuYOTfPzaprHtZdxd46yF/0mCwzuOMN/l+AN9OKBfgaQajv5nxeZ5uYF9jrLObOEbeJpF/CeDBOrYLPcw9AJYzIu/BBMpWSsjGug3AKh7733Xs40HW2Q3ehAyX1s8BeDTy+4Ocwrme0Wf/lnD5yvE8jx3Co9wP4IXI7R5lXTMdMbcUj4/ZQuavjex1jkzynX8xh+IHOQre1+IyluMZCraKg6DJxDzCum1kXV3haWK8mCH2Oj/kIKIwV3eGA5Ywn/gbO8WdwAFOEy3n6P5yAF18EnOIU0mtuKVIBa9CFjhYdPKy9rz3t/zA07PqauTpzZgsn9BcyIicCSkygIQUppCQwhQSUphCQgpTSEhhCgkpTCEhhSkkpDCFhBSmkJDCFBJSmEJCClNISGEKCSlMISGFKSSkMIWEFKaQkMIUElKYIlbIcZ020SBRDsUK2a2zIRokyqFYIUPY4B6dEVEnPXSoKu2RwQJCuo0NOhuiTjbQoWp0BCGPRnxxGgN39uuMiBrppzsxcdCPtjNeTAwhB8wuAJt0+RYR9NCVXXQnhkMdFSKElWMugO8A2MyY2UPMDyNEgXEOYJYw72QtU4tHgpADjMAam1qinUnS3WWzF6kSHBwo3EPu0rkQKbOrcA8ZYibu8BQ4XWSOE3TwTOH6HoJ37tR5FCmxsxBAtiDkGIfme3RGRIvZQ/fOZc8oHgGFbnO9pBQtZA+de+12sXRIPsgvbPOU+0SYY5iOradzr1FujmiQCX1uYh4UV2knRKqM0qmb6NhgaWHalq4bqVTAkNhxAYAVABbzM7/BbFkiP4R57pCH5zA/TzFhVHnpAPwPa1SM2OOJMIMAAAAASUVORK5CYII=" />
+                </svg>
+                <span>Collect</span>
+              </div>
+              <!-- 分享 -->
+              <div class="v4-art-top-item share-third">
+                <svg class="vt-art-top-item-img" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 200 200">
+                  <image id="图层_1" data-name="图层 1" x="18" y="18" width="164" height="164"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <svg class="vt-art-top-item-img-hover" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 200 200">
+                  <image id="图层_1" data-name="图层 1" x="18" y="18" width="164" height="164"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <span>Share</span>
+                <div class="baidu-share" id="yx_share"></div>
+              </div>
+              <!-- Submit manuscript -->
+              <a class="v4-art-top-item" href="https://mc03.manuscriptcentral.com/bdma" target="_blank">
+                <svg class="vt-art-top-item-img" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 200 200">
+                  <image id="图层_1" data-name="图层 1" x="18" y="14" width="164" height="173"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <svg class="vt-art-top-item-img-hover" xmlns="http://www.w3.org/2000/svg"
+                  xmlns:xlink="http://www.w3.org/1999/xlink" width="22" height="22" viewBox="0 0 200 200">
+                  <image id="图层_1" data-name="图层 1" x="18" y="14" width="164" height="173"
+                    xlink:href="data:img/png;base64,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" />
+                </svg>
+                <span>Submit Manuscript</span>
+              </a>
+              <!-- ai -->
+              <el-button type="text" class="v4-art-top-item"
+                style="padding: 4px 0" :disabled="aiChat.aiDrawerShow" @click="openAiChatDrawer">
+                <img src="/assets/img/article/AM_Full.svg" />
+                <span>AI Chat Paper</span>
+              </el-button>
+            </div>
+            <div v-if="treeDataReady && treeData.length > 0 || imgMenuList.length>0 || tableMenuList.length>0"
+              @click="drawer = true" class="v4-art-main-left-btn" id="v4_art_main_left_btn">
+              Show Outline
+            </div>
+          </div>
+        </div>
+        <el-drawer :size="300" class="v4-art-main-left-btn" :withHeader="false" :direction="'ltr'"
+          :visible.sync="drawer">
+          <div class="v4-art-main-left" style="padding-top: 0">
+            <div v-if="treeDataReady && treeData.length > 0" style="border-bottom: 1px solid #eef">
+              <div class="v4-art-main-left-title">Outline</div>
+              <el-tree ref="tree" node-key="id" :empty-text="''" :data="treeData" :indent="10" :highlight-current="true"
+                :expand-on-click-node="false" :props="defaultProps" @node-click="handleNodeClick">
+                <span class="custom-tree-node" slot-scope="{ node, data }">
+                  <span v-html="node.label"></span>
+                </span>
+              </el-tree>
+              <div class="v4-show-hide-icon-out is-not-active v4_art_outline_show" @click="showOutline(1)">Show full
+                outline <i class="el-icon-arrow-right"></i></div>
+              <div class="v4-show-hide-icon-out is-active v4_art_outline_hide" @click="showOutline(2)">Hide outline <i
+                  class="el-icon-arrow-up"></i></div>
+            </div>
+            <div>
+              <el-collapse v-model="activeNames" v-if="imgMenuList.length>0 || tableMenuList.length>0">
+                <div class="v4-outline-figures" v-if="imgMenuList.length>0" style="position: relative; z-index: 1">
+                  <div class="v4-art-main-left-title" v-html="'Figures (' + imgMenuList.length + ')'"></div>
+                  <div class="v4-outline-img">
+                    <div class="v4-outline-img-item" v-for="(item, index) in imgMenuList" v-if="index < 9"
+                      @click="turnCurrentNode('content_' + item['key'])" v-html="item['html']"></div>
+                  </div>
+                </div>
+                <el-collapse-item name="2" class="v4-outline-figures" v-if="imgMenuList.length>9">
+                  <template slot="title" v-if="imgMenuList.length>9">
+                    <span class="v4-show-hide-icon is-not-active" v-if="imgMenuList.length > 9">Show
+                      {{imgMenuList.length - 9}} more figures</span>
+                    <span class="v4-show-hide-icon is-active" v-if="imgMenuList.length > 9">Hide {{imgMenuList.length -
+                      9}} figures</span>
+                  </template>
+                  <div class="v4-outline-img">
+                    <div class="v4-outline-img-item" v-for="(item, index) in imgMenuList" v-if="index > 8"
+                      @click="turnCurrentNode('content_' + item['key'])" v-html="item['html']"></div>
+                  </div>
+                </el-collapse-item>
+                <div class="v4-outline-tables" v-if="tableMenuList.length>0"
+                  style="position: relative; z-index: 1; border-top: 1px solid #eef">
+                  <div class="v4-art-main-left-title" v-html="'Tables (' + tableMenuList.length + ')'"></div>
+                  <div class="v4-outline-table-item" v-for="(item, index) in tableMenuList" v-if="index < 5"
+                    @click="turnCurrentNode('content_' + item['key'])" v-html="item['label']"></div>
+                </div>
+                <el-collapse-item title="" name="3" class="v4-outline-tables" v-if="tableMenuList.length>5">
+                  <template slot="title" v-if="tableMenuList.length>5">
+                    <span class="v4-show-hide-icon is-not-active" v-if="tableMenuList.length > 5">Show
+                      {{tableMenuList.length - 5}} more tables</span>
+                    <span class="v4-show-hide-icon is-active" v-if="tableMenuList.length > 5">Hide
+                      {{tableMenuList.length - 5}} tables</span>
+                  </template>
+                  <div class="v4-outline-table-item" v-for="(item, index) in tableMenuList" v-if="index > 4"
+                    @click="turnCurrentNode('content_' + item['key'])" v-html="item['label']"></div>
+                </el-collapse-item>
+              </el-collapse>
+            </div>
+          </div>
+        </el-drawer>
+        <div class="v4-art-main">
+          <div class="v4-art-main-left-parent" id="v4_art_main_left">
+            <div v-if="treeDataReady && treeData.length > 0" style="border-bottom: 1px solid #eef">
+              <div class="v4-art-main-left-title">Outline</div>
+              <el-tree ref="tree" node-key="id" :empty-text="''" :data="treeData" :indent="10" :highlight-current="true"
+                :expand-on-click-node="false" :props="defaultProps" @node-click="handleNodeClick">
+                <span class="custom-tree-node" slot-scope="{ node, data }" :title="data.labelWord">
+                  <span v-html="node.label"></span>
+                </span>
+              </el-tree>
+              <div class="v4-show-hide-icon-out is-not-active v4_art_outline_show" @click="showOutline(1)">Show full
+                outline <i class="el-icon-arrow-right"></i></div>
+              <div class="v4-show-hide-icon-out is-active v4_art_outline_hide" @click="showOutline(2)">Hide outline <i
+                  class="el-icon-arrow-up"></i></div>
+            </div>
+            <div>
+              <el-collapse v-model="activeNames" v-if="imgMenuList.length>0 || tableMenuList.length>0">
+                <div class="v4-outline-figures" v-if="imgMenuList.length>0" style="position: relative; z-index: 1">
+                  <div class="v4-art-main-left-title" v-html="'Figures (' + imgMenuList.length + ')'"></div>
+                  <div class="v4-outline-img">
+                    <div class="v4-outline-img-item" v-for="(item, index) in imgMenuList" v-if="index < 9"
+                      @click="turnCurrentNode('content_' + item['key'])" v-html="item['html']"></div>
+                  </div>
+                </div>
+                <el-collapse-item name="2" class="v4-outline-figures" v-if="imgMenuList.length>9">
+                  <template slot="title" v-if="imgMenuList.length>9">
+                    <span class="v4-show-hide-icon is-not-active" v-if="imgMenuList.length > 9">Show
+                      {{imgMenuList.length - 9}} more figures</span>
+                    <span class="v4-show-hide-icon is-active" v-if="imgMenuList.length > 9">Hide {{imgMenuList.length -
+                      9}} figures</span>
+                  </template>
+                  <div class="v4-outline-img">
+                    <div class="v4-outline-img-item" v-for="(item, index) in imgMenuList" v-if="index > 8"
+                      @click="turnCurrentNode('content_' + item['key'])" v-html="item['html']"></div>
+                  </div>
+                </el-collapse-item>
+                <div class="v4-outline-tables" v-if="tableMenuList.length>0"
+                  style="position: relative; z-index: 1; border-top: 1px solid #eef">
+                  <div class="v4-art-main-left-title" v-html="'Tables (' + tableMenuList.length + ')'"></div>
+                  <div class="v4-outline-table-item" v-for="(item, index) in tableMenuList" v-if="index < 5"
+                    @click="turnCurrentNode('content_' + item['key'])" v-html="item['label']"></div>
+                </div>
+                <el-collapse-item title="" name="3" class="v4-outline-tables" v-if="tableMenuList.length>5">
+                  <template slot="title" v-if="tableMenuList.length>5">
+                    <span class="v4-show-hide-icon is-not-active" v-if="tableMenuList.length > 5">Show
+                      {{tableMenuList.length - 5}} more tables</span>
+                    <span class="v4-show-hide-icon is-active" v-if="tableMenuList.length > 5">Hide
+                      {{tableMenuList.length - 5}} tables</span>
+                  </template>
+                  <div class="v4-outline-table-item" v-for="(item, index) in tableMenuList" v-if="index > 4"
+                    @click="turnCurrentNode('content_' + item['key'])" v-html="item['label']"></div>
+                </el-collapse-item>
+              </el-collapse>
+            </div>
+          </div>
+          <div class="v4-art-main-center" id="v4_art_main_center">
+            <div class="art-html-center">
+              <div class="art-html-top">
+                <div class="v4-art-info">
+                  <!-- 文章类型 -->
+                  
+                  
+                  <!-- 期刊语种 -->
+                  
+                  
+                  <!-- 开放类型 -->
+                  <span class="v4-art-info-oa">Open Access </span>
+                  
+                  <!-- 文章阶段 -->
+                  
+                  <!-- 多版本时切换版本 -->
+                  <div id="version"></div>
+                </div>
+                <!-- 稿件基本信息 -->
+                <h1 class="v4-ahc-title">ResDecode: Accelerating Large Language Models Inference via Residual Decoding Heads</h1>
+                <!-- 作者和作者机构 -->
+                <div>
+                  <span class="art-authors"><span><a href='/scholar/info?id=1914504381250146305'>Ziqian Zeng</a></span><sup><sup>1</sup><sup>,</sup><sup>Z</sup></sup><span>,&nbsp;</span></span><span class="art-authors"><span><a href='/scholar/info?id=1914504381858320385'>Jiahong Yu</a></span><sup><sup>2</sup><sup>,</sup><sup>Z</sup></sup><span>,&nbsp;</span></span><span class="art-authors"><span><a href='/scholar/info?id=1914504382541991938'>Qianshi Pang</a></span><sup><sup>2</sup></sup><span>,&nbsp;</span></span><span class="art-authors"><span><a href='/scholar/info?id=1914504383238246401'>Zihao Wang</a></span><sup><sup>3</sup></sup><span>,&nbsp;</span></span><span class="art-authors"><span><a href='/scholar/info?id=1914504384056135681'>Huiping Zhuang</a></span><sup><sup>1</sup></sup><span>,&nbsp;</span></span><span class="art-authors"><span><a href='/scholar/info?id=1914504384777555969'>Fan Yu</a></span><sup><sup>4</sup></sup><span>,&nbsp;</span></span><span class="art-authors"><span><a href='/scholar/info?id=1914504385553502210'>Hongen Shao</a></span><sup><sup>5</sup></sup><span>,&nbsp;</span></span><span class="art-authors"><span><a href='/scholar/info?id=1914504386308476930'>Xiaofeng Zou</a></span><sup><sup>5</sup></sup><span
+                      class="art-authors-email"
+                      style="padding-left: 3px">(<a onclick="send_email(&quot;1914504386308476930&quot;,&quot;1914504378247024641&quot;)">
+                        <el-tooltip popper-class="v4-el-tooltip" effect="dark" content="zouxiaofeng@scut.edu.cn"
+                          placement="top-start">
+                          <img src="/assets/img/article/article-email.svg" style="width: 20px" />
+                        </el-tooltip> </a>)</span></span>
+                </div>
+                <div style="clear: both"></div>
+                <div class="art-authors-unit art-authors-unit2">
+                  <div class="art-authors-unit-inner art-authors-unit-inner2">
+                    <div class="art-authors-unit-item"><label>1</label>Shien Ming Wu School of Intelligent Engineering, South China University of Technology, Guangzhou 511442, China  </div>
+                    <div class="art-authors-unit-item"><label>2</label>School of Computer Science and Engineering, South China University of Technology, Guangzhou 510006, China  </div>
+                    <div class="art-authors-unit-item"><label>3</label>Department of Computer Science and Engineering, School of Engineering, The Hong Kong University of Science and Technology, Hong Kong 999077, China  </div>
+                    <div class="art-authors-unit-item"><label>4</label>Huawei Technologies Co. Ltd., Hangzhou 310000, China  </div>
+                    <div class="art-authors-unit-item"><label>5</label>School of Future Technology, South China University of Technology, Guangzhou 511442, China  </div>
+                    <div class="art-authors-unit-item"><p>Ziqian Zeng and Jiahong Yu contribute equally to this work.</p></div>
+                  </div>
+                </div>
+                <div>
+                  <span class="art-authors art-authors-more art-authors-more2"
+                    onclick="showAuthUnit(3)">
+                    Show Author Information <i class="el-icon-caret-bottom"></i>
+                  </span>
+                  <span class="art-authors art-authors-less art-authors-less2"
+                    style="display: none" onclick="showAuthUnit(4)">
+                    Hide Author Information <i class="el-icon-caret-top"></i>
+                  </span>
+                </div>
+                <!-- 撤稿关联信息 -->
+                
+                <!-- 勘误关联信息 -->
+                
+                
+                <!-- heightlight (keypointsabstracted) 同步接口返回-->
+                
+                <div
+                  style="border-top: 1px solid #eef; margin-top: 20px; padding-bottom: 8px"></div>
+                <!-- note 同步接口返回 期刊相关   目前没有对应 -->
+                <div class="v4-art-content-p">
+                  
+                  <h2></h2>
+                  
+                </div>
+                <!--abstract-->
+                <div class="v4-art-content-p v4-art-abstract" id="title_-2">
+                  <h2>Abstract</h2>
+                  <div>         <p>Large language Models (LLMs) have immense potential to enhance the capabilities of Cyber-Physical-Social Intelligence (CPSI) systems, enabling them to better engage with complex cyber, physical, and social environments. However, the high inference latency of LLMs, which is inherited from the autoregressive decoding process, hinders their wide application in CPSI systems. To address this challenge, current approaches have incorporated speculative decoding to enable parallel prediction of multiple subsequent tokens, thereby achieving inference acceleration. Nevertheless, the accuracy of these decoding heads falls short of the autoregressive decoding approach. In light of these limitations, we propose ResDecode, a novel speculative decoding method characterized by its efficient and accurate decoding heads. Within the lightweight draft model, we propose a residual decoding head to compensate for the full context encoder’s limited capability on long-range dependencies, thus improving accuracy. ResDecode demonstrates impressive results, achieving a maximum speedup ratio of 3.2<inline-formula id="Z-20250103131051"> <math id="mathml_Z-20250103131051" display="inline" overflow="scroll"><mo>×</mo></math></inline-formula> on the MT-bench compared to vanilla autoregressive decoding.</p>       </div>
+                </div>
+                <!--Graphical abstract -->
+                
+
+
+                <!-- 关键词 -->
+                <div class="v4-art-content-p" id="title_-3">
+                  <h2>Keywords</h2>
+                  <div class="v4-art-keyword">
+                    <a class="v4-art-keyword-item" onclick="jumpKeyword(&quot;speculative decoding&quot;)">speculative decoding</a><a class="v4-art-keyword-item" onclick="jumpKeyword(&quot;efficient inference&quot;)">efficient inference</a><a class="v4-art-keyword-item" onclick="jumpKeyword(&quot;Large Language Models (LLMs)&quot;)">Large Language Models (LLMs)</a>
+                  </div>
+                </div>
+                
+                <!--CLC number-->
+                
+                <!-- glossary异步接口返回 -->
+                <div id="title_-4" class="v4-art-content-p" style="display: none"></div>
+
+                <div style="border-top: 1px solid #eef; margin-top: 20px">
+                  <div id="article_no_data" style="padding-top: 30px; display: none">
+                    <p>No abstract is available for this article. Click the button above to view the PDF directly.</p>
+                  </div>
+                  <!-- 特定的文章不显示FULL TEXT-->
+                  
+                  <!-- 正文内容 -->
+                  <div id="insert_content">
+                    <div id="insert_content_one"></div>
+                    <!--electronic-->
+                    
+                    <div id="insert_content_two"></div>
+                    <!--正文参考文献-->
+                    <div v-if="referenceList && referenceList.length > 0" class="v4-art-content-p" id="title_-12">
+                      <h2>References</h2>
+                      <div v-html="referenceRew"></div>
+                      <div id="article_references" v-for="(reference,index) in referenceList"
+                        style="overflow-x: auto; overflow-y: hidden">
+                        <div class="v4-art-reference-item">
+                          <!-- 显示文章正文：有参考文献编号，点击跳转 -->
+                          <div v-if="reference.label != null && reference.label != '' && ifShowFullText == true"
+                            v-html="reference.label" :id="'r_'+reference.keyStr" class="v4-art-reference-item-index"
+                            onclick="findReferencesInContentById(this)">
+                            【1】
+                          </div>
+                          <!-- 不显示文章正文：有参考文献编号，没有点击 -->
+                          <div v-if="reference.label != null && reference.label != '' && ifShowFullText != true"
+                            v-html="reference.label" :id="'r_'+reference.keyStr"
+                            class="v4-art-reference-item-index v4-art-reference-item-index-not">
+                            【1】
+                          </div>
+                          <!-- 显示文章正文：无参考文献编号，点击跳转 -->
+                          <div v-if="reference.label == null || reference.label == '' && ifShowFullText == true"
+                            :id="'r_'+reference.keyStr" class="v4-art-reference-item-index"
+                            onclick="findReferencesInContentById(this)">
+                            <div style="height: 2px">&nbsp;</div>
+                            <img src="/assets/img/article/reference-link.png" style="width: 26px; margin: 0" />
+                          </div>
+                          <!-- 不显示文章正文：无参考文献编号，没有点击 -->
+                          <div v-if="reference.label == null || reference.label == '' && ifShowFullText != true"
+                            :id="'r_'+reference.keyStr"
+                            class="v4-art-reference-item-index v4-art-reference-item-index-not">
+                            <div style="height: 2px">&nbsp;</div>
+                            <img src="/assets/img/article/reference-link.png" style="width: 26px; margin: 0" />
+                          </div>
+                          <div class="v4-art-reference-item-title">
+                            <span v-html="reference.reference"></span>
+                          </div>
+                        </div>
+                        <div
+                          v-if="(reference.doi != null && reference.doi != '') || (reference.link != null && reference.link != '')"
+                          class="v4-art-reference-item-pos">
+                          <a v-if="reference.doi != null && reference.doi != ''" target="_blank"
+                            :href="'https://doi.org/'+ reference.doi">Crossref</a>
+                          <a v-if="reference.link != null && reference.link != ''" target="_blank"
+                            style="margin-left: 10px" :href="reference.link">Google Scholar</a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="v4-art-main-right" id="v4_art_main_right">
+            <img class="v4-article-journal-img"
+              src="/journal/get_journal_cover?flag=2&amp;status=0&amp;id=10.26599/BDMA.2024.9020074" />
+            <a class="v4-article-journal-title" href="/journal/2096-0654">Big Data Mining and Analytics</a>
+            <div class="v4-art-main-right-content">
+              <a href="/journal/join_journal/stage_page?stage=5&amp;id=1404097305465446402&amp;issueIndex=1914499321988386818&amp;issn=2096-0654">Volume 8 Issue 4,</br>August 2025</a>
+            </div>
+            <div class="v4-art-main-right-content">
+              <span>Pages 779-793</span>
+            </div>
+            <div class="v4-art-main-right-content">
+              DOI: <a href="https://doi.org/10.26599/BDMA.2024.9020074" target="_blank"
+                style="word-break: break-all">10.26599/BDMA.2024.9020074</a>
+            </div>
+            <div id="review-report">
+    <div class="review-report-main">
+        <div id="review-gs">
+            <h3><span id="rev_status"></span>
+                <img style="width: 14px; cursor: pointer" src="/assets/img/home/tip.png" data-toggle="tooltip"
+                    data-html="true" data-placement="bottom" title='<div style="padding: 10px;">
+            <div style="display: flex;align-items:flex-start;margin-bottom: 5px;font-size: 12px; line-height: 18px;"><img src="/assets/svg/right.svg" style="width: 16px; margin-right: 8px;"> Commended: Indicates that the current form of this paper demonstrates scientific rigor, with only minor suggestions for improvement, if any.</div>
+            <div style="display: flex;align-items:flex-start;margin-bottom: 5px;font-size: 12px; line-height: 18px;"><img src="/assets/svg/question.svg" style="width: 16px; margin-right: 8px;">  Revision Required: Suggests that the article has academic merit but requires small changes or specific, sometimes more significant revisions.</div>
+            <div style="display: flex;align-items:flex-start;font-size: 12px; line-height: 18px;"><img src="/assets/svg/wrong.svg" style="width: 16px; margin-right: 8px;"> Not Commended: Signifies that the article is of very poor quality, with fundamental flaws that seriously undermine the findings and conclusions.</div>
+        </div>' />
+            </h3>
+            <div class="review-status" id="rev_status_det"></div>
+            <div class="review-table" id="rev_table">
+                <table>
+                    <thead>
+                        <tr>
+                            <td></td>
+                            <td v-for="item in reviewListInfo.reviewAuthorList">
+                                {{item.num}}
+                            </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <template v-for="version in reviewListInfo.reviewList">
+                            <tr v-if="version.hasRsp">
+                                <td>{{version.versionName}}<br />Author&nbsp;Response</td>
+                                <td v-for="item in reviewListInfo.reviewAuthorList">
+                                    <template v-for="rev in version.reviewAuthorList">
+                                        <template v-if="rev.num == item.num && rev.replyPdfPath">
+                                            <a :data-id="rev.doi" onclick="reviewReport.viewPdf(this, 2)">View</a>
+                                        </template>
+                                    </template>
+                                </td>
+                            </tr>
+                            <tr :class="version.doi === doi ? 'current' : ''">
+                                <td>{{version.versionName}}<br />Review comment</td>
+                                <td v-for="item in reviewListInfo.reviewAuthorList">
+                                    <template v-for="rev in version.reviewAuthorList">
+                                        <template v-if="rev.num === item.num">
+                                            <img v-if="rev.rewResult === 1" src="/assets/svg/right.svg" />
+                                            <img v-if="rev.rewResult === 2" src="/assets/svg/question.svg" />
+                                            <img v-if="rev.rewResult === 3" src="/assets/svg/wrong.svg" />
+                                            <br />
+                                            <a :data-id="rev.doi" :data-state="rev.hasReviewHtml"
+                                                onclick="reviewReport.viewPdf(this, 1)">View</a>
+                                        </template>
+                                    </template>
+                                </td>
+                            </tr>
+                        </template>
+                    </tbody>
+                </table>
+            </div>
+            <div class="review-author" id="rev_author"></div>
+            <div class="review-comment">
+                <h3>Comments on this article</h3>
+                <div class="review-comments-num">
+                    <a onclick="reviewReport.showAllComment()" id="all_com_num"></a>
+                </div>
+                <el-button onclick="reviewReport.goToComment()">Go to comment</el-button>
+            </div>
+        </div>
+        <div id="review-xq">
+            <h3 onclick="reviewReport.back()" style="color: #3E65D8; cursor: pointer; ">
+                < Back to all reports</h3>
+                    <div class="review-status" id="review_status">
+                        Review Status:
+                        <span v-if="reviewData.commendedNum>0">{{reviewData.commendedNum}} Commended</span>
+                        <span v-if="reviewData.revisionRequiredNum>0">, {{reviewData.revisionRequiredNum}} Revision
+                            Required</span>
+                        <span v-if="reviewData.notCommendedNum>0">, {{reviewData.notCommendedNum}} Not Commended</span>
+                        <span
+                            v-if="reviewData.commendedNum===0&&reviewData.revisionRequiredNum==0&&reviewData.notCommendedNum===0">Under
+                            Peer Review</span>
+                    </div>
+                    <div class="review-comment">
+                        <h3>Review Comment</h3>
+                        <div class="review-result">
+                            <div class="review-result-item">
+                                <span id="review_result"></span>
+                                <img style="width: 16px; height: 16px; cursor: pointer"
+                                    src="/assets/img/home/tip.png" data-toggle="tooltip" data-html="true"
+                                    data-placement="bottom" title='<div style="padding: 10px;">
+                                        <div style="display: flex;align-items:flex-start;margin-bottom: 5px;font-size: 12px; line-height: 18px;"><img src="/assets/svg/right.svg" style="width: 16px; margin-right: 8px;"> Commended: Indicates that the current form of this paper demonstrates scientific rigor, with only minor suggestions for improvement, if any.</div>
+                                        <div style="display: flex;align-items:flex-start;margin-bottom: 5px;font-size: 12px; line-height: 18px;"><img src="/assets/svg/question.svg" style="width: 16px; margin-right: 8px;">  Revision Required: Suggests that the article has academic merit but requires small changes or specific, sometimes more significant revisions.</div>
+                                        <div style="display: flex;align-items:flex-start;font-size: 12px; line-height: 18px;"><img src="/assets/svg/wrong.svg" style="width: 16px; margin-right: 8px;"> Not Commended: Signifies that the article is of very poor quality, with fundamental flaws that seriously undermine the findings and conclusions.</div>
+                                    </div>' />
+                            </div>
+                            <div>
+                                <span id="review_date"></span>
+                                <span id="review_to_version"></span>
+                            </div>
+                        </div>
+                        <div class="review-author">
+                            <div class="review-author-item" id="review_author"></div>
+                        </div>
+                    </div>
+                    <div class="review-comment">
+                        <div class="review-comments-num review-comment-cite-img" style="margin-bottom: 5px;">
+                            <a onclick="reviewReport.showCite()"><strong>Cite this Report</strong></a>
+                        </div>
+                        <div class="review-comments-num review-comment-pdf-img" id="review_pdf"></div>
+                    </div>
+                    <div class="review-detail" id="review_content">
+                        <div class="review-content-list" id="review_content_list"></div>
+                        <div class="review-content-other" id="review_content_other"></div>
+                    </div>
+        </div>
+    </div>
+    <!-- 正文图片查看模态 -->
+    <ul style="display: none" id="review_img"></ul>
+    <!-- 大众评审pdf列表 -->
+    <el-dialog title="" :visible.sync="commentVisible" :close-on-click-modal="false" :append-to-body="true"
+        width="600px" custom-class="comment-main" @close="commentVisible=false">
+        <div class="comment-list">
+            <template v-for="item in reviewListInfo.allCommentsList">
+                <div class="comment-item" :data-id="item.id" onclick="reviewReport.viewPdf(this, 3)">
+                    <img src="/assets/svg/file-pdf.svg" style="width: 24px;" /> {{item.fileName}}
+                </div>
+            </template>
+        </div>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="commentVisible = false" type="primary" size="small"
+                style="width: 95px;">Close</el-button>
+        </span>
+    </el-dialog>
+    <!-- 评审报告cite -->
+    <el-dialog title="Cite this report" :visible.sync="citeVisible" :close-on-click-modal="false" :append-to-body="true"
+        width="600px" custom-class="cite-main" @close="citeVisible=false">
+        <div class="cite-main-content">
+            <div v-if="reviewData.reportCite">
+                <span v-html="reviewData.reportCite.author"></span><span>. </span>
+                <span v-html="reviewData.reportCite.title"></span><span>. </span>
+                <span style='font-style: italic;' v-html="reviewData.reportCite.journal"></span><span>, </span>
+                <span v-html="reviewData.reportCite.year"></span><span>, </span>
+                <a :href="reviewData.reportCite.doi" target="_blank">{{reviewData.reportCite.doi}}</a>
+            </div>
+        </div>
+        <span slot="footer" class="dialog-footer">
+            <el-button @click="citeVisible = false" type="primary" size="small" style="width: 95px;">Close</el-button>
+        </span>
+    </el-dialog>
+</div>
+            <div class="v4-art-main-right-title">Cite this article:</div>
+            <div class="v4-art-main-right-content">
+              <span>Zeng Z, Yu J, Pang Q, et al. </span>
+              <span>ResDecode: Accelerating Large Language Models Inference via Residual Decoding Heads. </span>
+              <span><span style = 'font-style: italic;'>Big Data Mining and Analytics</span>, </span>
+              <span> 2025, 8(4): 779-793. </span>
+              <span style="word-break: break-all">https://doi.org/10.26599/BDMA.2024.9020074</span>
+            </div>
+
+            
+            <div class="v4-art-main-right-content">
+              
+            </div>
+            
+            
+            <el-collapse style="margin-top: 15px">
+              <el-collapse-item title="Metrics & Citations" name="4">
+                <template slot="title">
+                  Metrics & Citations &nbsp;
+                  <el-tooltip popper-class="v4-el-tooltip" effect="dark" content="Citation counts are pulled independently from Crossref, Web of Science, Scopus and CSCD. Citation counts are only available if this journal is indexed in the corresponding database
+                  collection." placement="top">
+                    <img src="/assets/img/article/info-circle.svg" style="width: 16px" />
+                  </el-tooltip>
+                </template>
+
+                <div class="v4-metrics">
+                  <el-tooltip popper-class="v4-el-tooltip" effect="dark"
+                    content="The number of entries to this article page." placement="top">
+                    <div>
+                      <p>2910</p>
+                      <p>Views</p>
+                    </div>
+                  </el-tooltip>
+                  <el-tooltip popper-class="v4-el-tooltip" effect="dark"
+                    content="Total PDF downloads and full-text HTML views from publication date of article."
+                    placement="top">
+                    <div>
+                      <p>170</p>
+                      <p>Downloads</p>
+                    </div>
+                  </el-tooltip>
+                  <div>
+                    <p>10</p>
+                    <p>Crossref</p>
+                  </div>
+                  <div>
+                    <p>7</p>
+                    <p>Web of Science</p>
+                  </div>
+                  
+                  <div>
+                    <p>10</p>
+                    <p>Scopus</p>
+                  </div>
+                  <div>
+                    <p>0</p>
+                    <p>CSCD</p>
+                  </div>
+                  <div>
+                    <a href="http://scholar.google.com/scholar?hl=en&amp;lr=&amp;cites=http://dx.doi.org/10.26599/BDMA.2024.9020074"
+                      target="_blank" class="v4-google">Google Scholar<br />Citation</a>
+                  </div>
+                  <div id="article_altmetric">
+                    <div data-badge-popover="left" data-badge-type="donut" data-hide-no-mentions="true" class="altmetric-embed" data-doi="10.26599/BDMA.2024.9020074"></div>
+                    <script type="text/javascript" src="https://d1bxh8uas1mnw7.cloudfront.net/assets/embed.js"></script>
+                    <!-- <p></p>
+                    <p>Altmetrics</p> -->
+                  </div>
+                </div>
+              </el-collapse-item>
+              <el-collapse-item title="Article History" name="5">
+                <div class="v4-art-main-right-des">
+                  <div>Received: 20 April 2024</div>
+                  
+                  <div>Revised: 20 September 2024</div>
+                  <div>Accepted: 12 October 2024</div>
+                  <div>
+                    <span>Published: </span>
+                    
+                    <span>12 May 2025</span>
+                  </div>
+                  <!--大于等5并且开放了同行评议-->
+                  
+                </div>
+              </el-collapse-item>
+              <el-collapse-item title="Copyright" name="7">
+                <div class="v4-art-main-right-des">© The author(s) 2025.</div>
+              </el-collapse-item>
+              <el-collapse-item title="Rights and Permissions" name="6">
+                <div class="v4-art-main-right-des"><p>The articles published in this open access journal are distributed under the terms of the Creative Commons Attribution 4.0 International License (<a ext-link-type="uri" href="http://creativecommons.org/licenses/by/4.0/">http://creativecommons.org/licenses/by/4.0/</a>).</p></div>
+              </el-collapse-item>
+            </el-collapse>
+            <div style="overflow: hidden"><div id="trendmd-suggestions"></div>
+                        <script defer src='//js.trendmd.com/trendmd.min.js'  data-trendmdconfig='{"journal_id":"81480", "element":"#trendmd-suggestions"}'></script></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- 摘要图片 -->
+  <ul style="display: none" id="content_img_abstract"></ul>
+  <!-- 正文图片 -->
+  <ul style="display: none" id="content_img"></ul>
+  <div id="ws-folder">
+    <div class="ws-folder">
+  <link rel="stylesheet" href="/assets/css/folder-d7a270c8ffe910da44af264dbcec6276.css" />
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" style="margin-top: 10%">
+      <div class="lxf-box" style="padding-bottom: 20px">
+        <div class="journal-menu">
+          <a class="select">Select Folder</a>
+        </div>
+        <img src="/assets/img/article/article-close.png" class="close-modal" aria-hidden="true" alt="" />
+        <div class="modal-body">
+          <div class="folder-box layer_pop">
+            <div class="inner_group">
+              <div class="group_box">
+                <ul class="group_list clearfix"></ul>
+                <div class="group_button">
+                  <button type="button" class="btn btn-primary save-modal opt_area" style="width: 150px; margin-right: 5px">Create new folder</button>
+                  <button type="button" class="btn btn-primary save-modal del_area">Delete folder</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer" style="padding-top: 25px; margin-top: 20px">
+          <button type="button" class="btn btn-primary save-modal save_area">Save</button>
+        </div>
+      </div>
+    </div>
+    <script src="/assets/js/folder.js"></script>
+  </div>
+</div>
+  </div>
+  <div id="footer">
+    <div id="v4-footer" class="v4-footer">
+  <div class="footer-panel">
+    <div class="panel-item item-1">
+      <a href="/home"><img class="footer-logo" src="/assets/img/home/logo.png" alt="SciOpen"/></a>
+      <div class="footer-share">
+        <a class="share-icon" target="_blank" href="https://twitter.com/SciOpenTUP"><img src="/assets/svg/twitter.svg" alt="twitter"/></a>
+        <a class="share-icon" target="_blank" href="https://www.linkedin.com/company/91320577/admin/feed/posts/"><img src="/assets/svg/linkedin.svg" alt="linkedin"/></a>
+        <a class="share-icon" target="_blank" href="https://www.facebook.com/SciOpentup/"><img src="/assets/svg/facebook.svg" alt="facebook"/></a>
+        <a class="share-icon" target="_blank" href="https://bsky.app/profile/sciopentup.bsky.social"><img src="/assets/svg/blueSky.svg" alt="bsky"/></a>
+        <a class="share-icon wechat">
+          <img src="/assets/svg/weixin.svg" alt="wechat"/>
+          <div class="wechat-qrcode">
+            <img src="/assets/img/wechat.jpeg" alt="code"/>
+          </div>
+        </a>
+      </div>
+    </div>
+    <div class="panel-item item-2" v-if="aboutList.length">
+      <div class="item-title">About Us</div>
+      <div class="item-content">
+        <div class="content-item">
+          <div v-for="(item,index) in aboutList" class="item">
+            <a :href="item.href" target="_blank">{{item.title}}</a>
+          </div>
+          <div class="item">
+            <a href="https://www.tup.com.cn/en/index" target="_blank">Tsinghua University Press</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-item item-3" v-if="publishList.length">
+      <div class="item-title">Publish with Us</div>
+      <div class="item-content">
+        <div class="content-item">
+          <div class="item" v-for="(item,index) in publishList">
+            <a :href="item.href" target="_blank">{{item.title}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="panel-item item-4" v-if="supportList.length || contactUs">
+      <div class="item-title">Contact Us</div>
+      <div class="item-content">
+        <div class="content-item">
+          <div class="contact-us" v-html="contactUs"></div>
+          <div v-for="(item,index) in supportList" class="item">
+            <a :href="item.href" target="_blank">{{item.title}}</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <a id="cd_top" href="javascript:;" class="page-feed-top cd-top"></a>
+  <div class="v4-copyright">
+  <p class="Copyright-des"></p>
+  <p class="mobile-display-none">
+    <a href="https://beian.miit.gov.cn/" target="_blank" style="margin: 0 8px">京ICP备 10035462号-42</a>
+    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=11010802044758" style="margin: 0 8px" rel="noreferrer" target="_blank"
+      ><img src="/assets/img/jing.jpg" style="width: 14px; vertical-align: text-bottom; margin-right: 5px" />京公网安备11010802044758号</a
+    >
+  </p>
+  <script>
+    $('.Copyright-des').html('Copyright  © ' + new Date().getFullYear() + '  Tsinghua University Press Ltd.');
+  </script>
+</div>
+  <script src="/assets/js/v4-footer.js"></script>
+</div>
+  </div>
+
+
+  <!-- 添加LinkedIn - 2广告代码 2024-04-15 -->
+  <script type="text/javascript">
+    _linkedin_partner_id = '5602012';
+
+    window._linkedin_data_partner_ids = window._linkedin_data_partner_ids || [];
+
+    window._linkedin_data_partner_ids.push(_linkedin_partner_id);
+  </script>
+  <script type="text/javascript">
+    (function (l) {
+      if (!l) {
+        window.lintrk = function (a, b) {
+          window.lintrk.q.push([a, b]);
+        };
+
+        window.lintrk.q = [];
+      }
+
+      var s = document.getElementsByTagName('script')[0];
+
+      var b = document.createElement('script');
+
+      b.type = 'text/javascript';
+      b.async = true;
+
+      b.src = 'https://snap.licdn.com/li.lms-analytics/insight.min.js';
+
+      s.parentNode.insertBefore(b, s);
+    })(window.lintrk);
+  </script>
+
+  <noscript>
+    <img height="1" width="1" style="display: none" alt=""
+      src="https://px.ads.linkedin.com/collect/?pid=5602012&fmt=gif" />
+  </noscript>
+</body>
+<!-- 引入组件库 -->
+<script src="/assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="/assets/js/collection-7db6062b91d3b7951a9fbb2280cf19db.js"></script>
+<script src="/assets/js/footer-92affce77153f0b1aed686e8e0b226af.js"></script>
+<script src="/assets/js/download-79cfd6e9e0059049957b1ee6bb0b17a8.js"></script>
+<script src="/assets/js/yx.alert-ecdc879fec4c8ecb95292763b4d6c0c0.js"></script>
+<script src="/assets/js/share-22d0ac6aeb1ca7cf4283186bff2409be.js"></script>
+<script src="/assets/qrcodejs/qrcode.min.js"></script>
+<script src="/assets/js/article-c7bb56e3392f7d27f3fd6fdc99adc4cf.js"></script>
+<script src="/assets/js/ai-chat-8049139f8d4197a63b87926cf4044bbc.js"></script>
+<script src="/assets/js/review-report-290885969bebeb0423e350be8d3f9026.js"></script>
+<script src="/assets/js/review-report-page-fb45a048c6766cb7915bc63b6cbe53d0.js"></script>
+<script src="/assets/swiper/js/swiper.jquery.min.js"></script>
+<script src="/assets/viewer/viewer.js"></script>
+<script>
+  //  正文信息
+  var fullTextInfo = {}; // 大纲和正文信息
+  var esmTextInfo = '';
+  var esmTextTitle = '';
+  // 正文所有的图片
+  var imgListInfo = [];
+  // 所有的figer图片
+  var imgKeyListInfo = [];
+  // 所有可以点击看大图的图片
+  var imgShowListInfo = [];
+  // 请求前缀
+  var contextPath = '';
+  var title = '';
+  var doi = "10.26599\/BDMA.2024.9020074";
+  var showAI = 1;
+  var articleKeyword = [{"id":"1925455354898419713","articleId":"1914504378247024641","keywordId":"1925451630494879746","keywordName":"speculative decoding","keywordNameStyledContent":"speculative decoding"},{"id":"1925455355124912129","articleId":"1914504378247024641","keywordId":"1925451630780092417","keywordName":"efficient inference","keywordNameStyledContent":"efficient inference"},{"id":"1925455355347210241","articleId":"1914504378247024641","keywordId":"1889200544499220482","keywordName":"Large Language Models (LLMs)","keywordNameStyledContent":"Large Language Models (LLMs)"}];
+
+  var authors = {"authors":[{"id":"1914504381250146305","name":"<a href='\/scholar\/info?id=1914504381250146305'>Ziqian Zeng<\/a>","email":null,"type":2,"companyId":null,"orcid":null,"firstAuthor":null,"sub":"<sup>1<\/sup><sup>,<\/sup><sup>Z<\/sup>"},{"id":"1914504381858320385","name":"<a href='\/scholar\/info?id=1914504381858320385'>Jiahong Yu<\/a>","email":null,"type":2,"companyId":null,"orcid":null,"firstAuthor":null,"sub":"<sup>2<\/sup><sup>,<\/sup><sup>Z<\/sup>"},{"id":"1914504382541991938","name":"<a href='\/scholar\/info?id=1914504382541991938'>Qianshi Pang<\/a>","email":null,"type":2,"companyId":null,"orcid":null,"firstAuthor":null,"sub":"<sup>2<\/sup>"},{"id":"1914504383238246401","name":"<a href='\/scholar\/info?id=1914504383238246401'>Zihao Wang<\/a>","email":null,"type":2,"companyId":null,"orcid":null,"firstAuthor":null,"sub":"<sup>3<\/sup>"},{"id":"1914504384056135681","name":"<a href='\/scholar\/info?id=1914504384056135681'>Huiping Zhuang<\/a>","email":null,"type":2,"companyId":null,"orcid":null,"firstAuthor":null,"sub":"<sup>1<\/sup>"},{"id":"1914504384777555969","name":"<a href='\/scholar\/info?id=1914504384777555969'>Fan Yu<\/a>","email":null,"type":2,"companyId":null,"orcid":null,"firstAuthor":null,"sub":"<sup>4<\/sup>"},{"id":"1914504385553502210","name":"<a href='\/scholar\/info?id=1914504385553502210'>Hongen Shao<\/a>","email":null,"type":2,"companyId":null,"orcid":null,"firstAuthor":null,"sub":"<sup>5<\/sup>"},{"id":"1914504386308476930","name":"<a href='\/scholar\/info?id=1914504386308476930'>Xiaofeng Zou<\/a>","email":"zouxiaofeng@scut.edu.cn","type":1,"companyId":null,"orcid":null,"firstAuthor":null,"sub":"<sup>5<\/sup>"}],"companys":["<label>1<\/label>Shien Ming Wu School of Intelligent Engineering, South China University of Technology, Guangzhou 511442, China  ","<label>2<\/label>School of Computer Science and Engineering, South China University of Technology, Guangzhou 510006, China  ","<label>3<\/label>Department of Computer Science and Engineering, School of Engineering, The Hong Kong University of Science and Technology, Hong Kong 999077, China  ","<label>4<\/label>Huawei Technologies Co. Ltd., Hangzhou 310000, China  ","<label>5<\/label>School of Future Technology, South China University of Technology, Guangzhou 511442, China  ","<p>Ziqian Zeng and Jiahong Yu contribute equally to this work.<\/p>"]};
+  var esmSize = 0;
+  var articleId = "1914504378247024641";
+  var article = {"id":"1914504378247024641","title":"ResDecode: Accelerating Large Language Models Inference via Residual Decoding Heads","doi":"10.26599\/BDMA.2024.9020074","type":"","journalId":"1404097305465446402","isOa":1,"clickNum":2910,"downloadNum":170,"collectionNum":null,"cscdNum":0,"quoteNum":10,"articleNo":"BDMA-2024-0207","cover":null,"receivedTime":"2024-04-20T00:00:00.000+08:00","strReceivedTime":"20 April 2024","acceptedTime":"2024-10-12T00:00:00.000+08:00","strAcceptedTime":"12 October 2024","erratumId":null,"issueInfo":null,"issueInfoUrl":"<a href='\/journal\/join_journal\/archive?journalId=1404097305465446402\u0026volume=2025\u0026issn2096-0654'>2025, 8<\/a>(<a href='\/journal\/join_journal\/stage_page?stage=5\u0026id=1404097305465446402\u0026issueIndex=1914499321988386818\u0026issn2096-0654'>4<\/a>): 779-793","stageNum":5,"strType":"","strStage":"Issue","pubTime":"2025-05-12T15:20:15.000+08:00","pubYear":2025,"strPubTime":"12 May 2025","citationDate":"2025\/06\/01","erratum":null,"abstraction":"         <p>Large language Models (LLMs) have immense potential to enhance the capabilities of Cyber-Physical-Social Intelligence (CPSI) systems, enabling them to better engage with complex cyber, physical, and social environments. However, the high inference latency of LLMs, which is inherited from the autoregressive decoding process, hinders their wide application in CPSI systems. To address this challenge, current approaches have incorporated speculative decoding to enable parallel prediction of multiple subsequent tokens, thereby achieving inference acceleration. Nevertheless, the accuracy of these decoding heads falls short of the autoregressive decoding approach. In light of these limitations, we propose ResDecode, a novel speculative decoding method characterized by its efficient and accurate decoding heads. Within the lightweight draft model, we propose a residual decoding head to compensate for the full context encoder\u2019s limited capability on long-range dependencies, thus improving accuracy. ResDecode demonstrates impressive results, achieving a maximum speedup ratio of 3.2<inline-formula id=\"Z-20250103131051\"> <math id=\"mathml_Z-20250103131051\" display=\"inline\" overflow=\"scroll\"><mo>\u00D7<\/mo><\/math><\/inline-formula> on the MT-bench compared to vanilla autoregressive decoding.<\/p>       ","abstractImage":null,"abstractToc":null,"acknowledgement":"<title>Acknowledgment<\/title><p>This work was supported by the National Key R\u0026D Program of China (No. 2021ZD0110400), the National Natural Science Foundation of China (Nos. 62406114 and 62306117), the Guangzhou Basic and Applied Basic Research Foundation (Nos. 2023A04J1687 and 2024A04J3681), the Fundamental Research Funds for the Central Universities (Nos. 2024ZYGXZR074 and 2023ZYGXZR023), the Guangdong Basic and Applied Basic Research Foundation (No. 2024A1515010220), the Postdoctoral Fellowship Program of CPSF (No. GZC20230841), the South China University of Technology-TCL Technology Innovation Fund, and the CAAI-MindSpore Open Fund developed on Openl Community.<\/p> ","copyright":"\u00A9 The author(s) 2025.","pdfSize":"(2 MB)","isCollection":false,"journalIssn":"2096-0654","issueId":"1914499321988386818","revised":"20 September 2024","issueDate":" June 2025","serviceAddress":null,"price":0.0,"subject":null,"subjects":null,"license":"<p>The articles published in this open access journal are distributed under the terms of the Creative Commons Attribution 4.0 International License (<a ext-link-type=\"uri\" href=\"http:\/\/creativecommons.org\/licenses\/by\/4.0\/\">http:\/\/creativecommons.org\/licenses\/by\/4.0\/<\/a>).<\/p>","ifErratum":false,"webOfScienceNum":7,"scopusNum":10,"trendMd":"81480","trendMdHtml":"<div id=\"trendmd-suggestions\"><\/div>\n                        <script defer src='\/\/js.trendmd.com\/trendmd.min.js'  data-trendmdconfig='{\"journal_id\":\"81480\", \"element\":\"#trendmd-suggestions\"}'><\/script>","articleRecommendVos":null,"issue":"4","volume":"8","page":"Pages 779-793","citationPublicationDate":"2025\/5\/12","issueTime":"2025\/6\/1","authorAndCompanyVOS":[{"author":"Ziqian Zeng","company":"Shien Ming Wu School of Intelligent Engineering,CHINA. South China University of Technology,CHINA. "},{"author":"Jiahong Yu","company":"School of Computer Science and Engineering,CHINA. South China University of Technology,CHINA. "},{"author":"Qianshi Pang","company":"School of Computer Science and Engineering,CHINA. South China University of Technology,CHINA. "},{"author":"Zihao Wang","company":"Department of Computer Science and Engineering,CHINA. School of Engineering,CHINA. The Hong Kong University of Science and Technology,CHINA. "},{"author":"Huiping Zhuang","company":"Shien Ming Wu School of Intelligent Engineering,CHINA. South China University of Technology,CHINA. "},{"author":"Fan Yu","company":"Huawei Technology Co., Ltd,Shanghai,CHINA. "},{"author":"Hongen Shao","company":"School of Future Technology,CHINA. South China University of Technology,CHINA. "},{"author":"Xiaofeng Zou","company":"School of Future Technology,CHINA. South China University of Technology,CHINA. "}],"citationAuthorInstitution":null,"journalOrgan":"\u6E05\u534E\u5927\u5B66\u51FA\u7248\u793E","altmetricTwo":null,"keypointsAbstracted":null,"isMerge":null,"articleCiteVO":{"author":"Zeng Z, Yu J, Pang Q, et al. ","title":"ResDecode: Accelerating Large Language Models Inference via Residual Decoding Heads. ","journal":"<span style = 'font-style: italic;'>Big Data Mining and Analytics<\/span>, ","volume":" 2025, 8(4): 779-793. ","doi":"https:\/\/doi.org\/10.26599\/BDMA.2024.9020074","allStr":"Zeng Z, Yu J, Pang Q, et al. . ResDecode: Accelerating Large Language Models Inference via Residual Decoding Heads. . <span style = 'font-style: italic;'>Big Data Mining and Analytics<\/span>, .  2025, 8(4): 779-793. . https:\/\/doi.org\/10.26599\/BDMA.2024.9020074"},"frontNotesVO":{"title":null,"content":null},"articleCode":"","articleCodeId":null,"clcNumber":null,"documentsCode":null,"jumpIssueId":"1914499321988386818","jel":null,"mergeId":null,"hasReview":0,"hydVersionTimeVO":{"version":"Version 1","strPubDate":"12 May 2025","isFirstOrVor":true},"pageMateFlag":2,"citationFirstpage":"779","citationLastpage":"793","ifRetracted":false,"ifShowRetract":false,"refHtml":"","fpage":"779","lpage":"793"};
+  if (article.hasReview !== 1) {
+    $("#review-report").css('display', 'none');
+    $("#version").remove();
+  }
+  var uuid = "qk_4ce8839eca9d45368e56310da7e270f3";
+  var referenceList = [];
+
+  var ifShowFullText = true;
+  //设置预览全局变量
+  var ifPreview = 0 || 0;
+  // 在《纳米研究》2024年Issue2中35篇文章的下载按钮上增加Google下载事件代码
+  var ifNeedGoogleDownload = 1;
+  // 是否需要显示show all outline按钮
+  var allOutlineShow = false;
+
+  // 在《纳米研究》2024年Issue2中35篇文章的下载按钮上增加Google下载事件代码
+  function googleDownload() {
+    if (ifNeedGoogleDownload == 0) {
+      gtag('event', 'conversion', { 'send_to': 'AW-10902746976/k8LBCKGMg5YZEODu6s4o' });
+    }
+  }
+
+  // 正文左侧导航的节点
+  var domArr = [];
+  var treeDataO = [];
+  var articleApp = new Vue({
+    el: '#article-app',
+    data: {
+      pdfHoverIsShow: false,
+      drawer: false,
+      activeNames: ['1'],
+      treeData: [],
+      treeDataReady: false,
+      defaultProps: {
+        children: 'children',
+        label: 'label',
+        id: 'id',
+      },
+      imgMenuList: [],
+      tableMenuList: [],
+      referenceList: [],
+      referenceRew: '',
+    },
+    methods: {
+      pdfViewMouseenter() {
+        const userAgentInfo = navigator.userAgent;
+        const Agents = ['Android', 'iPhone', 'SymbianOS', 'Windows Phone', 'iPad', 'iPod'];
+        const isPcStatus = Agents.every((one) => !userAgentInfo.includes(one));
+        const client = document.documentElement.clientWidth || document.body.clientWidth;
+        if (isPcStatus && client > 1024) {
+          this.pdfHoverIsShow = true;
+        }
+      },
+      pdfViewMouseleave() {
+        setTimeout(() => {
+          this.pdfHoverIsShow = false;
+        }, 500);
+      },
+      handleChange(val) {
+      },
+      handleNodeClick(data) {
+        turnCurrentNode(data.id);
+      },
+      showOutline(type) {
+        // 关闭其他节点
+        this.treeData.forEach(leaf => {
+          this.$refs.tree.store.nodesMap[leaf.id].expanded = type === 1;
+          if (leaf.children && leaf.children.length > 0) {
+            leaf.children.forEach(leafChild => {
+              this.$refs.tree.store.nodesMap[leafChild.id].expanded = type === 1;
+              if (leafChild.children && leafChild.children.length > 0) {
+                leafChild.children.forEach(leafSon => {
+                  this.$refs.tree.store.nodesMap[leafSon.id].expanded = type === 1;
+                });
+              }
+            });
+          }
+        });
+        if (type === 1) {
+          $('.v4_art_outline_show').css('display', 'none');
+          $('.v4_art_outline_hide').css('display', 'block');
+        } else {
+          $('.v4_art_outline_show').css('display', 'block');
+          $('.v4_art_outline_hide').css('display', 'none');
+        }
+      },
+      setSelectedKey(key) {
+        // 选中节点并且展开其父节点
+        this.$refs.tree.setCurrentKey(key, true);
+        const parentNode = this.$refs.tree.getNode(key).parent;
+        var key1 = key;
+        var key2 = '';
+        var key3 = '';
+        if (parentNode && parentNode.data && parentNode.data.id) {
+          key2 = parentNode.data.id;
+          this.$refs.tree.store.nodesMap[parentNode.data.id].expanded = true;
+          const grandparentNode = parentNode.parent;
+          if (grandparentNode && grandparentNode.data && grandparentNode.data.id) {
+            key3 = grandparentNode.data.id;
+            this.$refs.tree.store.nodesMap[grandparentNode.data.id].expanded = true;
+          }
+        }
+        // 关闭其他节点
+        this.treeData.forEach(leaf => {
+          if (leaf.id !== key1 && leaf.id !== key2 && leaf.id !== key3) {
+            this.$refs.tree.store.nodesMap[leaf.id].expanded = false;
+          }
+          if (leaf.children && leaf.children.length > 0) {
+            leaf.children.forEach(leafChild => {
+              if (leafChild.id !== key1 && leafChild.id !== key2 && leafChild.id !== key3) {
+                this.$refs.tree.store.nodesMap[leafChild.id].expanded = false;
+              }
+              if (leafChild.children && leafChild.children.length > 0) {
+                leafChild.children.forEach(leafSon => {
+                  if (leafSon.id !== key1 && leafSon.id !== key2 && leafSon.id !== key3) {
+                    this.$refs.tree.store.nodesMap[leafSon.id].expanded = false;
+                  }
+                });
+              }
+            });
+          }
+        });
+        if ($('.v4_art_outline_show').css('display') != 'none' || $('.v4_art_outline_hide').css('display') != 'none') {
+          $('.v4_art_outline_show').css('display', 'block');
+          $('.v4_art_outline_hide').css('display', 'none');
+        }
+      },
+      openAiChatDrawer() {
+        // 关闭评审的弹框
+        reviewReviewPage.reviewReportDrawerClose();
+        aiChat.aiDrawerOpen(doi, article.stageNum, 1, showAI)
+      },
+      // 打开评审报告弹框
+      openReviewReportDrawer(id) {
+        // 关闭ai的弹框
+        aiChat.aiDrawerClose();
+        reviewReviewPage.reviewReportDrawerOpen(id);
+      }
+    },
+  });
+  // 异步获取参考文献
+  function loadReferenceList() {
+    $.ajax({
+      url: contextPath + '/article/reference/list?doi=' + doi,
+      type: 'get',
+      async: false,
+      data: '',
+      dataType: 'json',
+      contentType: 'application/json',
+      success: (data) => {
+        referenceList = data['object'].referenceVOS;
+        articleApp.referenceList = referenceList;
+        articleApp.referenceRew = data['object'].refHtml;
+      },
+      error: function (err) {
+        alert(err.toString());
+      },
+    });
+  }
+  loadReferenceList();
+  // 异步加载正文内容
+  function loadFullTextInfo() {
+    $.ajax({
+      url: contextPath + '/article/full_text?doi=' + doi,
+      type: 'get',
+      data: '',
+      dataType: 'json',
+      contentType: 'application/json',
+      success: function (data) {
+        fullTextDataIsReady = true;
+        fullTextInfo = data['object'];
+        if (fullTextInfo['glossary']['length'] > 0) {
+          for (var gl = 0; gl < fullTextInfo['glossary']['length']; gl++) {
+            treeDataO.push({ id: 'content_title_-4_' + gl, label: fullTextInfo['glossary'][gl]['title'] });
+          }
+        }
+        // 正文
+        if (fullTextInfo['trees'].length > 0) {
+          fullTextInfo['trees'].forEach(item => {
+            if (item.key !== 'esm1') {
+              var nodeC = { id: 'content_' + item.key, label: item.title, children: [] };
+              if (item.children && item.children.length > 0) {
+                allOutlineShow = true;
+                item.children.forEach(child => {
+                  if (child.key !== 'esm1') {
+                    var nodeS = { id: 'content_' + child.key, label: child.title, children: [] };
+                    if (child.children && child.children.length > 0) {
+                      child.children.forEach(son => {
+                        if (son.key !== 'esm1') {
+                          nodeS.children.push({ id: 'content_' + son.key, label: son.title, children: [] });
+                        }
+                      });
+                    }
+                    nodeC.children.push(nodeS);
+                  }
+                });
+              }
+              treeDataO.push(nodeC);
+            }
+          });
+        }
+        // app 附录
+        if (fullTextInfo['app']['length'] > 0) {
+          for (var ap = 0; ap < fullTextInfo['app']['length']; ap++) {
+            treeDataO.push({ id: 'content_title_-5_' + ap, label: fullTextInfo['app'][ap]['title'] });
+          }
+        }
+        // fn 脚注
+        if (fullTextInfo['fn']['length'] > 0) {
+          treeDataO.push({ id: 'content_title_-6', label: 'Annotation' });
+        }
+        // esm
+        if (article.strType !== 'Issue Information') {
+          treeDataO.push({ id: 'content_title_-11', label: 'Electronic Supplementary Material' });
+        }
+        // ack 致谢
+        if (article['acknowledgement']) {
+          treeDataO.push({ id: 'content_title_-7', label: 'Acknowledgements' });
+        }
+        // funding-statement 基金
+        if (fullTextInfo['fundingStatements']['length'] > 0) {
+          treeDataO.push({ id: 'content_title_-8', label: 'Funding' });
+        }
+        // notes [	伦理声明,知情同意书,	利益声明,作者声明,数据声明]
+        if (fullTextInfo['notes']['length'] > 0) {
+          for (var no = 0; no < fullTextInfo['notes'].length; no++) {
+            treeDataO.push({ id: 'content_title_-10_' + no, label: fullTextInfo['notes'][no]['title'] });
+          }
+        }
+
+        // 参考文献
+        if (referenceList && referenceList['length'] > 0) {
+          treeDataO.push({ id: 'content_title_-12', label: 'References' });
+        }
+        // bio 作者简介
+        if (fullTextInfo['bio']['length'] > 0) {
+          treeDataO.push({ id: 'content_title_-13', label: 'Author biography' });
+        }
+        // 大纲hover时显示title
+        var reg = /<\/?.+?\/?>/g;
+        treeDataO.forEach(item => {
+          item.labelWord = item['label'].replace(reg, '');
+          if (item.children && item.children.length > 0) {
+            item.children.forEach(child => {
+              child.labelWord = child.label.replace(reg, '');
+              if (child.children && child.children.length > 0) {
+                child.children.forEach(son => {
+                  son.labelWord = son.label.replace(reg, '');
+                });
+              }
+            });
+          }
+        });
+        articleApp.treeData = treeDataO;
+        articleApp.imgMenuList = fullTextInfo['figImages'];
+        articleApp.tableMenuList = fullTextInfo['tabKeyList'];
+
+        //所有fig图片/大纲信息
+        imgKeyListInfo = fullTextInfo['imgKeyList'];
+        // 正文所有的图片
+        imgListInfo = fullTextInfo['images'];
+        // 可以点击看大图的图片
+        imgShowListInfo = [];
+        if (imgListInfo.length > 0) {
+          imgListInfo.forEach(item => {
+            if (item['html'].indexOf('class="inline-graphic"') < 0) {
+              imgShowListInfo.push(item);
+            }
+          });
+          // 缩略图大图查看
+          var imageBigHtml = '';
+          if (imgShowListInfo.length > 0) {
+            for (var m = 0; m < imgShowListInfo.length; m++) {
+              imageBigHtml = imageBigHtml + '<li>' + '<div>' + imgShowListInfo[m]['parentHtml'] + '</div>' + '</li>';
+            }
+          }
+          $('#content_img').html(imageBigHtml);
+        }
+
+        // 正文信息
+        $.ajax({
+          url: fullTextInfo['fullTextUrl'],
+          type: 'get',
+          success: function (data) {
+            fullTextInfo['contentList'] = JSON.parse(data);
+
+            // glossary
+            if (fullTextInfo['glossary']['length'] > 0) {
+              $('#title_-4').css('display', 'block');
+              var dom = '';
+              for (var g = 0; g < fullTextInfo['glossary']['length']; g++) {
+                dom = dom +
+                  '<div class="v4-art-content-p">' +
+                  '<div class="glossary-item" id="title_-4_' + g + '">' +
+                  '<h2>' + fullTextInfo['glossary'][g]['title'] + '</h2>' +
+                  '<div>' + fullTextInfo['glossary'][g]['content'] + '</div>' +
+                  '</div>' +
+                  '</div>';
+              }
+              dom = dom + '<div style="clear: both;"></div>';
+              $('#title_-4').html(dom);
+            }
+            // 正文
+            var contentHtml = '';
+            var contentHtml2 = '';
+            esmTextInfo = '';
+            esmTextTitle = '';
+            if (fullTextInfo['contentList'] && fullTextInfo['contentList']['length'] > 0) {
+              for (var s = 0; s < fullTextInfo['contentList'].length; s++) {
+                // 处理图片
+                for (var i = 0; i < imgListInfo['length']; i++) {
+                  const mergImg = new RegExp(`<img[^>]*id="${imgListInfo[i]['key']}"[^>]*>`, 'gi');
+                  if (imgListInfo[i]['contentHtml'].indexOf('class="inline-graphic"') < 0) {
+                    // 是否是fig图片
+                    var ifFig = false;
+                    for (var ii = 0; ii < imgKeyListInfo.length; ii++) {
+                      if (imgListInfo[i]['contentHtml'].indexOf('id="' + imgKeyListInfo[ii] + '"') > 0) {
+                        ifFig = true;
+                      }
+                    }
+                    if (ifFig) {
+                      fullTextInfo['contentList'][s]['content'] = fullTextInfo['contentList'][s]['content'].replace(mergImg, imgListInfo[i]['contentHtml'] + '<div class="v4-art-image">\n' +
+                        '                    <span onclick="showImageBtn(event, \'' + imgListInfo[i]['key'] + '\')">View original image</span>\n' +
+                        '                    <span onclick="downloadImageBtn(event, \'' + imgListInfo[i]['key'] + '\')">Download original image</span>\n' +
+                        '                  </div>');
+                    } else {
+                      fullTextInfo['contentList'][s]['content'] = fullTextInfo['contentList'][s]['content'].replace(mergImg, imgListInfo[i]['contentHtml']);
+                    }
+                  } else {
+                    fullTextInfo['contentList'][s]['content'] = fullTextInfo['contentList'][s]['content'].replace(mergImg, imgListInfo[i]['contentHtml']);
+                  }
+                }
+                // 处理正文的脚注内容，实现定位
+                const xrefFn = new RegExp(`ref-type="fn"`, 'gi');
+                fullTextInfo['contentList'][s]['content'] =
+                  fullTextInfo['contentList'][s]['content'].replace(xrefFn, 'ref-type="fn" onclick="findFnById(event)"');
+                // 正文内出现esm说明文字内容
+                if (fullTextInfo['contentList'][s]['key'] === 'esm1') {
+                  esmTextInfo = fullTextInfo['contentList'][s]['content'];
+                  esmTextTitle = fullTextInfo['contentList'][s]['title'];
+                } else {
+                  contentHtml =
+                    contentHtml +
+                    '<div class="v4-art-content-p" id="' +
+                    fullTextInfo['contentList'][s]['key'] + '">' +
+                    '<h2 >' +
+                    fullTextInfo['contentList'][s]['title'] +
+                    '</h2>' +
+                    '<div style="overflow-x: auto; overflow-y: hidden;">' +
+                    fullTextInfo['contentList'][s]['content'] +
+                    '</div>' +
+                    '</div>';
+                }
+              }
+            }
+
+            // app
+            if (fullTextInfo['app']['length'] > 0) {
+              for (var a = 0; a < fullTextInfo['app']['length']; a++) {
+                contentHtml =
+                  contentHtml +
+                  '<div class="v4-art-content-p" id="title_-5_' + a + '">' +
+                  '<h2>' +
+                  fullTextInfo['app'][a]['label'] + fullTextInfo['app'][a]['title'] +
+                  '</h2>' +
+                  '<div style="overflow-x: auto; overflow-y: hidden;">' +
+                  fullTextInfo['app'][a]['content'] +
+                  '</div>' +
+                  '</div>';
+              }
+            }
+            // fn
+            if (fullTextInfo['fn']['length'] > 0) {
+              contentHtml =
+                contentHtml +
+                '<div class="v4-art-content-p" id="title_-6">' +
+                '<h2 class="content-title">' +
+                'Annotation' +
+                '</h2>';
+
+              for (var f = 0; f < fullTextInfo['fn']['length']; f++) {
+                contentHtml = contentHtml +
+                  '<div class="fn-item">' +
+                  '<span style="cursor: pointer;" id="f_' + fullTextInfo['fn'][f]['key'] + '" onclick="findFnInContentById(this)">' + fullTextInfo['fn'][f]['title'] + '</span>' +
+                  '<div>' + fullTextInfo['fn'][f]['content'] + '</div>' +
+                  '</div>';
+              }
+              contentHtml = contentHtml + '</div>';
+            }
+
+            // 正文内的esmText放到esm位置
+            if (esmTextInfo) {
+              if (esmSize > 0) {
+                $('#esm_text').html(esmTextInfo);
+                $('#esm_text').css('display', 'block');
+                $('#esm_title').html(esmTextTitle);
+              } else if (esmSize < 0) {
+                contentHtml =
+                  contentHtml +
+                  '<div class="v4-art-content-p" id="title_-11">' +
+                  '<h2 class="content-title">' +
+                  esmTextTitle +
+                  '</h2>' +
+                  '<div style="overflow-x: auto; overflow-y: hidden;">' +
+                  esmTextInfo +
+                  '</div>' +
+                  '</div>';
+              }
+              treeDataO.forEach((item) => {
+                if (item.id === 'content_title_-11') {
+                  item.label = esmTextTitle;
+                  item.labelWord = esmTextTitle;
+                  articleApp.treeData = treeDataO;
+                }
+              });
+            } else {
+              if (esmSize === 0) {
+                treeDataO.forEach((item, index) => {
+                  if (item.id === 'content_title_-11') {
+                    treeDataO.splice(index, 1);
+                    articleApp.treeData = treeDataO;
+                  }
+                });
+              }
+            }
+            articleApp.treeDataReady = true;
+
+            // ack
+            if (article['acknowledgement']) {
+              contentHtml2 =
+                contentHtml2 +
+                '<div class="v4-art-content-p" id="title_-7">' +
+                '<h2 class="content-title">' +
+                'Acknowledgements' +
+                '</h2>' +
+                '<div style="overflow-x: auto; overflow-y: hidden;">' +
+                article['acknowledgement'] +
+                '</div>' +
+                '</div>';
+            }
+            // funding-statement
+            if (fullTextInfo['fundingStatements']['length'] > 0) {
+              contentHtml2 =
+                contentHtml2 +
+                '<div class="v4-art-content-p" id="title_-8">' +
+                '<h2 class="content-title">' +
+                'Funding' +
+                '</h2>';
+              for (var fs = 0; fs < fullTextInfo['fundingStatements']['length']; fs++) {
+                contentHtml2 = contentHtml2 +
+                  '<div class="fs-item"><p>' +
+                  fullTextInfo['fundingStatements'][fs] +
+                  '</p></div>';
+              }
+              contentHtml2 = contentHtml2 + '</div>';
+            }
+            // notes
+            if (fullTextInfo['notes']['length'] > 0) {
+              contentHtml2 =
+                contentHtml2 +
+                '<div class="v4-art-content-p" id="title_-10">';
+              for (var n = 0; n < fullTextInfo['notes']['length']; n++) {
+                contentHtml2 = contentHtml2 +
+                  '<div class="notes-item" id="title_-10_' + n + '">' +
+                  '<h2>' + fullTextInfo['notes'][n]['title'] + '</h2>' +
+                  '<div>' + fullTextInfo['notes'][n]['content'] + '</div>' +
+                  '</div>';
+              }
+              contentHtml2 = contentHtml2 + '</div>';
+            }
+
+            // bio
+            var contentHtmlBio = '';
+            if (fullTextInfo['bio']['length'] > 0) {
+              contentHtmlBio = contentHtmlBio +
+                '<div class="v4-art-content-p" id="title_-13" style="min-height: 200px;">' +
+                '<h2>' +
+                'Author biography' +
+                '</h2>';
+              for (var b = 0; b < fullTextInfo['bio']['length']; b++) {
+                contentHtmlBio = contentHtmlBio +
+                  '<div class="bio-item">' +
+                  (fullTextInfo['bio'][b]['path'] ? '<img src="' + fullTextInfo['bio'][b]['path'] + '">' : '') +
+                  '<div>' + fullTextInfo['bio'][b]['content'] + '</div>' +
+                  '</div>';
+
+              }
+              contentHtmlBio = contentHtmlBio + '<div style="clear: both"></div></div>';
+            }
+            $('#insert_content_one').prepend(contentHtml);
+            $('#insert_content_two').prepend(contentHtml2);
+            $('#insert_content').append(contentHtmlBio);
+
+            // 最后一个节点少的时候 看到最后一个节点会把大纲推上去
+            // setTimeout(function () {
+            //   if ($('#insert_content .v4-art-content-p').last().height() < 500) {
+            //     $('#insert_content .v4-art-content-p').last().css('padding-bottom', '500px');
+            //   }
+            // }, 1000);
+
+
+            MathJax.Hub.Queue(['Typeset', MathJax.Hub]);
+
+            // 渲染好数据之后，；
+            setTimeout(function () {
+              // 图片大图模态初始化
+              if (document.getElementById('content_img')) {
+                preViewImage = new Viewer(document.getElementById('content_img'), {
+                  url: 'original-src',
+                });
+              }
+              initTagClickHandler();
+              // 左侧大纲节点
+              domArr = $('.v4-art-content-p');
+              // 是否显示show outline
+              setTimeout(() => {
+                if (allOutlineShow) {
+                  $(".v4_art_outline_show").css('display', 'block');
+                }
+              }, 300);
+            }, 10);
+            if (
+              fullTextInfo['glossary']['length'] === 0 &&
+              (!fullTextInfo['contentList'] || fullTextInfo['contentList']['length'] === 0) &&
+              fullTextInfo['app']['length'] === 0 &&
+              fullTextInfo['fn']['length'] === 0 &&
+              (!esmTextInfo && esmSize === 0) &&
+              !article['acknowledgement'] &&
+              fullTextInfo['fundingStatements']['length'] === 0 &&
+              fullTextInfo['notes']['length'] === 0 &&
+              fullTextInfo['bio']['length'] === 0 &&
+              referenceList['length'] === 0 &&
+              !article.clcNumber &&
+              !article.documentsCode &&
+              !article.articleCodeId &&
+              !article.abstraction &&
+              !article.abstractToc &&
+              !article.abstractImage &&
+              !article['keypointsAbstracted'] &&
+              !article.erratum &&
+              articleKeyword.length === 0
+            ) {
+              $('#article_no_data').css('display', 'block');
+            }
+          },
+          error: function (err) {
+            alert(err.toString());
+          },
+        });
+      },
+      error: function (err) {
+        alert(err.toString());
+      },
+    });
+  }
+
+
+  // 进入页面时执行
+  // 组装大纲
+  // key-points Highlights keypointsAbstracted
+  if (article['keypointsAbstracted'] != null) {
+    treeDataO.push({ id: 'content_title_-1', label: article['keypointsAbstracted']['title'] });
+  }
+  // 摘要  article.abstraction != null || (article.abstractToc != null && article.abstractToc != '')
+  if (article.abstraction != null && article.abstraction != '') {
+    treeDataO.push({ id: 'content_title_-2', label: 'Abstract' });
+  }
+  // 摘要  article.abstractImage != null
+  if ((article.abstractImage != null && article.abstractImage != '') || (article.abstractToc != null && article.abstractToc != '')) {
+    treeDataO.push({ id: 'content_title_-2-1', label: 'Graphical Abstract' });
+  }
+  // 关键词
+  if (articleKeyword.length > 0) {
+    treeDataO.push({ id: 'content_title_-3', label: 'Keywords' });
+  }
+  // CLC number 2024-7-8 大纲中去掉CLC Number显示
+  // if ((article.clcNumber != null && article.clcNumber != '') || (article.documentsCode != null && article.documentsCode != '')
+  //   || (article.articleCodeId != null && article.articleCodeId != '')) {
+  //   treeDataO.push({ id: 'content_title_clc', label: 'CLC number' });
+  // }
+  // 处理摘要图片
+  if (article.abstractImage) {
+    var abstractImgStrBig = '<img ' + 'original-src=' + $('#v4_art_abstract_img img').attr('src');
+    $('#content_img_abstract').html('<li>' + article.abstractImage.replace('<img', abstractImgStrBig) + '</li>');
+    var abstractImgStr = '<img id="v4-art-abstract-img" onclick="showImageBtn(event, \'v4-art-abstract-img\')" ' + 'original-src=' + $('#v4_art_abstract_img img').attr('src');
+    $('#v4_art_abstract_img').html(article.abstractImage.replace('<img', abstractImgStr));
+    var dom = '<div class="v4-art-image">\n' +
+      '                    <span onclick="showImageBtn(event, \'v4-art-abstract-img\')">View original image</span>\n' +
+      '                    <span onclick="downloadImageBtn(event, \'v4-art-abstract-img\')">Download original image</span>\n' +
+      '                  </div>';
+    $('#v4_art_abstract_img').parent().append(dom);
+    setTimeout(() => {
+      // 图片大图模态初始化
+      if (document.getElementById('content_img_abstract')) {
+        preViewImage = new Viewer(document.getElementById('content_img_abstract'), {
+          url: 'original-src',
+        });
+      }
+    }, 10);
+  }
+  // 如果显示正文内容 加载正文，不显示正文时，拼接显示增强出版资源、参考文献
+  if (ifShowFullText && article.strType !== 'Issue Information') {
+    // 加载文章内容
+    loadFullTextInfo();
+  } else {
+    // esm
+    if (esmSize > 0) {
+      treeDataO.push({
+        id: 'content_title_-11',
+        label: 'Electronic Supplementary Material',
+        labelWord: 'Electronic Supplementary Material',
+      });
+    }
+    // 参考文献
+    if (referenceList && referenceList['length'] > 0) {
+      treeDataO.push({ id: 'content_title_-12', label: 'References' });
+    }
+    articleApp.treeData = treeDataO;
+    articleApp.treeDataReady = true;
+    if (
+      esmSize === 0 &&
+      referenceList['length'] === 0 &&
+      !article.clcNumber &&
+      !article.documentsCode &&
+      !article.articleCodeId &&
+      !article.abstraction &&
+      !article.abstractToc &&
+      !article.abstractImage &&
+      !article['keypointsAbstracted'] &&
+      !article.erratum &&
+      articleKeyword === 0
+    ) {
+      $('#article_no_data').css('display', 'block');
+    }
+  }
+
+  // 加载Altmetrics 是否存在
+  function isAltmetrics() {
+
+
+    const script = document.createElement('script');
+    script.src = `https://api.altmetric.com/v1/doi/${doi}?callback=handleAltmetricData`;
+    document.head.appendChild(script);
+
+    // $.ajax({
+    //   // url: contextPath + '/article/altmetric?doi=' + doi,
+    //   url: 'https://api.altmetric.com/v1/doi/' + doi,
+    //   type: 'get',
+    //   dataType: 'json',
+    //   contentType: 'application/json',
+    //   success: function (data) {
+    //     if (data.score > 0) {
+    //       $('#article_altmetric').css('display', 'block');
+    //     }
+    //   },
+    //   error: function (err) {
+    //     // alert(err.toString());
+    //     console.log(err);
+    //   },
+    // });
+  }
+
+  // setTimeout(function() {
+  //   isAltmetrics();
+  // }, 1000);
+
+  // 点击图片显示大图
+  function showImage(event, dom) {
+    if ($(dom).attr('class') !== 'inline-graphic') {
+      if (event && event.stopPropagation) {
+        event.stopPropagation();
+      }
+
+      var id = $(dom).attr('id');
+      var index = 0;
+      for (var i = 0; i < imgShowListInfo.length; i++) {
+        if (imgShowListInfo[i]['key'] === id) {
+          index = i;
+          $($('#content_img').children()[index]).find('img').click();
+        }
+      }
+    }
+  }
+
+  function showImageBtn(event, id) {
+    if (event && event.stopPropagation) {
+      event.stopPropagation();
+    }
+    if (id === 'v4-art-abstract-img') {
+      $($('#content_img_abstract').children()[0]).find('img').click();
+    } else {
+      var index = 0;
+      for (var i = 0; i < imgShowListInfo.length; i++) {
+        if (imgShowListInfo[i]['key'] === id) {
+          index = i;
+          $($('#content_img').children()[index]).find('img').click();
+        }
+      }
+    }
+  }
+
+  // 下载原图
+  function downloadImageBtn(event, id) {
+    if (event && event.stopPropagation) {
+      event.stopPropagation();
+    }
+
+    $.ajax({
+      url: contextPath + '/article/img/download?path=' + $('#' + id).attr('src'),
+      type: 'get',
+      dataType: 'json',
+      contentType: 'application/json',
+      success: function (data) {
+        if ($(window).width() < 800) {
+          window.location.href = data.object;
+        } else {
+          window.open(data.object);
+        }
+      },
+      error: function (err) {
+        alert(err.toString());
+      },
+    });
+  }
+
+  // 点击表格模态显示表格，功能取消，不做任何操作
+  function showTable(event) { }
+
+  // 新增轮询检测用户停留时间
+  $(document).ready(function () {
+    setInterval(function () {
+      $.ajax({
+        url: '/article/statistical_duration?id=' + articleId + '&uuid=' + uuid,
+        type: 'get',
+      });
+    }, 5000);
+  });
+
+  // 统计下载量
+  function countDownLoadNum(id, ifPreview) {
+    $.ajax({
+      url: contextPath + '/article/stat?articleId=' + id + '&ifPreview=' + ifPreview,
+      type: 'get',
+      dataType: 'json',
+      contentType: 'application/json',
+    });
+  }
+
+  var user = null;
+
+  function send_email(authorId, articleId) {
+    if (user != null) {
+      location.href = contextPath + '/user/user/article/send_email?authorId=' + authorId + '&articleId=' + articleId;
+    } else {
+      showYxAlert('warning', 'You are not currently logged in, please log in and operate!');
+      var code = window.location.pathname;
+      var param = window.location.search;
+      location.href = '/user/user/login_forward?tag=5&code=' + encodeURIComponent(code + param);
+    }
+  }
+
+  // 点击xref标签跳转
+  function initTagClickHandler() {
+    $('xref').click(function (event) {
+      event = event || window.event;
+      event.stopPropagation ? event.stopPropagation() : (event.cancelBubble = true);
+      var refType = $(this).attr('ref-type');
+      var id = $(this).attr('rid');
+      switch (refType) {
+        // 表格
+        case 'table': {
+          var dom = $('#' + id).parent();
+          break;
+        }
+        // 图片
+        case 'fig':
+        // 章节
+        case 'sec':
+        // 公式
+        case 'disp-formula': {
+          var dom = $('#' + id);
+          break;
+        }
+        // 评审报告
+        case 'custom': {
+          // todo 待开发
+          console.log(id);
+          articleApp.openReviewReportDrawer(id);
+          break;
+        }
+        default: {
+        }
+      }
+      jumpToId(dom);
+    });
+
+    $('.html-table-content label').click(function () {
+      var tableDom = $(this).closest('.html-table-content');
+      jumpToId(tableDom);
+    });
+
+    $('fig label').click(function () {
+      var figDom = $(this).closest('fig');
+      jumpToId(figDom);
+    });
+  }
+
+  function jumpToId(dom) {
+    if (!dom) {
+      return;
+    }
+    $(window).scrollTop(dom.offset().top - 100);
+    dom.css('backgroundColor', '#eee');
+    setTimeout(function () {
+      dom.css('backgroundColor', 'initial');
+    }, 1000);
+  }
+
+  // 正文节点滚动到可视范围内，选中展开对应的节点
+  $(window).scroll(function () {
+    // 正文节点滚动到可视范围内，选中展开对应的节点
+    for (var d = 0; d < domArr.length; d++) {
+      const domRect = domArr[d].getBoundingClientRect();
+      if (domRect.top < 150 && domRect.top > 0) {
+        articleApp.setSelectedKey('content_' + $(domArr[d]).attr('id'));
+        return;
+      }
+      if (domRect.bottom > 500 && domRect.top < 0) {
+        articleApp.setSelectedKey('content_' + $(domArr[d]).attr('id'));
+        return;
+      }
+    }
+  });
+
+  window.addEventListener('scroll', function () {
+    // 不显示正文的时候不统计浏览量
+    if (!ifShowFullText) {
+      return
+    }
+    // 滚动到正文部分的时候掉接口
+    if (time > 1000 * 60 * 5 || num === 0) {
+      if (document.getElementById('insert_content').getBoundingClientRect().top <= 150) {
+        time = 0;
+        num = num + 1;
+        countDownLoadNum(articleId, ifPreview);
+      }
+    }
+  });
+
+  var time = 0;
+  var num = 0;
+  var interval = setInterval(function () {
+    time = time + 1000;
+  }, 1000);
+
+  window.addEventListener('beforeunload', (event) => {
+    // 在这里执行你的清理工作
+    clearInterval(interval);
+  });
+</script>
+
+</html>

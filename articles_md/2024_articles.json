@@ -1,0 +1,635 @@
+[
+  {
+    "doi": "10.26599/BDMA.2024.9020074",
+    "title": "ResDecode: Accelerating Large Language Models Inference via Residual Decoding Heads",
+    "authors": [
+      "Ziqian Zeng",
+      "Jiahong Yu",
+      "Qianshi Pang",
+      "Zihao Wang",
+      "Huiping Zhuang",
+      "Fan Yu",
+      "Hongen Shao",
+      "Xiaofeng Zou"
+    ],
+    "keywords": [
+      "speculative decoding",
+      "efficient inference",
+      "Large Language Models (LLMs)"
+    ],
+    "abstract": "<p>Large language Models (LLMs) have immense potential to enhance the capabilities of Cyber-Physical-Social Intelligence (CPSI) systems, enabling them to better engage with complex cyber, physical, and social environments. However, the high inference latency of LLMs, which is inherited from the autoregressive decoding process, hinders their wide application in CPSI systems. To address this challenge, current approaches have incorporated speculative decoding to enable parallel prediction of multiple subsequent tokens, thereby achieving inference acceleration. Nevertheless, the accuracy of these decoding heads falls short of the autoregressive decoding approach. In light of these limitations, we propose ResDecode, a novel speculative decoding method characterized by its efficient and accurate decoding heads. Within the lightweight draft model, we propose a residual decoding head to compensate for the full context encoder’s limited capability on long-range dependencies, thus improving accuracy. ResDecode demonstrates impressive results, achieving a maximum speedup ratio of 3.2<inline-formula id=\"Z-20250103131051\"> <math id=\"mathml_Z-20250103131051\" display=\"inline\" overflow=\"scroll\"><mo>×</mo></math></inline-formula> on the MT-bench compared to vanilla autoregressive decoding.</p>",
+    "volume": "8",
+    "issue": "4",
+    "firstpage": "779",
+    "lastpage": "793",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020074",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020074.pdf",
+    "publication_date": "2025/6/1",
+    "online_date": "2025/5/12",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020075",
+    "title": "ETV-MVS: Robust Visibility-Aware Multi-View Stereo with Epipolar Line-Based Transformer",
+    "authors": [
+      "Shaoqian Wang",
+      "Xiaokun Ding",
+      "Yuxin Mao",
+      "Yuchao Dai"
+    ],
+    "keywords": [
+      "Multi-View Stereo (MVS)",
+      "Deep Neural Networks (DNN)",
+      "epipolar geometry",
+      "Transformer"
+    ],
+    "abstract": "<p>Multi-View Stereo (MVS) is a pivotal technique in computer vision for reconstructing 3D models from multiple images by estimating depth maps. However, the reconstruction performance is hindered by visibility challenges, such as occlusions and non-overlapping regions. In this paper, we propose an innovative visibility-aware framework to address these issues. Central to our method is an Epipolar Line-based Transformer (ELT) module, which capitalizes on the epipolar line correspondence and candidate matching features between images to enhance the feature representation and correlation robustness. Furthermore, we propose a novel Supervised Visibility Estimation (SVE) module that estimates high-precision visibility maps, transcending the constraints of previous methods that rely on indirect supervision. By integrating these modules, our method achieves state-of-the-art results on the benchmarks and demonstrates its capability to perform high-quality reconstructions even in challenging regions. The code will be released at <a ext-link-type=\"uri\" href=\"https://github.com/npucvr/ETV-MVS\">https://github.com/npucvr/ETV-MVS</a>.</p>",
+    "volume": "8",
+    "issue": "3",
+    "firstpage": "520",
+    "lastpage": "533",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020075",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020075.pdf",
+    "publication_date": "2025/5/1",
+    "online_date": "2025/4/4",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020076",
+    "title": "SVMFN-FSAR: Semantic-Guided Video Multimodal Fusion Network for Few-Shot Action Recognition",
+    "authors": [
+      "Ran Wei",
+      "Rui Yan",
+      "Hongyu Qu",
+      "Xing Li",
+      "Qiaolin Ye",
+      "Liyong Fu"
+    ],
+    "keywords": [
+      "few-shot learning",
+      "action recognition",
+      "Large Language Model (LLM)",
+      "Transformer",
+      "video understanding"
+    ],
+    "abstract": "<p>Few-Shot Action Recognition (FSAR) has been a heat topic in various areas, such as computer vision and forest ecosystem security. FSAR aims to recognize previously unseen classes using limited labeled video examples. A principal challenge in the FSAR task is to obtain more action semantics related to the category from a few samples for classification. Recent studies attempt to compensate for visual information through action labels. However, concise action category names lead to less distinct semantic space and potential performance limitations. In this work, we propose a novel Semantic-guided Video Multimodal Fusion Network for FSAR (SVMFN-FSAR). We utilize the Large Language Model (LLM) to expand detailed textual knowledge of various action categories, enhancing the distinction of semantic space and alleviating the problem of insufficient samples in FSAR tasks to some extent. We perform the matching metric between the extracted distinctive semantic information and the visual information of unknown class samples to understand the overall semantics of the video for preliminary classification. In addition, we design a novel semantic-guided temporal interaction module based on Transformers, which can make the LLM-expanded knowledge and visual information complement each other, and improve the quality of feature representation in samples. Experimental results on three few-shot benchmarks, Kinetics, UCF101, and HMDB51, consistently demonstrate the effectiveness and interpretability of the proposed method.</p>",
+    "volume": "8",
+    "issue": "3",
+    "firstpage": "534",
+    "lastpage": "550",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020076",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020076.pdf",
+    "publication_date": "2025/5/1",
+    "online_date": "2025/4/4",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020077",
+    "title": "Editorial: Special Section on Challenges and Opportunities in Biomedical Big Data Analysis: From Large Language Models to Clinical Applications",
+    "authors": [
+      "Yanjie Wei",
+      "Huiling Zhang",
+      "Zhipeng Cai",
+      "Fa Zhang",
+      "Zhaolei Zhang"
+    ],
+    "keywords": [],
+    "abstract": "",
+    "volume": "7",
+    "issue": "4",
+    "firstpage": "1114",
+    "lastpage": "1115",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020077",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020077.pdf",
+    "publication_date": "2024/12/1",
+    "online_date": "2024/12/4",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020078",
+    "title": "Multiscale Information Fusion Based on Large Model Inspired Bacterial Detection",
+    "authors": [
+      "Zongduo Liu",
+      "Yan Huang",
+      "Jian Wang",
+      "Genji Yuan",
+      "Junjie Pang"
+    ],
+    "keywords": [
+      "bacterial detection",
+      "large model",
+      "feature fusion",
+      "global information"
+    ],
+    "abstract": "<p>Accurate and efficient bacterial detection is essential for public health and medical diagnostics. However, traditional detection methods are constrained by limited dataset size, complex bacterial morphology, and diverse detection environments, hindering their effectiveness. In this study, we present EagleEyeNet, a novel multi-scale information fusion model designed to address these challenges. EagleEyeNet leverages large models as teacher networks in a knowledge distillation framework, significantly improving detection performance. Additionally, a newly designed feature fusion architecture, integrating Transformer modules, is proposed to enable the efficient fusion of global and multi-scale features, overcoming the bottlenecks posed by Feature Pyramid Networks (FPN) structures, which in turn reduces information transmission loss between feature layers. To improve the model’s adaptability for different scenarios, we create our own QingDao Bacteria Detection (QDBD) dataset as a comprehensive evaluation benchmark for bacterial detection. Experimental results demonstrate that EagleEyeNet achieves remarkable performance improvements, with mAP50 increases of 3.1% on the QDBD dataset and 4.9% on the AGRA dataset, outperforming the State-Of-The-Art (SOTA) methods in detection accuracy. These findings underscore the transformative potential of integrating large models and deep learning for advancing bacterial detection technologies.</p>",
+    "volume": "8",
+    "issue": "1",
+    "firstpage": "1",
+    "lastpage": "17",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020078",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020078.pdf",
+    "publication_date": "2025/2/1",
+    "online_date": "2024/12/19",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020079",
+    "title": "Seeing and Reasoning: A Simple Deep Learning Approach to Visual Question Answering",
+    "authors": [
+      "Rufai Yusuf Zakari",
+      "Jim Wilson Owusu",
+      "Ke Qin",
+      "Tao He",
+      "Guangchun Luo"
+    ],
+    "keywords": [
+      "machine learning",
+      "deep learning",
+      "Visual Question Answering (VQA)",
+      "multi-step reasoning",
+      "computer vision"
+    ],
+    "abstract": "<p>Visual Question Answering (VQA) is a complex task that requires a deep understanding of both visual content and natural language questions. The challenge lies in enabling models to recognize and interpret visual elements and to reason through questions in a multi-step, compositional manner. We propose a novel Transformer-based model that introduces specialized tokenization techniques to effectively capture intricate relationships between visual and textual features. The model employs an enhanced self-attention mechanism, enabling it to attend to multiple modalities simultaneously, while a co-attention unit dynamically guides focus to the most relevant image regions and question components. Additionally, a multi-step reasoning module supports iterative inference, allowing the model to excel at complex reasoning tasks. Extensive experiments on benchmark datasets demonstrate the model’s superior performance, with accuracies of 98.6% on CLEVR, 63.78% on GQA, and 68.67% on VQA v2.0. Ablation studies confirm the critical contribution of key components, such as the reasoning module and co-attention mechanism, to the model’s effectiveness. Qualitative analysis of the learned attention distributions further illustrates the model’s dynamic reasoning process, adapting to task complexity. Overall, our study advances the adaptation of Transformer architectures for VQA, enhancing both reasoning capabilities and model interpretability in visual reasoning tasks.</p>",
+    "volume": "8",
+    "issue": "2",
+    "firstpage": "458",
+    "lastpage": "478",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020079",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020079.pdf",
+    "publication_date": "2025/4/1",
+    "online_date": "2025/1/28",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020080",
+    "title": "Editorial: Special Section on Edge AI Empowered Giant Model Training",
+    "authors": [
+      "Dongxiao Yu",
+      "Xu Chen",
+      "Zhipeng Cai"
+    ],
+    "keywords": [],
+    "abstract": "",
+    "volume": "7",
+    "issue": "4",
+    "firstpage": "1015",
+    "lastpage": "1016",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020080",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020080.pdf",
+    "publication_date": "2024/12/1",
+    "online_date": "2024/12/4",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020081",
+    "title": "Exploratory and Interpretable Approach to Estimating Latent Health Risk Factors Without Using Domain Knowledge",
+    "authors": [
+      "Ruichen Cong",
+      "Shoji Nishimura",
+      "Atsushi Ogihara",
+      "Qun Jin"
+    ],
+    "keywords": [
+      "health data analysis",
+      "latent factor exploration",
+      "interpretable approach",
+      "health risk estimation"
+    ],
+    "abstract": "<p>The identification of latent risk factors that can induce to health risks or an abnormal status is an important task in healthcare data analyses. In recent years, health analyses based on neural network models have been applied widely. However, such analysis processes are blackbox and the results lack explainability. Some approaches by constructing a domain model may tackle these issues. However, domain knowledge from an expert is required. In this study, we propose an exploratory and interpretable approach to estimating latent health risk factors without relying on domain knowledge, in which feature selection and causal discovery are used to construct a domain model for uncovering complex relationships in health and medical data. An evaluation experiment conducted on two datasets by comparing the proposed approach with four baselines demonstrated that the proposed approach outperformed the baselines in terms of model fitness. Furthermore, the number of model parameters in our method was smaller than that in the baselines, which reduced model complexity. Moreover, the analysis process of the proposed approach was visible and explainable, which improved the interpretability of the analysis processes.</p>",
+    "volume": "8",
+    "issue": "2",
+    "firstpage": "447",
+    "lastpage": "457",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020081",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020081.pdf",
+    "publication_date": "2025/4/1",
+    "online_date": "2025/1/28",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020082",
+    "title": "Dual Context Representation Learning Framework for Entity Alignment",
+    "authors": [
+      "Bo Cheng",
+      "Jia Zhu",
+      "Pasquale De Meo"
+    ],
+    "keywords": [
+      "entity alignment",
+      "knowledge graph",
+      "knowledge representation learning",
+      "contrastive learning"
+    ],
+    "abstract": "<p>Entity alignment, which aims to identify entities with the same meaning in different Knowledge Graphs (KGs), is a key step in knowledge integration. Despite the promising results achieved by existing methods, they often fail to fully leverage the structure information of KGs for entity alignment. Therefore, our goal is to thoroughly explore the features of entity neighbors and relationships to obtain better entity embeddings. In this work, we propose DCEA, an effective dual-context representation learning framework for entity alignment. Specifically, the neighbor-level embedding module introduces relation information to more accurately aggregate neighbor context. The relation-level embedding module utilizes neighbor context to enhance relation-level embeddings. To eliminate semantic gaps between neighbor-level and relation-level embeddings, and fully exploit their complementarity, we design a hybrid embedding fusion model that adaptively performs embedding fusion to obtain powerful joint entity embeddings. We also jointly optimize the contrastive loss of multi-level embeddings, enhancing their mutual reinforcement while preserving the characteristics of neighbor and relation embeddings. Additionally, the decision fusion module combines the similarity scores calculated between entities based on embeddings at different levels to make the final alignment decision. Extensive experimental results on public datasets indicate that our DCEA performs better than state-of-the-art baselines.</p>",
+    "volume": "8",
+    "issue": "2",
+    "firstpage": "346",
+    "lastpage": "363",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020082",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020082.pdf",
+    "publication_date": "2025/4/1",
+    "online_date": "2025/1/28",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020083",
+    "title": "Segmentation-Guided Deep Learning for Glioma Survival Risk Prediction with Multimodal MRI",
+    "authors": [
+      "Jianhong Cheng",
+      "Hulin Kuang",
+      "Songhan Yang",
+      "Hailin Yue",
+      "Jin Liu",
+      "Jianxin Wang"
+    ],
+    "keywords": [
+      "deep learning",
+      "glioma segmentation",
+      "survival risk",
+      "multimodal magnetic resonance imaging (MRI)"
+    ],
+    "abstract": "<p>Glioma survival risk prediction is of great significance for the individualized treatment and assessment programs. Currently, most deep learning based survival prediction paradigms rely on invasive and expensive histopathology and genomics methods. However, magnetic resonance imaging (MRI) has emerged as a promising non-invasive alternative with significant prognostic potential. To leverage the benefits of MRI, we propose a segmentation-guided fully automated multimodal MRI-based survival network (SGS-Net), which can simultaneously perform glioma segmentation and survival risk prediction. Specifically, the task interrelation is addressed using a hybrid convolutional neural network-Transformer (CNN-Transformer) encoder to represent the shared high-level semantic features by co-training a decoder for glioma segmentation and a Cox model for survival prediction. Then, to ensure the effective representation of the high-level features, glioma segmentation as an auxiliary task is utilized to guide survival prediction by jointly optimizing the segmentation loss and the Cox partial log-likelihood loss. Furthermore, a pair-wise ranking loss is designed to allow the network to learn the survival difference between patients. To balance the multi-task losses, an uncertain weight manner is adopted to adaptively adjust the weights for preventing task bias. Finally, the proposed SGS-Net is assessed using a publicly available multi-institutional dataset. Experimental and visual results show that SGS-Net achieves promising segmentation performance and obtains a C-index of 81.07% for survival risk prediction, which outperforms several existing state-of-the-art methods and even histopathology-based methods. In addition, Kaplan-Meier survival analysis confirms that the prognosis risk generated by SGS-Net is consistent with the prior prognosis based on the grading or genotyping paradigms.</p>",
+    "volume": "8",
+    "issue": "2",
+    "firstpage": "364",
+    "lastpage": "382",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020083",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020083.pdf",
+    "publication_date": "2025/4/1",
+    "online_date": "2025/1/28",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020084",
+    "title": "Towards Efficient Serverless MapReduce Computing on Cloud-Native Platforms",
+    "authors": [
+      "Xu Huang",
+      "Rong Gu",
+      "Yihua Huang"
+    ],
+    "keywords": [
+      "cloud-native Serverless",
+      "MapReduce Shuffle",
+      "big data"
+    ],
+    "abstract": "<p>MapReduce is one of the most classic and powerful parallel computing models in the field of big data. It is still active in the big data system ecosystem and is currently evolving towards cloud-native environment. Among them, due to its elasticity and ease-to-use, Serverless computing is one of the most promising directions of cloud-native technology. To support MapReduce big data computing capabilities in a Serverless environment can give full play to Serverless’s advantages. However, due to different underlying system architecture, three issues will be encountered when running MapReduce jobs in the Serverless environment. Firstly, the scheduling strategy is difficult to fully utilize the available resources. Secondly, reading Shuffle index data on cloud storage is inefficient and expensive. Thirdly, cloud storage Input/Output (I/O) request latency has a long tail effect. To solve these problems, this paper proposes three strategies with a MapReduce parallel processing framework in Serverless environment. Experimental results show that compared with cutting-edge systems, our approach shortens job execution time by 25.6% on average and reduces job execution costs by 17.3%.</p>",
+    "volume": "8",
+    "issue": "3",
+    "firstpage": "575",
+    "lastpage": "591",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020084",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020084.pdf",
+    "publication_date": "2025/5/1",
+    "online_date": "2025/4/4",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020085",
+    "title": "Resource Time Series Analysis and Forecasting in Large-Scale Virtual Clusters",
+    "authors": [
+      "Yue Lin",
+      "Jiamin Wen",
+      "Xudong Zhang",
+      "Yan Liang",
+      "Jianjiang Li"
+    ],
+    "keywords": [
+      "workload forecasting",
+      "multivariate time series forecasting",
+      "deep learning"
+    ],
+    "abstract": "<p>In today’s rapidly evolving internet landscape, prominent companies across various industries face increasingly complex business operations, leading to significant cluster-scale growth. However, this growth brings about challenges in cluster management and the inefficient utilization of vast amounts of data due to its low value density. This paper, based on the large-scale cluster virtualization and monitoring system of the data center of the Bureau of Geophysical Prospecting (BGP), utilizes time series data of host resources from the monitoring system’s time series database to propose a multivariate multi-step time series forecasting model, MUL-CNN-BiGRU-Attention, for forecasting CPU load on virtual cluster hosts. The model undergoes extensive offline training using a large volume of time series data, followed by deployment using TensorFlow Serving. Recent small-batch data are employed for fine-tuning model parameters to better adapt to current data patterns. Comparative experiments are conducted between the proposed model and other baseline models, demonstrating notable improvements in Mean Absolute Error (MAE), Mean Squared Error (MSE), Root Mean Squared Error (RMSE), and <i>R</i><sup>2</sup> metrics by up to 35.2%, 56.1%, 32.5%, and 10.3%, respectively. Additionally, ablation experiments are designed to investigate the impact of different factors on the performance of the forecasting model, providing valuable insights for parameter optimization based on experimental results.</p>",
+    "volume": "8",
+    "issue": "3",
+    "firstpage": "592",
+    "lastpage": "605",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020085",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020085.pdf",
+    "publication_date": "2025/5/1",
+    "online_date": "2025/4/4",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020086",
+    "title": "Exploring Applications of Convolutional Neural Networks in Analyzing Multispectral Satellite Imagery: A Systematic Review",
+    "authors": [
+      "Antonia Ivanda",
+      "Ljiljana Šerić",
+      "Maja Braović"
+    ],
+    "keywords": [
+      "remote sensing",
+      "MultiSpectral Images (MSI)",
+      "satellite images",
+      "Convolutional Neural Networks (CNN)",
+      "machine learning",
+      "classification",
+      "regression",
+      "segmentation"
+    ],
+    "abstract": "<p>Remote sensing is of great importance for analyzing and studying various phenomena occurrence and development on Earth. Today is possible to extract features specific to various fields of application with the application of modern machine learning techniques, such as Convolutional Neural Networks (CNN) on MultiSpectral Images (MSI). This systematic review examines the application of 1D-, 2D-, 3D-, and 4D-CNNs to MSI, following Preferred Reporting Items for Systematic Reviews and Meta-Analyses (PRISMA) guidelines. This review addresses three Research Questions (RQ): RQ1: “In which application domains different CNN models have been successfully applied for processing MSI data?”, RQ2: “What are the commonly utilized MSI datasets for training CNN models in the context of processing multispectral satellite imagery?”, and RQ3: “How does the degree of CNN complexity impact the performance of classification, regression or segmentation tasks for multispectral satellite imagery?”. Publications are selected from three databases, Web of Science, IEEE Xplore, and Scopus. Based on the obtained results, the main conclusions are: (1) The majority of studies are applied in the field of agriculture and are using Sentinel-2 satellite data; (2) Publications implementing 1D-, 2D-, and 3D-CNNs mostly utilize classification. For 4D-CNN, there are limited number of studies, and all of them use segmentation; (3) This study shows that 2D-CNNs prevail in all application domains, but 3D-CNNs prove to be better for spatio-temporal pattern recognition, more specifically in agricultural and environmental monitoring applications. 1D-CNNs are less common compared to 2D-CNNs and 3D-CNNs, but they show good performance in spectral analysis tasks. 4D-CNNs are more complex and still underutilized, but they have potential for complex data analysis. More details about metrics according to each CNN are provided in the text and supplementary files, offering a comprehensive overview of the evaluation metrics for each type of machine learning technique applied.</p>",
+    "volume": "8",
+    "issue": "2",
+    "firstpage": "407",
+    "lastpage": "429",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020086",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020086.pdf",
+    "publication_date": "2025/4/1",
+    "online_date": "2025/1/29",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020087",
+    "title": "Parameter Disentanglement for Diverse Representations",
+    "authors": [
+      "Jingxu Wang",
+      "Jingda Guo",
+      "Ruili Wang",
+      "Zhao Zhang",
+      "Liyong Fu",
+      "Qiaolin Ye"
+    ],
+    "keywords": [
+      "representation learning",
+      "efficient network",
+      "computer vision"
+    ],
+    "abstract": "<p>Recent advances in neural network architectures reveal the importance of diverse representations. However, simply integrating more branches or increasing the width for the diversity would inevitably increase model complexity, leading to prohibitive inference costs. In this paper, we revisit the learnable parameters in neural networks and showcase that it is feasible to disentangle learnable parameters to latent sub-parameters, which focus on different patterns and representations. This important finding leads us to study further the aggregation of diverse representations in a network structure. To this end, we propose Parameter Disentanglement for Diverse Representations (PDDR), which considers diverse patterns in parallel during training, and aggregates them into one for efficient inference. To further enhance the diverse representations, we develop a lightweight refinement module in PDDR, which adaptively refines the combination of diverse representations according to the input. PDDR can be seamlessly integrated into modern networks, significantly improving the learning capacity of a network while maintaining the same complexity for inference. Experimental results show great improvements on various tasks, with an improvement of 1.47% over Residual Network 50 (ResNet50) on ImageNet, and we improve the detection results of Retina Residual Network 50 (Retina-ResNet50) by 1.7% Mean Average Precision (mAP). Integrating PDDR into recent lightweight vision transformer models, the resulting model outperforms related works by a clear margin.</p>",
+    "volume": "8",
+    "issue": "3",
+    "firstpage": "606",
+    "lastpage": "623",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020087",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020087.pdf",
+    "publication_date": "2025/5/1",
+    "online_date": "2025/4/4",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020088",
+    "title": "Effectively Integrating CNN and Low-Complexity Transformer for Lung Cancer Tumor Prediction After Neoadjuvant Chemoimmunotherapy",
+    "authors": [
+      "Jiancun Zhou",
+      "Xianzhen Tan",
+      "Hulin Kuang",
+      "Jianxin Wang"
+    ],
+    "keywords": [
+      "lung cancer tumor prediction",
+      "neoadjuvant chemoimmunotherapy",
+      "hybrid convolutional neural network (CNN) and Transformer network",
+      "low-complexity self-attention"
+    ],
+    "abstract": "<p>A novel hybrid model combining a convolutional neural network (CNN) and a low-complexity Transformer network is introduced for predicting lung cancer response to neoadjuvant chemoimmunotherapy using computed tomography scans. This approach is crucial as it assists clinicians in identifying patients likely to benefit from treatment and in assessing their prognosis. The model employs channel splitting to minimize parameter count. It then leverages both CNN for local feature extraction and a streamlined Transformer for global feature comprehension. To enhance efficiency, a novel self-attention mechanism is implemented, focusing on feature aggregation and element-wise multiplication. To address the different semantic meanings of features, an attention-based module is designed to seamlessly integrate features from both networks, employing a process of coarse fusion, attention computation, and fine fusion. When evaluated with data from 232 lung cancer patients who have undergone neoadjuvant chemoimmunotherapy, the model demonstrates exceptional performance, achieving a Dice score of 47.04% and a 95.00% Hausdorff distance of 25.12 mm, outperforming existing methods. Additionally, it has only 2.91×10<sup>6</sup> parameters and 52.95×10<sup>9</sup> floating point operations. Moreover, the model’s predictive accuracy in tumor diameter estimation is beneficial for treatment planning. Its robustness is further validated through its application in stroke lesion prediction, indicating its broad applicability.</p>",
+    "volume": "8",
+    "issue": "5",
+    "firstpage": "981",
+    "lastpage": "996",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020088",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020088.pdf",
+    "publication_date": "2025/10/1",
+    "online_date": "2025/7/14",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020089",
+    "title": "Dynamic Knowledge Path Learning for Few-Shot Learning",
+    "authors": [
+      "Jingzhu Li",
+      "Zhe Yin",
+      "Xu Yang",
+      "Jianbin Jiao",
+      "Ye Ding"
+    ],
+    "keywords": [
+      "data mining",
+      "few-shot learning",
+      "image classification"
+    ],
+    "abstract": "<p>Few-shot learning is a challenging task that aims to train a classifier with very limited training samples. Most existing few-shot learning methods mainly focus on mining knowledge from limited training samples as much as possible and ignore the learning order. Inspired by human learning, people select useful knowledge and follow a learning path to enhance their learning ability. In this paper. we propose a novel few-shot learning model called dynamic knowledge path learning (DKPL) to guide the few-shot learning task to learn useful selected knowledge with suitable learning paths. Specifically, we simultaneously consider the importance, direction, and diversity of knowledge and propose a dynamic path learning strategy in the dynamic path construction module. Furthermore, we design a new learner to absorb knowledge, step by step, according to each class’s learning path in the knowledge path propagation module. As far as we know, this is the first few-shot learning work to consider dynamic path learning to improve classification accuracy. Experiments and visual case studies demonstrate the effectiveness and superiority of the DKPL model on four real-world image datasets.</p>",
+    "volume": "8",
+    "issue": "2",
+    "firstpage": "479",
+    "lastpage": "495",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020089",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020089.pdf",
+    "publication_date": "2025/4/1",
+    "online_date": "2025/1/28",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020090",
+    "title": "Large Language Model for Medical Images: A Survey of Taxonomy, Systematic Review, and Future Trends",
+    "authors": [
+      "Peng Wang",
+      "Wenpeng Lu",
+      "Chunlin Lu",
+      "Ruoxi Zhou",
+      "Min Li",
+      "Libo Qin"
+    ],
+    "keywords": [
+      "Large Language Model (LLM)",
+      "x-stage tuning",
+      "medical images"
+    ],
+    "abstract": "<p>The advent of Large Language Models (LLMs) has sparked considerable interest in the medical image domain, as they can generalize to multiple tasks and offer outstanding performance. While LLMs achieve promising results, there is currently a lack of a comprehensive summary of medical images, making it challenging for researchers to understand the progress within this domain. To fill this gap, we make the first attempt to present a comprehensive survey for LLM on medical images. In addition, to better summarize the current progress comprehensively, we further introduce a novel x-stage tuning paradigm for summarization, including zero-stage tuning, one-stage tuning, and multi-stage tuning, offering a unified perspective on LLMs for medical images. Finally, we discuss challenges and future directions in this domain, aiming to spur more breakthroughs in the future. We hope this work can pave the way for the broad application of LLMs in medical images and provide a valuable resource for this domain.</p>",
+    "volume": "8",
+    "issue": "2",
+    "firstpage": "496",
+    "lastpage": "517",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020090",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020090.pdf",
+    "publication_date": "2025/4/1",
+    "online_date": "2025/1/28",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020091",
+    "title": "Census and Analysis of Higher-Order Interactions in Real-World Hypergraphs",
+    "authors": [
+      "Xihang Meng",
+      "Xuemeng Zhai",
+      "Gaolei Fei",
+      "Sheng Wen",
+      "Guangmin Hu"
+    ],
+    "keywords": [
+      "complex systems",
+      "higher-order interactions",
+      "hypergraphs",
+      "higher-order motifs",
+      "hyperlink prediction"
+    ],
+    "abstract": "<p>Complex systems can be more accurately described by higher-order interactions among multiple units. Hypergraphs excel at depicting these interactions, surpassing the binary limitations of traditional graphs. However, retrieving valuable information from hypergraphs is often challenging due to their intricate interconnections. To address this issue, we introduce a new category of structural patterns, hypermotifs, which are defined as statistically significant local structures formed by interconnected hyperedges. We propose a systematic framework for hypermotif extraction. This framework features the encoding, census, and evaluation of higher-order patterns, effectively overcoming their inherent complexity and diversity. Our experimental results demonstrate that hypermotifs can serve as higher-order fingerprints of real-world hypergraphs, helping to identify hypergraph classes based on network functions. These motifs potentially represent preferential attachments and key modules in real-world hypergraphs, arising from specific mechanisms or constraints. Our work validates the efficacy of hypermotifs in exploring hypergraphs, offering a powerful tool for revealing the design principles and underlying dynamics of interacting systems.</p>",
+    "volume": "8",
+    "issue": "2",
+    "firstpage": "383",
+    "lastpage": "406",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020091",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020091.pdf",
+    "publication_date": "2025/4/1",
+    "online_date": "2025/1/28",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020092",
+    "title": "Text Classification Techniques: A Holistic Review, Observational Analysis, and Experimental Investigation",
+    "authors": [
+      "Kamal Taha",
+      "Paul D. Yoo",
+      "Chan Yeun",
+      "Aya Taha"
+    ],
+    "keywords": [
+      "text classification",
+      "classical methods",
+      "deep learning methods",
+      "experimental evaluation"
+    ],
+    "abstract": "<p>This review article provides a thorough assessment of modern and innovative algorithms for text classification through both observational and experimental evaluations. We propose a new classification system, grounded in methodology, to categorize text classification algorithms into an organized structure from general categories down to particular fine-grained techniques. Drawing on more than 100 academic papers from prominent publishers, our extensive review spans a wide range of algorithms, encompassing traditional, deep learning, and emerging approaches. Through observational studies and comparative experiments among various algorithms, techniques, and methodological categories, we offer detailed insights into the area of text classification. The goal of this survey is to assist scholars in choosing the right methods for specific projects while encouraging further advancements in this area. This detailed examination not only contributes to the scholarly conversation on text classification but also seeks to direct future progress by identifying promising avenues for innovation and enhancement. The primary contributions of this article include the sophisticated methodological classification, a thorough review and examination of state-of-the-art algorithms, along with observational and experimental assessments, and a visionary outlook on the future development of text classification methods.</p>",
+    "volume": "8",
+    "issue": "3",
+    "firstpage": "624",
+    "lastpage": "660",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020092",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020092.pdf",
+    "publication_date": "2025/5/1",
+    "online_date": "2025/4/4",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020093",
+    "title": "Joint Adaptive Resolution Selection and Conditional Early Exiting for Efficient Video Recognition on Edge Devices",
+    "authors": [
+      "Qingli Wang",
+      "Chengwu Yu",
+      "Shan Chen",
+      "Weiwei Fang",
+      "Naixue Xiong"
+    ],
+    "keywords": [
+      "deep learning",
+      "edge intelligence",
+      "resolution selection",
+      "early exit",
+      "video analytics"
+    ],
+    "abstract": "<p>Given the explosive growth in video content generation, there is a rising demand for efficient and scalable video recognition. Deep learning has shown its remarkable performance in video analytics, by applying 2D or 3D Convolutional Neural Networks (CNNs) across multiple video frames. However, high data quantities, intensive computational costs, and various performance requirements restrict the deployment and application of these video-oriented models on resource-constrained edge devices, e.g., Internet-of-Things (IoT) and mobile devices. To tackle this issue, we propose a joint optimization system RSEE by adaptive Resolution Selection (RS) and conditional Early Exiting (EE) to facilitate efficient video recognition based on 2D CNN backbones. Given a video frame, RSEE firstly determines what input resolution is to be used for processing by the dynamic resolution selector, then sends the resolution-adjusted frame into the backbone network to extract features, and finally determines whether to stop further processing based on the accumulated features of current video at the early-exiting gate. Extensive experiments conducted on benchmark datasets indicate that RSEE remarkably outperforms current state-of-the-art solutions in terms of computational cost (by up to 84.72% on UCF101 and 78.93% on HMDB51) and inference speed (up to 3.18× on UCF101 and 3.50× on HMDB51), while still preserving competitive recognition accuracy (up to 7.81% on UCF101 7.21% on HMDB51). Furthermore, the superiority of RSEE on resource-constrained edge devices is validated on the NVIDIA Jetson Nano, with processing speeds controlled by hyperparameters ranging from about 12 to 60 Frame-Per-Second (FPS) that well enable real-time analysis.</p>",
+    "volume": "8",
+    "issue": "3",
+    "firstpage": "661",
+    "lastpage": "677",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020093",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020093.pdf",
+    "publication_date": "2025/5/1",
+    "online_date": "2025/4/4",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020094",
+    "title": "Predicting the Imbalanced Impact of Drugs on Microbial Abundance Using Multi-View Learning and Data Augmentation",
+    "authors": [
+      "Bei Zhu",
+      "Haoyang Yu",
+      "Bingxue Du",
+      "Hui Yu",
+      "Jianyu Shi"
+    ],
+    "keywords": [
+      "drug-microbe association",
+      "imbalanced data",
+      "multi-view learning",
+      "hypergraph neural network",
+      "data augmentation"
+    ],
+    "abstract": "<p>The interactions between drugs and microbes affecting microbial abundance can lead to various diseases or reduce the effectiveness of pharmaceutical treatments. Traditional Microbe-Drug Association (MDA) determination through biological assays is time-consuming and costly. With the accumulation of MDA data, computational methods have become a promising approach to infer potential MDAs. Although existing methods focus on predicting whether a drug interacts with a microbe, they can rarely infer whether a drug promotes or inhibits the abundance of a given microbe. Moreover, the extreme imbalance among abundance-promoted, abundance-inhibited, and non-impacted cases remains a challenge for computational prediction methods. To address these issues, we propose a framework for predicting the imbalanced Impact of Drugs on Microbial Abundance by leveraging Multi-view Learning and Data Augmentation, named IDMA-MLDA. IDMA-MLDA employs a novel method of transforming a bipartite graph into a hypergraph, uses hypergraph convolutions to capture high-order vertex neighborhoods (macro-view), and employs graph neural networks to learn individual features of drugs and microbes (micro-view). It integrates features from both macro-view and micro-view to obtain more comprehensive representations, incorporates a data augmentation module to handle class imbalance, and uses a multilayer perceptron to predict the impact of drugs on microbial abundance. We demonstrate the superiority of IDMA-MLDA through comparisons with six baseline methods, and ablation studies affirm the contributions of each key module in IDMA-MLDA’s prediction. Furthermore, a comprehensive literature review verifies the abundance types of twelve MDAs predicted by IDMA-MLDA.</p>",
+    "volume": "8",
+    "issue": "3",
+    "firstpage": "678",
+    "lastpage": "693",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020094",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020094.pdf",
+    "publication_date": "2025/5/1",
+    "online_date": "2025/4/4",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020095",
+    "title": "Lightweight Multiscale Spatio-Temporal Graph Convolutional Network for Skeleton-Based Action Recognition",
+    "authors": [
+      "Zhiyun Zheng",
+      "Qilong Yuan",
+      "Huaizhu Zhang",
+      "Yizhou Wang",
+      "Junfeng Wang"
+    ],
+    "keywords": [
+      "Human Action Recognition (HAR)",
+      "skeleton data",
+      "Graph Convolutional Network (GCN)",
+      "attention mechanism"
+    ],
+    "abstract": "<p>Using skeletal information to model and recognize human actions is currently a hot research subject in the realm of Human Action Recognition (HAR). Graph Convolutional Networks (GCN) have gained popularity in this discipline due to their capacity to efficiently process graph-structured data. However, it is challenging for current models to handle distant dependencies that commonly exist between human skeleton nodes, which hinders the development of algorithms in related fields. To solve these problems, the Lightweight Multiscale Spatio-Temporal Graph Convolutional Network (LMSTGCN) is proposed. Firstly, the Lightweight Multiscale Spatial Graph Convolutional Network (LMSGCN) is constructed to capture the information in various hierarchies, and multiple inner connections between skeleton joints are captured by dividing the input features into a number of subsets along the channel direction. Secondly, the dilated convolution is incorporated into the temporal convolution to construct Lightweight Multiscale Temporal Convolutional Network (LMTCN), which allows to obtain a wider receptive field while keeping the size of the convolution kernel unchanged. Thirdly, the Spatio-Temporal Location Attention (STLAtt) module is used to identify the most informative joints in the sequence of skeletal information at a specific frame, hence improving the model’s ability to extract features and recognize actions. Finally, multi-stream data fusion input structure is used to enhance the input data and expand the feature information. Experiments on three public datasets illustrate the effectiveness of the proposed network.</p>",
+    "volume": "8",
+    "issue": "2",
+    "firstpage": "310",
+    "lastpage": "325",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020095",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020095.pdf",
+    "publication_date": "2025/4/1",
+    "online_date": "2025/1/28",
+    "research_area": []
+  },
+  {
+    "doi": "10.26599/BDMA.2024.9020096",
+    "title": "Disentangling Reasoning Factors for Natural Language Inference",
+    "authors": [
+      "Xixi Zhou",
+      "Limin Zeng",
+      "Ziping Zhao",
+      "Jiajun Bu",
+      "Wenjie Liang",
+      "Haishuai Wang"
+    ],
+    "keywords": [
+      "Natural Language Processing (NLP)",
+      "Natural Language Inference (NLI)",
+      "disentangled representation learning",
+      "variational autoencoder"
+    ],
+    "abstract": "<p>Natural Language Inference (NLI) seeks to deduce the relations of two texts: a premise and a hypothesis. These two texts may share similar or different basic contexts, while three distinct reasoning factors emerge in the inference from premise to hypothesis: entailment, neutrality, and contradiction. However, the entanglement of the reasoning factor with the basic context in the learned representation space often complicates the task of NLI models, hindering accurate classification and determination based on the reasoning factors. In this study, drawing inspiration from the successful application of disentangled variational autoencoders in other areas, we separate and extract the reasoning factor from the basic context of NLI data through latent variational inference. Meanwhile, we employ mutual information estimation when optimizing Variational AutoEncoders (VAE)-disentangled reasoning factors further. Leveraging disentanglement optimization in NLI, our proposed a Directed NLI (DNLI) model demonstrates excellent performance compared to state-of-the-art baseline models in experiments on three widely used datasets: Stanford Natural Language Inference (SNLI), Multi-genre Natural Language Inference (MNLI), and Adversarial Natural Language Inference (ANLI). It particularly achieves the best average validation scores, showing significant improvements over the second-best models. Notably, our approach effectively addresses the interpretability challenges commonly encountered in NLI methods.</p>",
+    "volume": "8",
+    "issue": "3",
+    "firstpage": "694",
+    "lastpage": "711",
+    "year": 2024,
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020096",
+    "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020096.pdf",
+    "publication_date": "2025/5/1",
+    "online_date": "2025/4/4",
+    "research_area": []
+  }
+]
