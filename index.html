@@ -107,7 +107,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
 <header class="header">
   <div class="header-inner">
     <div>
-      <h1>Big Data Mining and Analytics <span style="font-size:.85rem;font-weight:400;opacity:.85">(174 articles)</span></h1>
+      <h1>Big Data Mining and Analytics</h1>
       <p>Article Index &amp; Search</p>
     </div>
     <div class="header-links">
@@ -306,7 +306,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
         }
         html += '</div>';
       }
-      if (a.doi) html += '<div class="card-doi"><a href="https://doi.org/' + a.doi + '" target="_blank" onclick="event.stopPropagation()">https://www.doi.org/' + esc(a.doi) + '</a></div>';
+      if (a.doi) html += '<div class="card-doi"><a href="https://www.sciopen.com/article/' + a.doi + '" target="_blank" onclick="event.stopPropagation()">https://www.sciopen.com/article/' + esc(a.doi) + '</a></div>';
       if (a.doi) {
         html += '<div class="card-cite" onclick="event.stopPropagation()">' +
           '<span class="card-cite-text">' + getCiteText(a) + '</span>' +
@@ -324,7 +324,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
       html += '</div>';
       if (a.abstract) html += '<div class="d-abstract"><strong>Abstract:</strong> ' + highlight(a.abstract.replace(/<[^>]+>/g, ''), currentQuery) + '</div>';
       html += '<div class="d-links">';
-      
+      if (a.url) html += '<a href="' + a.url + '" target="_blank" onclick="event.stopPropagation()">View on SciOpen →</a>';
       if (a.pdf) html += '<a href="' + a.pdf + '" target="_blank" onclick="event.stopPropagation()">Download PDF →</a>';
       html += '</div></div></div>';
     }
@@ -351,7 +351,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
     var title = (a.title || '').replace(/<[^>]+>/g, '');
     var volIssue = (a.volume || a.issue) ? (a.volume||'') + '(' + (a.issue||'') + ')' : '';
     var pages = (a.firstpage && a.lastpage) ? (a.firstpage + '-' + a.lastpage) : (a.firstpage || '');
-    var doiUrl = 'https://doi.org/' + (a.doi || '');
+    var doiUrl = 'https://www.sciopen.com/article/' + (a.doi || '');
     return authorStr + '. ' + title + '. Big Data Mining and Analytics, ' + year + ', ' + volIssue + ': ' + pages + '. ' + doiUrl;
   }
 
@@ -400,33 +400,31 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
     var a = filteredArticles[idx];
     if (!a) return;
     var firstAuthor = (a.authors && a.authors[0]) || 'Unknown';
-    var surname = firstAuthor.split(/\s+/).pop() || 'Unknown';
+    var surname = firstAuthor.split(/\s+/)[0] || 'Unknown';
     var bibKey = surname + (a.year || '');
-    var authors = (a.authors || []).map(au => au.name || '').join(' and ');
+    var authors = (a.authors || []).join(' and ');
     var title = (a.title || '').replace(/[{}]/g, '');
     var journal = 'Big Data Mining and Analytics';
     var year = a.year || '';
     var volume = a.volume || '';
     var number = a.issue || '';
-    var pages = (a.firstpage && a.lastpage) ? a.firstpage + '-' + a.lastpage : (a.firstpage || '');
-    var keywords = (a.keywords || []).join(', ');
+    var pages = (a.firstpage && a.lastpage) ? a.firstpage + '--' + a.lastpage : (a.firstpage || '');
     var doi = a.doi || '';
+    var issn = '2096-0654';
+    var keywords = (a.keywords || []).join(', ');
     
-    var bib = '@article{' + bibKey + ', \r\n';
-    bib += 'author = {' + authors + '},\r\n';
-    bib += 'title = {' + title + '},\r\n';
-    bib += 'year = {' + year + '},\r\n';
-    bib += 'journal = {' + journal + '},\r\n';
-    if (volume) bib += 'volume = {' + volume + '},\r\n';
-    if (number) bib += 'number = {' + number + '},\r\n';
-    if (pages) bib += 'pages = {' + pages + '},\r\n';
-    if (keywords) bib += 'keywords = {' + keywords + '},\r\n';
-    if (doi) {
-      bib += 'url = {https://doi.org/' + doi + '},\r\n';
-      bib += 'doi = {' + doi + '},\r\n';
-    }
-    if (a.abstract) bib += 'abstract = {' + a.abstract.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() + '},\r\n';
-    bib += '}';
+    var bib = '@article{' + bibKey + ',\n  author    = {' + authors +
+      '},\n  title     = {' + title +
+      '},\n  journal   = {' + journal +
+      '},\n  year      = {' + year +
+      '},\n  volume    = {' + volume +
+      '},\n  number    = {' + number +
+      '},\n  pages     = {' + pages +
+      '},\n  doi       = {' + doi +
+      '},\n  publisher = {清华大学出版社},\n  issn      = {' + issn + '}}';
+    
+    if (keywords) bib += ',\n  keywords  = {' + keywords + '}';
+    bib += '\n}\n';
     
     var fn = (doi || 'BDMA').replace(/[/\\]/g, '_') + '.bib';
     downloadFile(bib, fn, 'application/x-bibtex;charset=utf-8;');
@@ -454,7 +452,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
     if (a.volume) ris.push('VL  - ' + a.volume);
     if (a.issue) ris.push('IS  - ' + a.issue);
     if (a.abstract) ris.push('AB  - ' + a.abstract.replace(/<[^>]+>/g, '').replace(/\s+/g,' ').trim());
-    if (a.doi) ris.push('UR  - https://doi.org/' + a.doi);
+    if (a.doi) ris.push('UR  - https://www.sciopen.com/article/' + a.doi);
     if (a.doi) ris.push('DO  - ' + a.doi);
     var fn = (a.doi||'BDMA').replace(/[/\\]/g,'_') + '.ris';
     downloadFile(ris.join('\r\n') + '\r\n', fn, 'application/x-research-info-systems;charset=utf-8;');
