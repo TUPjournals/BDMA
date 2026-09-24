@@ -306,7 +306,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
         }
         html += '</div>';
       }
-      if (a.doi) html += '<div class="card-doi"><a href="https://doi.org/' + a.doi + '" target="_blank" onclick="event.stopPropagation()">https://www.sciopen.com/article/' + esc(a.doi) + '</a></div>';
+      if (a.doi) html += '<div class="card-doi"><a href="https://doi.org/' + a.doi + '" target="_blank" onclick="event.stopPropagation()">https://www.doi.org/' + esc(a.doi) + '</a></div>';
       if (a.doi) {
         html += '<div class="card-cite" onclick="event.stopPropagation()">' +
           '<span class="card-cite-text">' + getCiteText(a) + '</span>' +
