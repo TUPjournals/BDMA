@@ -400,31 +400,33 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
     var a = filteredArticles[idx];
     if (!a) return;
     var firstAuthor = (a.authors && a.authors[0]) || 'Unknown';
-    var surname = firstAuthor.split(/\s+/)[0] || 'Unknown';
+    var surname = firstAuthor.split(/\s+/).pop() || 'Unknown';
     var bibKey = surname + (a.year || '');
-    var authors = (a.authors || []).join(' and ');
+    var authors = (a.authors || []).map(au => au.name || '').join(' and ');
     var title = (a.title || '').replace(/[{}]/g, '');
     var journal = 'Big Data Mining and Analytics';
     var year = a.year || '';
     var volume = a.volume || '';
     var number = a.issue || '';
-    var pages = (a.firstpage && a.lastpage) ? a.firstpage + '--' + a.lastpage : (a.firstpage || '');
-    var doi = a.doi || '';
-    var issn = '2096-0654';
+    var pages = (a.firstpage && a.lastpage) ? a.firstpage + '-' + a.lastpage : (a.firstpage || '');
     var keywords = (a.keywords || []).join(', ');
+    var doi = a.doi || '';
     
-    var bib = '@article{' + bibKey + ',\n  author    = {' + authors +
-      '},\n  title     = {' + title +
-      '},\n  journal   = {' + journal +
-      '},\n  year      = {' + year +
-      '},\n  volume    = {' + volume +
-      '},\n  number    = {' + number +
-      '},\n  pages     = {' + pages +
-      '},\n  doi       = {' + doi +
-      '},\n  publisher = {清华大学出版社},\n  issn      = {' + issn + '}}';
-    
-    if (keywords) bib += ',\n  keywords  = {' + keywords + '}';
-    bib += '\n}\n';
+    var bib = '@article{' + bibKey + ', \r\n';
+    bib += 'author = {' + authors + '},\r\n';
+    bib += 'title = {' + title + '},\r\n';
+    bib += 'year = {' + year + '},\r\n';
+    bib += 'journal = {' + journal + '},\r\n';
+    if (volume) bib += 'volume = {' + volume + '},\r\n';
+    if (number) bib += 'number = {' + number + '},\r\n';
+    if (pages) bib += 'pages = {' + pages + '},\r\n';
+    if (keywords) bib += 'keywords = {' + keywords + '},\r\n';
+    if (doi) {
+      bib += 'url = {https://doi.org/' + doi + '},\r\n';
+      bib += 'doi = {' + doi + '},\r\n';
+    }
+    if (a.abstract) bib += 'abstract = {' + a.abstract.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim() + '},\r\n';
+    bib += '}';
     
     var fn = (doi || 'BDMA').replace(/[/\\]/g, '_') + '.bib';
     downloadFile(bib, fn, 'application/x-bibtex;charset=utf-8;');
