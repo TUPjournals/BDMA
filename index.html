@@ -351,7 +351,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
     var title = (a.title || '').replace(/<[^>]+>/g, '');
     var volIssue = (a.volume || a.issue) ? (a.volume||'') + '(' + (a.issue||'') + ')' : '';
     var pages = (a.firstpage && a.lastpage) ? (a.firstpage + '-' + a.lastpage) : (a.firstpage || '');
-    var doiUrl = 'https://www.sciopen.com/article/' + (a.doi || '');
+    var doiUrl = 'https://doi.org/' + (a.doi || '');
     return authorStr + '. ' + title + '. Big Data Mining and Analytics, ' + year + ', ' + volIssue + ': ' + pages + '. ' + doiUrl;
   }
 
