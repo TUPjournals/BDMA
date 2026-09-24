@@ -306,7 +306,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
         }
         html += '</div>';
       }
-      if (a.doi) html += '<div class="card-doi"><a href="https://www.sciopen.com/article/' + a.doi + '" target="_blank" onclick="event.stopPropagation()">https://www.sciopen.com/article/' + esc(a.doi) + '</a></div>';
+      if (a.doi) html += '<div class="card-doi"><a href="https://www.doi.org/' + a.doi + '" target="_blank" onclick="event.stopPropagation()">https://www.doi.org/' + esc(a.doi) + '</a></div>';
       if (a.doi) {
         html += '<div class="card-cite" onclick="event.stopPropagation()">' +
           '<span class="card-cite-text">' + getCiteText(a) + '</span>' +
@@ -351,7 +351,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
     var title = (a.title || '').replace(/<[^>]+>/g, '');
     var volIssue = (a.volume || a.issue) ? (a.volume||'') + '(' + (a.issue||'') + ')' : '';
     var pages = (a.firstpage && a.lastpage) ? (a.firstpage + '-' + a.lastpage) : (a.firstpage || '');
-    var doiUrl = 'https://www.sciopen.com/article/' + (a.doi || '');
+    var doiUrl = 'https://www.doi.org/' + (a.doi || '');
     return authorStr + '. ' + title + '. Big Data Mining and Analytics, ' + year + ', ' + volIssue + ': ' + pages + '. ' + doiUrl;
   }
 
@@ -452,7 +452,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
     if (a.volume) ris.push('VL  - ' + a.volume);
     if (a.issue) ris.push('IS  - ' + a.issue);
     if (a.abstract) ris.push('AB  - ' + a.abstract.replace(/<[^>]+>/g, '').replace(/\s+/g,' ').trim());
-    if (a.doi) ris.push('UR  - https://www.sciopen.com/article/' + a.doi);
+    if (a.doi) ris.push('UR  - https://www.doi.org/' + a.doi);
     if (a.doi) ris.push('DO  - ' + a.doi);
     var fn = (a.doi||'BDMA').replace(/[/\\]/g,'_') + '.ris';
     downloadFile(ris.join('\r\n') + '\r\n', fn, 'application/x-research-info-systems;charset=utf-8;');
