@@ -1,7 +1,7 @@
 [
   {
     "doi": "10.26599/BDMA.2025.9020110",
-    "title": "",
+    "title": "Improving Cross-Modal Semantic Alignment with Cross-Modal Joint Semantic Transformer for Multimodal Sentiment Analysis",
     "authors": [
       "Wenxuan Zhang",
       "Jihong Ding",
@@ -72,7 +72,7 @@
   },
   {
     "doi": "10.26599/BDMA.2025.9020073",
-    "title": "",
+    "title": "Empowering Large Language Models for Relational Data Cleaning and Integration",
     "authors": [
       "Xiaojun Shi",
       "Gregorius Justin Chung",
@@ -138,7 +138,7 @@
   },
   {
     "doi": "10.26599/BDMA.2025.9020105",
-    "title": "",
+    "title": "TabMAGD: Combining Masked Autoencoders with Guided Diffusion for Mixed-Type Tabular Data Synthesis",
     "authors": [
       "Yang Qian",
       "Yinan Jing",
