@@ -324,7 +324,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
       html += '</div>';
       if (a.abstract) html += '<div class="d-abstract"><strong>Abstract:</strong> ' + highlight(a.abstract.replace(/<[^>]+>/g, ''), currentQuery) + '</div>';
       html += '<div class="d-links">';
-      if (a.url) html += '<a href="' + a.url + '" target="_blank" onclick="event.stopPropagation()">View on SciOpen →</a>';
+      
       if (a.pdf) html += '<a href="' + a.pdf + '" target="_blank" onclick="event.stopPropagation()">Download PDF →</a>';
       html += '</div></div></div>';
     }
