@@ -179,15 +179,29 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
 
   function highlight(text, query) {
     if (!query || !text) return esc(text || '');
-    var result = esc(text);
-    var tokens = query.trim().split(/\s+/);
+    var tokens = query.trim().split(/\\s+/);
+    var seen = {}, uniqueTokens = [];
     for (var i = 0; i < tokens.length; i++) {
-      if (!tokens[i]) continue;
-      var escaped = tokens[i].replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-      var re = new RegExp('(' + escaped + ')', 'gi');
-      result = result.replace(re, '<mark style="background:#fde047;padding:0 2px;border-radius:2px">$1</mark>');
+      if (!tokens[i] || seen[tokens[i].toLowerCase()]) continue;
+      seen[tokens[i].toLowerCase()] = 1;
+      uniqueTokens.push(tokens[i]);
     }
-    return result;
+    uniqueTokens.sort(function(a, b) { return b.length - a.length; });
+    if (uniqueTokens.length === 0) return esc(text);
+    var escaped = uniqueTokens.map(function(tok) {
+      return tok.replace(/[.*+?^${}()|[\]\\\\]/g, '\\$&');
+    });
+    var combinedRe = new RegExp('(' + escaped.join('|') + ')', 'gi');
+    var parts = esc(text).split(/(<[^>]*>)/);
+    var result = [];
+    for (var i = 0; i < parts.length; i++) {
+      if (parts[i].charAt(0) === '<') {
+        result.push(parts[i]);
+      } else {
+        result.push(parts[i].replace(combinedRe, '<mark style="background:#fde047;padding:0 2px;border-radius:2px">$1</mark>'));
+      }
+    }
+    return result.join('');
   }
 
   function fuzzyMatch(text, query) {
