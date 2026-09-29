@@ -179,7 +179,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
 
   function highlight(text, query) {
     if (!query || !text) return esc(text || '');
-    var tokens = query.trim().split(/\\s+/);
+    var tokens = query.trim().split(/\s+/);
     var seen = {}, uniqueTokens = [];
     for (var i = 0; i < tokens.length; i++) {
       if (!tokens[i] || seen[tokens[i].toLowerCase()]) continue;
@@ -189,7 +189,7 @@ body{font-family:'Inter','Microsoft YaHei',-apple-system,BlinkMacSystemFont,'Seg
     uniqueTokens.sort(function(a, b) { return b.length - a.length; });
     if (uniqueTokens.length === 0) return esc(text);
     var escaped = uniqueTokens.map(function(tok) {
-      return tok.replace(/[.*+?^${}()|[\]\\\\]/g, '\\$&');
+      return tok.replace(/[.*+?^${}()|[\\]\\]/g, '\$&');
     });
     var combinedRe = new RegExp('(' + escaped.join('|') + ')', 'gi');
     var parts = esc(text).split(/(<[^>]*>)/);
