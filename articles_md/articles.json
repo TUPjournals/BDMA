@@ -2539,7 +2539,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020032.pdf",
     "publication_date": "2025/12/1",
     "online_date": "2025/9/19",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -2573,7 +2575,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020014.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020014"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020014",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020035",
@@ -2605,7 +2610,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020035.pdf",
     "publication_date": "2025/12/1",
     "online_date": "2025/9/19",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -2641,7 +2648,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020034.pdf",
     "publication_date": "2025/12/1",
     "online_date": "2025/9/19",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -2674,7 +2683,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020038.pdf",
     "publication_date": "2025/12/1",
     "online_date": "2025/9/19",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -2706,7 +2717,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020030.pdf",
     "publication_date": "2025/12/1",
     "online_date": "2025/9/19",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -2742,7 +2755,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020027.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020027"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020027",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020025",
@@ -2775,7 +2791,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020025.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020025"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020025",
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020023",
@@ -2807,7 +2826,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020023.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020023"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020023",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020022",
@@ -2837,7 +2859,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020022.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020022"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020022",
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020021",
@@ -2869,7 +2894,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020021.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020021"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020021",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020020",
@@ -2902,7 +2930,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020020.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020020"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020020",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020019",
@@ -2933,7 +2964,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020019.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020019"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020019",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020028",
@@ -2964,7 +2998,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020028.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020028"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020028",
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020006",
@@ -2995,7 +3032,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020006.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020006"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020006",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020004",
@@ -3027,7 +3067,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020004.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020004"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020004",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020018",
@@ -3058,7 +3101,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020018.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020018"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020018",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020017",
@@ -3090,7 +3136,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020017.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020017"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020017",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020013",
@@ -3121,7 +3170,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020013.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020013"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020013",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020012",
@@ -3150,7 +3202,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020012.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020012"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020012",
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020011",
@@ -3183,7 +3238,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020011.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020011"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020011",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020007",
@@ -3213,7 +3271,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020007.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020007"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020007",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020015",
@@ -3244,7 +3305,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020015.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020015"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020015",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020010",
@@ -3277,7 +3341,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020010.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020010"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020010",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020009",
@@ -3309,7 +3376,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020009.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020009"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020009",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020088",
@@ -3336,7 +3406,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020088.pdf",
     "publication_date": "2025/10/1",
     "online_date": "2025/7/14",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3368,7 +3440,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020031.pdf",
     "publication_date": "2025/6/1",
     "online_date": "2025/5/12",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3398,7 +3472,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020008.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020008"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020008",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020099",
@@ -3425,7 +3502,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020099.pdf",
     "publication_date": "2025/6/1",
     "online_date": "2025/5/12",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3457,7 +3536,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020003.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020003"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020003",
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020001",
@@ -3486,7 +3568,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020001.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020001"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020001",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020051",
@@ -3514,7 +3599,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020051.pdf",
     "publication_date": "2025/6/1",
     "online_date": "2025/5/12",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3543,7 +3630,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020036.pdf",
     "publication_date": "2025/6/1",
     "online_date": "2025/5/12",
-    "research_area": [],
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3575,7 +3664,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020024.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020024"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020024",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020005",
@@ -3606,7 +3698,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020005.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020005"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020005",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020002",
@@ -3634,7 +3729,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020002.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020002"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020002",
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020042",
@@ -3662,7 +3760,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020042.pdf",
     "publication_date": "2025/6/1",
     "online_date": "2025/5/12",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3695,7 +3795,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020074.pdf",
     "publication_date": "2025/6/1",
     "online_date": "2025/5/12",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3724,7 +3826,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020069.pdf",
     "publication_date": "2025/6/1",
     "online_date": "2025/5/12",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3760,7 +3864,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020016.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020016"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020016",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020098",
@@ -3789,7 +3896,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020098.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3822,7 +3931,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020071.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3854,7 +3965,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020096.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3886,7 +3999,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020094.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3918,7 +4033,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020093.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3948,7 +4065,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020092.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -3979,7 +4098,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020087.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4009,7 +4130,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020085.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4037,7 +4160,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020084.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4070,7 +4195,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020062.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4101,7 +4228,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020061.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4134,7 +4263,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020076.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4164,7 +4295,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020075.pdf",
     "publication_date": "2025/5/1",
     "online_date": "2025/4/4",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4194,7 +4327,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020026.pdf",
     "type": "Research Article",
     "year": 2025,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020026"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2025.9020026",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020090",
@@ -4222,7 +4358,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020090.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/28",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4252,7 +4390,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020089.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/28",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4284,7 +4424,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020079.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/28",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4314,7 +4456,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020081.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/28",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4347,7 +4491,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020068.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/28",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4380,7 +4526,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020086.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/29",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4412,7 +4560,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020091.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/28",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4444,7 +4594,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020083.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/28",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4473,7 +4625,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020082.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/28",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4504,7 +4658,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020066.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/28",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4535,7 +4691,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020095.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/28",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4567,7 +4725,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020073.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/28",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4599,7 +4759,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020060.pdf",
     "publication_date": "2025/4/1",
     "online_date": "2025/1/28",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4628,7 +4790,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020072.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4658,7 +4822,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020064.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4689,7 +4855,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020040.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4721,7 +4889,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020055.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4753,7 +4923,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020053.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4783,7 +4955,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020049.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4815,7 +4989,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020048.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4844,7 +5020,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020047.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4875,7 +5053,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020050.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4908,7 +5088,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020032.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4942,7 +5124,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020036.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/9/16",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -4973,7 +5157,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020070.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5004,7 +5190,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020063.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5035,7 +5223,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020078.pdf",
     "publication_date": "2025/2/1",
     "online_date": "2024/12/19",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5070,7 +5260,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020039.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5100,7 +5292,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020052.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5134,7 +5328,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020027.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020027"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020027",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020038",
@@ -5161,7 +5358,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020038.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5195,7 +5394,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020024.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020024"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020024",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020008",
@@ -5226,7 +5428,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020008.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020008"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020008",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020007",
@@ -5258,7 +5463,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020007.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020007"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020007",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020005",
@@ -5288,7 +5496,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020005.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020005"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020005",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020054",
@@ -5316,7 +5527,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020054.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5349,7 +5562,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020043.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5381,7 +5596,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020059.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5412,7 +5629,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020067.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5449,7 +5668,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020057.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5490,7 +5711,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020058.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5518,7 +5741,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020045.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5550,7 +5775,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020034.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5589,7 +5816,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020046.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5621,7 +5850,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020056.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5666,7 +5897,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020044.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5692,7 +5925,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020077.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5722,7 +5957,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020037.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5755,7 +5992,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020035.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5790,7 +6029,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020022.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020022"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020022",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020065",
@@ -5819,7 +6061,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020065.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5851,7 +6095,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020029.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5887,7 +6133,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020001.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020001"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020001",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020080",
@@ -5908,7 +6157,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020080.pdf",
     "publication_date": "2024/12/1",
     "online_date": "2024/12/4",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -5940,7 +6191,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020009.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020009"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020009",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020015",
@@ -5970,7 +6224,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020015.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020015"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020015",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020013",
@@ -6000,7 +6257,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020013.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020013"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020013",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020031",
@@ -6026,7 +6286,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020031.pdf",
     "publication_date": "2024/9/1",
     "online_date": "2024/8/28",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -6055,7 +6317,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020030.pdf",
     "publication_date": "2024/9/1",
     "online_date": "2024/8/28",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -6087,7 +6351,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020028.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020028"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020028",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020026",
@@ -6117,7 +6384,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020026.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020026"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020026",
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020025",
@@ -6146,7 +6416,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020025.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020025"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020025",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020011",
@@ -6173,7 +6446,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020011.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020011"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020011",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020033",
@@ -6200,7 +6476,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020033.pdf",
     "publication_date": "2024/9/1",
     "online_date": "2024/8/28",
-    "research_area": [],
+    "research_area": [
+      "Information System and Web Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -6236,7 +6514,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020004.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020004"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020004",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020002",
@@ -6269,7 +6550,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020002.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020002"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020002",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020040",
@@ -6299,7 +6583,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020040.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020040"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020040",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020037",
@@ -6328,7 +6615,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020037.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020037"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020037",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020035",
@@ -6359,7 +6649,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020035.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020035"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020035",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020023",
@@ -6391,7 +6684,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020023.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020023"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020023",
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020021",
@@ -6418,7 +6714,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020021.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020021"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020021",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020018",
@@ -6448,7 +6747,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020018.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020018"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020018",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020041",
@@ -6473,7 +6775,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020041.pdf",
     "publication_date": "2024/9/1",
     "online_date": "2024/8/28",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
@@ -6513,7 +6817,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020010.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020010"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020010",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020020",
@@ -6542,7 +6849,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020020.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020020"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020020",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020019",
@@ -6571,7 +6881,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020019.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020019"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020019",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020012",
@@ -6602,7 +6915,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020012.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020012"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020012",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020006",
@@ -6636,7 +6952,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020006.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020006"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020006",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2024.9020003",
@@ -6667,7 +6986,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2024.9020003.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020003"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2024.9020003",
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020036",
@@ -6696,7 +7018,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020036.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020036"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020036",
+    "research_area": [
+      "Information System and Web Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020032",
@@ -6725,7 +7050,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020032.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020032"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020032",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020028",
@@ -6755,7 +7083,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020028.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020028"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020028",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020027",
@@ -6784,7 +7115,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020027.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020027"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020027",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020025",
@@ -6811,7 +7145,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020025.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020025"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020025",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020024",
@@ -6852,7 +7189,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020024.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020024"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020024",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020023",
@@ -6880,7 +7220,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020023.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020023"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020023",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020022",
@@ -6914,7 +7257,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020022.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020022"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020022",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020039",
@@ -6946,7 +7292,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020039.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020039"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020039",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020029",
@@ -6979,7 +7328,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020029.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020029"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020029",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020020",
@@ -7009,7 +7361,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020020.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020020"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020020",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020014",
@@ -7041,7 +7396,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020014.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020014"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020014",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020041",
@@ -7074,7 +7432,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020041.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020041"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020041",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020033",
@@ -7102,7 +7463,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020033.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020033"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020033",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020030",
@@ -7131,7 +7495,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020030.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020030"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020030",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020034",
@@ -7150,7 +7517,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020034.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020034"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020034",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020021",
@@ -7184,7 +7554,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020021.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020021"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020021",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020019",
@@ -7213,7 +7586,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020019.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020019"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020019",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020018",
@@ -7245,7 +7621,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020018.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020018"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020018",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020017",
@@ -7275,7 +7654,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020017.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020017"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020017",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020015",
@@ -7306,7 +7688,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020015.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020015"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020015",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020009",
@@ -7336,7 +7721,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020009.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020009"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020009",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020008",
@@ -7366,7 +7754,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020008.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020008"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020008",
+    "research_area": [
+      "Safety, Security, and Trust in Big Data and Artificial Intelligence"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020007",
@@ -7396,7 +7787,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020007.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020007"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020007",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020006",
@@ -7428,7 +7822,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020006.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020006"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020006",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020005",
@@ -7461,7 +7858,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020005.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020005"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020005",
+    "research_area": [
+      "Computational Biology and Bioinformatics"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020004",
@@ -7491,7 +7891,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020004.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020004"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020004",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9010003",
@@ -7519,7 +7922,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9010003.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9010003"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9010003",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020010",
@@ -7548,7 +7954,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020010.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020010"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020010",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2023.9020001",
@@ -7577,7 +7986,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2023.9020001.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020001"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2023.9020001",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2022.9020048",
@@ -7608,7 +8020,10 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2022.9020048.pdf",
     "type": "Research Article",
     "year": 2024,
-    "url": "https://www.sciopen.com/article/10.26599/BDMA.2022.9020048"
+    "url": "https://www.sciopen.com/article/10.26599/BDMA.2022.9020048",
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ]
   },
   {
     "doi": "10.26599/BDMA.2025.9020103",
@@ -7667,7 +8082,9 @@
     "pdf": "https://www.sciopen.com/local/article_pdf/10.26599/BDMA.2025.9020104.pdf",
     "publication_date": "2025/12/18",
     "online_date": "machine learning library",
-    "research_area": [],
+    "research_area": [
+      "Big Data Intelligent Computing and Mining"
+    ],
     "publisher": "清华大学出版社",
     "issn": "2096-0654",
     "type": "Research Article"
